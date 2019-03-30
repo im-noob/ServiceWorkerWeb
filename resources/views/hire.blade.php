@@ -70,14 +70,43 @@
                 <span style="color:black;font-size:15px;">No of profile view :100 <i class="far fa-eye"></i> </span>
                 <div class="row">
                     <div class="col-sm-6">
-
+                        Address : {{$list[0]->address}}
                     </div>
                     <div class="col-sm-6">
-                        
+                        Location : {{$list[0]->address}}
                     </div>
                 </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        District :      (813025)
+                    </div>
+                    <div class="col-sm-6">
+                        State : 
+                    </div>
+                </div>
+                <br>
+                <h6>Service Charge</h6>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Cras justo odio
+                        <span class="badge badge-primary badge-pill">14</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Dapibus ac facilisis in
+                        <span class="badge badge-primary badge-pill">2</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Morbi leo risus
+                        <span class="badge badge-primary badge-pill">1</span>
+                    </li>
+                </ul>
+                <br>
+                <h6>Discription </h6>
+                <p>kjdsahfjweyuriynwey uweyrew ew iewyiru iuweryewr </p>
+                <br>
+                <button class="btn btn-primary"> Hire me </button>
             </div>
-
         </div>
     </div>
 </section>
