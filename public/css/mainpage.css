@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css?family=Catamaran:400,500,600,700,700|Source+Sans+Pro:400,600");
+/*===================================
+Show List
+====================================*/
+.img1 {
+    height: 100;
+    padding: 5;
+    width: 100%;
+  }
+
+.cusView {
+    margin: 5px;
+    width: 20%;
+}
+
+
+.povView {
+    margin: 5px;
+    width: 80%;
+}
+
+.authHeading {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.profileview {
+    background-color: seashell;
+    padding-top: 50px;
+    height: 400;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.signupform {
+  padding-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.grid-container {
+  position: relative;
+  display: grid;
+  align-content: space-between;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+  margin-top: 5%;
+}
+
+.grid-container > div {
+  border-style: solid;
+  border-width: medium;
+  font-size: 20px;
+  height: 80%;
+  overflow: scroll;
+}
+
+
+
+.signup-view {
+    background-image: url("../images/backpic.jpg");
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .signup-view:before {
+    content: '';
+    background: rgba(65, 21, 21, 0.63);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .signup-view .block {
+    color: #fff;
+  }
+  
+  .signup-view .block h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  .signup-view .block p {
+    color: #fff;
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .signup-view .block .btn-main {
+    margin-right: 8px;
+  }
+  
+  .signup-view .block .btn-main:hover {
+    opacity: .8;
+  }
+  
+  .signup-view-video {
+    height: 100vh;
+    position: inherit !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .signup-view-video .block {
+    color: #fff;
+    text-align: center;
+  }
+  
+  .signup-view-video .block h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .signup-view-video .block p {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+  }
+  
+  .signup-view-video .block .btn-main {
+    margin-top: 20px;
+  }
+  
