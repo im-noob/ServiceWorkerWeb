@@ -20,7 +20,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </head>
   <body>
-    <header>
+    <header class = "headerView">
         <div class="container-fluid">
             <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,6 +48,9 @@
                 <li class="nav-item">
                 <a class="nav-link" id="login1" data-toggle="modal" data-target="#myModal" >Login/SignUp</a>
                 </li>
+                <li class="nav-item">
+                <a class="nav-link" id="logout" href="{{url('/')}}/logout" >Logout</a>
+                </li>
             </ul>
             </div>
             </nav>
@@ -59,6 +62,8 @@
     @yield('signup')
     @yield('hire')
     @yield('signupForm')
+    @yield('info')
+    @yield('conformRequest')
     
     <br>
     <footer id="footer" class="bg-one">

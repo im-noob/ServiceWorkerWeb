@@ -13,8 +13,17 @@ Show List
     width: 20%;
 }
 
+.headerView {
+  height:7%;
+}
+
+.bodyView {
+  position: relative;
+  margin-top: 7%;
+}
 
 .povView {
+    height:80%;
     margin: 5px;
     width: 80%;
 }
@@ -36,7 +45,7 @@ Show List
 }
 
 .signupform {
-  padding-top: 5%;
+  margin-top: 7%;
   margin-left: auto;
   margin-right: auto;
   width: 40%;

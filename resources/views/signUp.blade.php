@@ -12,20 +12,19 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="container">
-                        <form method="get" action="{{url('/')}}/signupForm">
+                        <form method="get" action="{{url('/')}}/sendOtp">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}" /> 
                             <div class="form-group">
-                                <label for="category">Example select</label>
-                                <select class="form-control" id="category">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                <label for="category">Select Occupation</label>
+                                <select class="form-control" name="sub_id">
+                                    @foreach($data as $msg)
+                                        <option value="{{$msg->wor_subcat_id}}" >{{$msg->subcat_name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             
                             <div class="form-group">
-                                <input type="text" name="mobileNo" placeholder="Enter Mobile No" class="form-control" id="mobileNo">
+                                <input type="text" name="mobileNo" placeholder="Enter Mobile No" class="form-control" id="mobileNo" />
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="form-control btn btn-primary" >Signup</button>
@@ -37,4 +36,11 @@
         </div>
     </div>
 </section>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#login1').text("");
+        $('#logout').text("");       
+    });
+</script
 @endsection

@@ -1,113 +1,58 @@
 @extends('main')
 @section('hire')
-<section class="grid-container">
-    <div >
-        <h4>Service Provider</h4>
-        <div class="list-group content-view" id="list-tab" role="tablist">
-            @php
-                $i = 0;
-            @endphp
-            @foreach($data as $msg)
-                @if($i++ == 0)
-                <a class="list-group-item list-group-item-action active cat" id="{{$msg->wor_info_id}}" data-toggle="list" href="#subcat" role="tab" aria-controls="prince">
-                    <div class="card">
-                        <div class="container">
+
+<section class = "bodyView">
+    <div class="card">
+        <div class="container">
+            <div class="d-flex justify-content-center mb-3">
+                <div class="p-2 "><h3>Service Provider List</h3></div>
+            </div>
+            <div class="row"> 
+                @foreach($data as $msg)
+                    <div class = "col-md-4">
+                        <div class="card">
+                        <div class ="container">
                             <div class = "row">
-                                <div class="col-sm-4">
-                                    <img src="{{url('/')}}/images/company/gallery-1.jpg" class="rounded povView">
+                                <div class="col-md-6">
+                                    <img src="{{$msg['pic']}}" class="rounded povView" alt="UserPic">
                                 </div>
-                                <div class="col-sm-8">
-                                    <span style="color:black;">{{$msg->name}}</span><br>
-                                    <span style="background-color:green;color:black;font-size:15px;">{{$msg->rating}}</span>
-                                    <span style="color:black;font-size:15px;">{{$msg->no_of_work}}<i class="far fa-eye"></i> </span>
+                                <div class="col-md-6">
+                                    <span style="font-size:20px;color:black;">{{$msg['name']}}</span><br>
+                                    <span style="font-size:16px;color:black;">No of Views: {{$msg['no_of_profile_view']}}</span><br>
+                                    <span style="font-size:14px;color:black;background-color:green"> {{$msg['rating']}}* </span>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <span style="color:black;font-size:15px;">Work Time :{{$msg->work_hour}}</span>
-                                </div>
-                                <div class="col-sm-6">
-                                    <span style="color:black;font-size:15px;">Experiance :{{$msg->work_exp}} year(s)</span>
-                                </div>
+                            <hr>
+                            <ul class="list-group" id="worklist1">
+                                @foreach($msg['priceList'] as $msg1)
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        {{$msg1->subcat_name}}
+                                        <span ><i class="fas fa-rupee-sign"></i>{{$msg1->min_price}} - <i class="fas fa-rupee-sign"></i>{{$msg1->max_price}} </span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                            <hr>
+                            <form action="{{url('/')}}/hire/submit" method="get">
+                                <input type="hidden" name="id" value="{{$msg['wor_info_id']}}" >
+                                <input type="hidden" name="subcat_id" value = "{{$subcat}}" >
+                                <input type="hidden" name="_token" value = "{{csrf_token()}}" >
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary form-control"> Hire me </button>
+                                </div>    
+                            </form>
                             </div>
                         </div>
-                    </div>
-                </a>
-                @else
-                <a class="list-group-item list-group-item-action" id="{{$msg->wor_info_id}}" data-toggle="list" href="#subcat" role="tab" aria-controls="prince">
-                    <div class="card">
-                        <div class="container">
-                            <div class = "row">
-                                <div class="col-sm-4">
-                                    <img src="{{url('/')}}/images/company/gallery-1.jpg" class="rounded povView">
-                                </div>
-                                <div class="col-sm-8">
-                                    <span style="color:black;">{{$msg->name}}</span><br>
-                                    <span style="background-color:green;color:black;font-size:15px;">{{$msg->rating}}</span>
-                                    <span style="color:black;font-size:15px;">{{$msg->no_of_work}}<i class="far fa-eye"></i> </span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <span style="color:black;font-size:15px;">Work Time:{{$msg->work_hour}}</span>
-                                </div>
-                                <div class="col-sm-6">
-                                    <span style="color:black;font-size:15px;">Experiance:{{$msg->work_exp}} year(s)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                @endif
-            @endforeach
-        </div>
-    </div>
-    <div >
-        <h4>Discription</h4>
-        <div class="card">
-            <div class="container">
-                <h4 style="text-align:center;">Name Of Banda</h4>
-                <span style="color:black;font-size:15px;">No of profile view :100 <i class="far fa-eye"></i> </span>
-                <div class="row">
-                    <div class="col-sm-6">
-                        Address : {{$list[0]->address}}
-                    </div>
-                    <div class="col-sm-6">
-                        Location : {{$list[0]->address}}
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-sm-6">
-                        District :      (813025)
-                    </div>
-                    <div class="col-sm-6">
-                        State : 
-                    </div>
-                </div>
-                <br>
-                <h6>Service Charge</h6>
-                <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Cras justo odio
-                        <span class="badge badge-primary badge-pill">14</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Dapibus ac facilisis in
-                        <span class="badge badge-primary badge-pill">2</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Morbi leo risus
-                        <span class="badge badge-primary badge-pill">1</span>
-                    </li>
-                </ul>
-                <br>
-                <h6>Discription </h6>
-                <p>kjdsahfjweyuriynwey uweyrew ew iewyiru iuweryewr </p>
-                <br>
-                <button class="btn btn-primary"> Hire me </button>
+                    </div> 
+                @endforeach
             </div>
         </div>
     </div>
 </section>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#login1').text("");
+        $('#logout').text("");       
+    });
+</script>
 @endsection
