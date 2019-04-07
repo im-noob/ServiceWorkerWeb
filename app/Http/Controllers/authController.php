@@ -246,7 +246,6 @@ class authController extends Controller
         }
 
         $workerRate["wor_info_id"] = $user_id;
-
         $wor_info_tab = DB::table('wor_info_tab')->where('wor_info_id',$user_id)
             ->select('wor_info_id')->get();
 

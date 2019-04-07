@@ -87,13 +87,11 @@ class hireController extends Controller
                     ->where('wor_order_id', $o_id);
             }
             catch(Exception $e){
-                echo "<script type='text/javascript'> alert('Sometning went wrong'); </script>";
-                Redirect::to('/');
+                return redirect()->back()->with('alert', 'Something went wrong');
             }    
         }
         else{
-            echo "<script type='text/javascript'> alert('Wrong OTP'); </script>";
-            Redirect::to('/');
+            return redirect()->back()->with('alert', 'Invalid OTP');
         }
         
         echo "<script type='text/javascript'> alert('Scccessfully order placed.'); </script>";
@@ -121,6 +119,7 @@ class hireController extends Controller
                     ->select('id')
                     ->where('phone',$mobileNo)
                     ->get();
+
         $user_id = "";
         if(sizeof($user) > 0){
             $user_id = $user->id;
@@ -134,7 +133,7 @@ class hireController extends Controller
                     'email' => $email,
                     'user_type' => "customer",
                 ]);
-           
+
             $user_id = mysql_insert_id();
         }
 
@@ -162,7 +161,7 @@ class hireController extends Controller
         $num = rand(1000,9999);
         $_SESSION["cpt"] = $num;
 
-        return view('conformRequest',['otp'=>$num]);
+        return view('conformRequest',['otp'=>$num,'url1'=>'/hire/cnfrmotp']);
         
     }
     public function getUserInfo(Request $request){
