@@ -43,19 +43,15 @@
             @for($i = 0 ; $i < 5 ; $i++)
                 <h4>{{$data[$i][1]}}</h4>
                 <div class="row">
-                    <div class = "col-lg-11">
-                        <div class="row">
-                            @for($j=0; $j < 4 ; $j++)
-                                <div class = "col-md-3">
-                                    <img  src="{{url('/')}}/images/company/gallery-1.jpg" class="rounded img1" alt="Cinque Terre">
-                                    <p>{{$data[$i][2][$j]->subcat_name}}</p>
-                                </div> 
-                            @endfor
-                        </div>
-                    </div>
-                    <div class = "col-lg-1">
-                        <span style="font-size:25px"><i class="fas fa-arrow-circle-right"></i></span>
-                    </div>
+                    @for($j=0; $j < 4 ; $j++)
+                    
+                        <div class = "col-md-3">
+                            <a href="{{url('/hire/'.$data[$i][2][$j]->wor_subcat_id.'/')}}" target = "_blank">
+                            <img  src="{{url('/')}}/images/company/gallery-1.jpg" class="rounded img1" alt="Cinque Terre">
+                            <p>{{$data[$i][2][$j]->subcat_name}}</p>
+                            </a>
+                        </div> 
+                    @endfor
                 </div>
             @endfor
         </div>
@@ -164,7 +160,6 @@
 	<div class="modal fade" id="service" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-      
         <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title">Our Service</h4>
