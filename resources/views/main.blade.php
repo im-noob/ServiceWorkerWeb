@@ -20,40 +20,41 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </head>
   <body>
-    <header class = "headerView">
+    <header>
         <div class="container-fluid">
-            <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="{{url('/')}}/"><img src="{{url('/')}}/images/fullLogo.png" class="rounded logo-view" alt="logo" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
-            <!-- Brand -->
-            <a class="navbar-brand" href="{{url('/')}}/" ><img src="{{url('/')}}/images/fullLogo.png" class="rounded cusView" alt="logo" /></a>
-            
-            <!-- Links -->
-            <div class="collapse navbar-collapse" id="nav-content">   
-            <ul class="navbar-nav justified-content-end">
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul  class="navbar-nav">
                 <li class="nav-item">
-                <a class="nav-link" href="{{url('/')}}/">Home</a>
+                    <a class="nav-link" href="{{url('/')}}/">Home</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" id="Myservice" data-toggle="modal" data-target="#service" >My Services</a>
+                    <a class="nav-link" id="Myservice" data-toggle="modal" data-target="#service" >My Services</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
+                    <a class="nav-link" href="#">Blog</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link"  href="{{url('/')}}/signup" >Become A professional</a>
+                    <a class="nav-link"  href="{{url('/')}}/signup" >Become A professional</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" id="login1" data-toggle="modal" data-target="#myModal" >Login/SignUp</a>
+                    <a class="nav-link" id="login1" data-toggle="modal" data-target="#myModal" >Login/SignUp</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" id="logout" href="{{url('/')}}/logout" >Logout</a>
+                    <a class="nav-link" id="logout" href="{{url('/')}}/logout" >Logout</a>
                 </li>
             </ul>
             </div>
-            </nav>
+        </nav>
+            
+            
+            
+            
+
         </div>        
     </header>
 

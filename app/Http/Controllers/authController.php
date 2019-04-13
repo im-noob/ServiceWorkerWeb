@@ -54,7 +54,7 @@ class authController extends Controller
 
             return view('profile',['mobile'=>$mobile]);
         }
-        return view('home');
+        return redirect()->back()->with('alert', 'Invalid OTP');
     }
 
     public function profileSubmit(Request $request){

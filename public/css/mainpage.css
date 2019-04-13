@@ -8,28 +8,30 @@ Show List
     width: 100%;
   }
 
+
 .cusView {
-    margin: 5px;
-    width: 20%;
+  height:50px;
+  margin: 2px;
+  width: 50px;
 }
 
-.headerView {
-  height:7%;
+.logo-view{
+  width:100px;
 }
 
 .bodyView {
   position: relative;
-  margin-top: 7%;
+  margin-top: 70px;
 }
 
 .povView {
-    height:80%;
+    height:100px;
     margin: 5px;
-    width: 80%;
+    width: 100px;
 }
 
 .authHeading {
-    display: block;
+  display: block;
   margin-left: auto;
   margin-right: auto;
   width: 60%;
@@ -50,6 +52,50 @@ Show List
   margin-right: auto;
   width: 40%;
 }
+
+.sub-container {
+  display: grid;
+  grid-row-gap: 5px;
+  grid-column-gap:5px;
+  grid-template-columns: auto auto auto auto;
+  padding: 10px;
+}
+
+.sub-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 30px;
+  text-align: center;
+}
+@media screen and (max-width: 600px) {
+  .povView {
+    height:90px;
+    margin: 5px;
+    width: 90px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sub-item {
+    width: 150px;
+  }
+
+  .sub-container {
+    overflow: auto;
+  }
+}
+
+.feedback-container {
+  display: grid;
+  grid-column-gap:5px;
+  grid-template-columns: auto auto;
+}
+
+.feedback-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+
 
 .grid-container {
   position: relative;
@@ -75,15 +121,19 @@ Show List
     background-size: cover;
     height: 100vh;
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .home-view {
+    background-image: url("../images/backpic.jpg");
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-content: center;
   }
   
   .signup-view:before {
