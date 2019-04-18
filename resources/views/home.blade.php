@@ -34,16 +34,26 @@
             </div>
         </div>
     </section>
-     <br>
+    <br>
+    <section >   
+        <div class= "card salun_template text-center">  
+            <div class="container" >
+                <a href="{{url('/')}}/shop_salun">
+                    <h3 style= "color:whitesmoke;">Local Salon time alaviable <button  class="btn btn-primary"> Click Here </button></h3>
+                </a>
+            </div> 
+        </div>
+    </section>
+        <br>
     <section>   
         <div class= "card">   
             <br>
-            <h3 style= " text-align:center;margin-top:5px;">Recomended Services</h3>  
+            <h3 style= "text-align:center;margin-top:5px;">Recomended Services</h3>  
             <div class= "container" >
-            @for($i = 0 ; $i < 5 ; $i++)
+            @for($i = 0 ; $i < sizeof($data) ; $i++)
                 <h4>{{$data[$i][1]}}</h4>
                 <div class="sub-container">
-                    @for($j=0; $j < 4 ; $j++)                    
+                    @for($j=0; $j < sizeof($data[$i][2]) ; $j++)                    
                         <div class = "sub-item">
                             <a href="{{url('/hire/'.$data[$i][2][$j]->wor_subcat_id.'/')}}" target = "_blank">
                             <img  src="{{url('/')}}/images/company/gallery-1.jpg" class="rounded img1" alt="Cinque Terre">

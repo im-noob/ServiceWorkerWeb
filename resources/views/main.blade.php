@@ -64,6 +64,7 @@
     @yield('hire')
     @yield('signupForm')
     @yield('info')
+    @yield('SalonSelect')
     @yield('conformRequest')
     
     <br>

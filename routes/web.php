@@ -41,3 +41,7 @@ Route::get('/hire/cnfrmotp', 'hireController@conformOTP');
 Route::get('/hire/submit', 'hireController@hireSubmit');
 
 Route::get('/hire/{id}', 'hireController@hirePage');
+
+Route::get('/shop_salun','salonController@selectSalon');
+
+Route::get('/shop_details','salonController@SalonDetails');

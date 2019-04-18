@@ -62,7 +62,7 @@ class hireController extends Controller
         //     return view('hire',['data'=>$spList,'list'=>$List,'worklist'=>$List1,'status'=>"true"]);
         // }
 
-        return view('hire',['data'=>$ServiceList,'subcat'=>$id]);
+        return view('CommonWorkList',['data'=>$ServiceList,'subcat'=>$id]);
     }
 
     public function conformOTP(Request $request){
