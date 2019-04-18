@@ -1,58 +1,129 @@
 @extends('main')
 @section('hire')
-
-<section class = "bodyView">
-    <div class="card">
+<section class="bodyView">
         <div class="container">
-            <div class="d-flex justify-content-center mb-3">
-                <div class="p-2 "><h3>Service Provider List</h3></div>
+        <div class="card">
+            <div class="card-header">
+                <h3>Work List</h3>
             </div>
-            <div class="row"> 
-                @foreach($data as $msg)
-                    <div class = "col-md-4">
-                        <div class="card">
-                        <div class ="container">
-                            <div class = "row">
-                                <div class="col-md-6">
-                                    <img src="{{$msg['pic']}}" class="rounded povView" alt="UserPic">
-                                </div>
-                                <div class="col-md-6">
-                                    <span style="font-size:20px;color:black;">{{$msg['name']}}</span><br>
-                                    <span style="font-size:16px;color:black;">No of Views: {{$msg['no_of_profile_view']}}</span><br>
-                                    <span style="font-size:14px;color:black;background-color:green"> {{$msg['rating']}}* </span>
-                                </div>
-                            </div>
-                            <hr>
-                            <ul class="list-group" id="worklist1">
-                                @foreach($msg['priceList'] as $msg1)
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        {{$msg1->subcat_name}}
-                                        <span ><i class="fas fa-rupee-sign"></i>{{$msg1->min_price}} - <i class="fas fa-rupee-sign"></i>{{$msg1->max_price}} </span>
-                                    </li>
-                                @endforeach
-                            </ul>
-                            <hr>
-                            <form action="{{url('/')}}/hire/submit" method="get">
-                                <input type="hidden" name="id" value="{{$msg['wor_info_id']}}" >
-                                <input type="hidden" name="subcat_id" value = "{{$subcat}}" >
-                                <input type="hidden" name="_token" value = "{{csrf_token()}}" >
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary form-control"> Hire me </button>
-                                </div>    
-                            </form>
+            @php
+                $size = sizeof($data);
+            @endphp
+
+            @if($size <= 0)
+                <p>No List is avaliable.</p>
+            @endif
+            @for($i =0 ; $i < $size; $i++)
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="salonList-container">
+                            <img src="{{url('/')}}{{$data[$i]->pic}}" class="card-img" alt="logo">
+                            <div class="left-item">
+                                <h6 class="card-title">{{$data[$i]->work_name}}</h6>
+                                <span><i class="fas fa-rupee-sign" id="price{{$data[$i]->wor_list_id}}">{{$data[$i]->price}}</i> /- </span>
+                                <div class="bton" id="cbtonview{{$data[$i]->wor_list_id}}" >
+                                    <button class="btn btn-primary" onclick="changeView({{$data[$i++]->wor_list_id}})" >Add to Cart</button>                                    
+                                </div> 
                             </div>
                         </div>
-                    </div> 
-                @endforeach
+                    </div>
+                </div>
+                <br>
+                @if($i < $size)
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="salonList-container">
+                            <img src="{{url('/')}}{{$data[$i]->pic}}" class="card-img" alt="logo">
+                            <div class="left-item">
+                                <h6 class="card-title">{{$data[$i]->work_name}}</h6>
+                                <span><i class="fas fa-rupee-sign" id="price{{$data[$i]->wor_list_id}}">{{$data[$i]->price}}</i> /- </span>
+                                <div class="bton" id="cbtonview{{$data[$i]->wor_list_id}}" >
+                                    <button class="btn btn-primary" onclick="changeView({{$data[$i++]->wor_list_id}})" >Add to Cart</button>                                    
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                @endif
+                @if($i < $size)
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="salonList-container">
+                            <img src="{{url('/')}}{{$data[$i]->pic}}" class="card-img" alt="logo">
+                            <div class="left-item">
+                                <h6 class="card-title">{{$data[$i]->work_name}}</h6>
+                                <span><i class="fas fa-rupee-sign" id="price{{$data[$i]->wor_list_id}}">{{$data[$i]->price}}</i> /- </span>
+                                <div class="bton" id="cbtonview{{$data[$i]->wor_list_id}}" >
+                                    <button class="btn btn-primary" onclick="changeView({{$data[$i]->wor_list_id}})" >Add to Cart</button>                                    
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endif
+            </div>
+            <br>
+            @endfor
+            <div class="card-footer">
+                <span> Total : <i class="fas fa-rupee-sign" id="total">00</i></span>
             </div>
         </div>
     </div>
 </section>
 
+
 <script type="text/javascript">
+
+    function changeView(id){
+
+        var val = $('#price'+id).text();
+        var total = $('#total').text();
+
+        total = parseInt(val) + parseInt(total);
+        
+        $('#total').text(total);
+
+        $('#cbtonview'+id).empty();
+        $('#cbtonview'+id).append(
+            '<button class="btn btn-primary" onclick="increaseVal('+id+')" >+</button>'+
+            '<span class="bton-item" id="'+id+'">1</span>'+
+            '<button class="btn btn-primary" onclick="decreaseVal('+id+')" >-</button>'
+        );
+        console.log('view Changed');
+    }
+
+    function decreaseVal(id){
+
+        var val = $('#'+id).text();
+        val = val-1;
+        console.log(val);
+        if(val > 0){
+            $('#'+id).text(val);
+            var val1 = $('#price'+id).text();
+            var total = $('#total').text();
+            total = parseInt(total) - parseInt(val1);
+            $('#total').text(total);
+        }
+    }
+
+    function increaseVal(id){
+        var val = $('#'+id).text();
+        val = parseInt(val)+1;
+
+        var val1 = $('#price'+id).text();
+        var total = $('#total').text();
+        total = parseInt(val1) + parseInt(total);
+        $('#total').text(total);
+
+        // console.log(val);
+        $('#'+id).text(val);
+    }
+
     $(document).ready(function(){
         $('#login1').text("");
         $('#logout').text("");       
     });
-</script>
+</script
 @endsection

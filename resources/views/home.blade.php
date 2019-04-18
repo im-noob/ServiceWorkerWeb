@@ -35,7 +35,7 @@
         </div>
     </section>
     <br>
-    <section >   
+    <section>   
         <div class= "card salun_template text-center">  
             <div class="container" >
                 <a href="{{url('/')}}/shop_salun">

@@ -1,7 +1,6 @@
 @extends('main')
 @section('SalonSelect')
 <section class="bodyView">
-    
         <div class="container">
         <div class="card text-center">
             <div class="card-header">

@@ -98,7 +98,6 @@ body {
   display: grid;
   grid-column-gap:1%;
   grid-template-columns: auto auto auto;
-  background-color: cornsilk;
 }
 
 .bton-item {
@@ -115,12 +114,16 @@ body {
 
 .salonList-item {
   background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
+  text-align: left;
 }
 
 .workList-item {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: right;
+}
+
+.left-item {
+  text-align: left;
 }
 
 

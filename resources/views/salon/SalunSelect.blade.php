@@ -38,70 +38,45 @@
                 <div class="card-hrader">
                     <h4>Local Salon List</h4>
                 </div>
+                @php
+                    $size = sizeof($data);
+                @endphp
+                @for($i = 0 ; $i < $size ; $i++)
                 <div class="row">
                     <div class="col-md-6">
-                        <a href="{{url('/')}}/shop_details"  >
+                        <a href="{{url('/shop_details/'.$data[$i]->wor_info_id.'/')}}"  >
                         <div class="card">
                             <div class="salonList-container">
+                                <img src="{{$data[$i]->pic}}" class="card-img" alt="pic">
                                 <div class="salonList-item">
-                                    <img src="{{url('/')}}/images/pricing-bg.jpg" class="card-img" alt="...">
-                                </div>
-                                <div class="salonList-item">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">As a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                        </div>
-                        </a>
-                        <br>
-                        <a href="{{url('/')}}/shop_details"  >
-                        <div class="card">
-                            <div class="salonList-container">
-                                <div class="salonList-item">
-                                    <img src="{{url('/')}}/images/pricing-bg.jpg" class="card-img" alt="...">
-                                </div>
-                                <div class="salonList-item">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">As a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                    <h5 class="card-title">{{$data[$i]->name}}</h5>
+                                    <p class="card-text">Address : {{$data[$i]->address}}</p>
+                                    <p class="card-text">Location : {{$data[$i]->location}}    {{$data[$i++]->pin_code}}</p>
                                 </div>
                             </div>
                         </div>
                         </a>
                     </div>
+                    @if($i < $size)
                     <div class="col-md-6">
-                        <a href="{{url('/')}}/shop_details"  >
-                        <div class="card">
-                            <div class="salonList-container">
-                                <div class="salonList-item">
-                                    <img src="{{url('/')}}/images/pricing-bg.jpg" class="card-img" alt="...">
-                                </div>
-                                <div class="salonList-item">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                        </div>
-                        </a>
-                        <br>
-                        <a href="{{url('/')}}/shop_details" >
-                        <div class="card">
-                            <div class="salonList-container">
-                                <div class="salonList-item">
-                                    <img src="{{url('/')}}/images/pricing-bg.jpg" class="card-img" alt="...">
-                                </div>
-                                <div class="salonList-item">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">As a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a href="{{url('/shop_details/'.$data[$i]->wor_info_id.'/')}}"  >
+                            <div class="card">
+                                <div class="salonList-container">
+                                    <div class="salonList-item">
+                                        <img src="{{$data[$i]->pic}}" class="card-img" alt="pic">
+                                    </div>
+                                    <div class="salonList-item">
+                                        <h5 class="card-title">{{$data[$i]->name}}</h5>
+                                        <p class="card-text">Address : {{$data[$i]->address}}</p>
+                                        <p class="card-text">Location : {{$data[$i]->location}}    {{$data[$i]->pin_code}}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </a>
                     </div>
+                    @endif
                 </div>
+                @endfor 
             </div>
         </div>
         <br>

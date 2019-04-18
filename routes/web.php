@@ -44,4 +44,4 @@ Route::get('/hire/{id}', 'hireController@hirePage');
 
 Route::get('/shop_salun','salonController@selectSalon');
 
-Route::get('/shop_details','salonController@SalonDetails');
+Route::get('/shop_details/{id}','salonController@SalonDetails');

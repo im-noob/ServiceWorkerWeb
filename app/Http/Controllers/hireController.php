@@ -21,48 +21,17 @@ class hireController extends Controller
 
     public function hirePage($id){
         
-        $spList = DB::table('wor_info_tab')
-            ->join('wor_rate_tab','wor_rate_tab.wor_info_id','=','wor_info_tab.wor_info_id')
-            ->select('name','work_exp','work_hour','no_of_work','rating','pic','no_of_profile_view','wor_info_tab.wor_info_id')
-            ->where('wor_subcat_id',$id)
+
+        $spList = DB::table('wor_list_tab')
+            ->join('wor_price_list','wor_price_list.wor_list_id','=','wor_list_tab.wor_list_id')
+            ->select('wor_list_tab.wor_list_id','work_name','wor_list_tab.pic','work_type','time_taken','price')
+            ->where('wor_list_tab.wor_subcat_id',$id)
+            ->distinct()
             ->get();
 
-        $ServiceList = [];
-        foreach($spList as $msg){
-            $localData = [
-                'name'=>$msg->name,
-                'work_exp'=>$msg->work_exp,
-                'work_hour' => $msg->work_hour,
-                'no_of_work'=>$msg->no_of_work,
-                'rating' => $msg->rating,
-                'pic'=>$msg->pic,
-                'no_of_profile_view' => $msg->no_of_profile_view,
-                'wor_info_id' => $msg->wor_info_id
-            ];
-            
-            $List1 = DB::table('wor_rate_tab')
-                ->join('wor_subcat_tab','wor_subcat_tab.wor_subcat_id','=','wor_rate_tab.wor_subcat_id')
-                ->select('wor_subcat_tab.subcat_name','wor_rate_tab.*')
-                ->where('wor_info_id',$msg->wor_info_id)
-                ->get();
+        //print_r($spList);exit();
 
-            $localData['priceList'] = $List1; 
-            array_push($ServiceList,$localData);
-        }
-
-        //var_dump($ServiceList);
-        // if(sizeof($spList))
-        // {
-        //     $List1 = DB::table('wor_rate_tab')
-        //         ->join('wor_subcat_tab','wor_subcat_tab.wor_subcat_id','=','wor_rate_tab.wor_subcat_id')
-        //         ->select('wor_subcat_tab.subcat_name','wor_rate_tab.*')
-        //         ->where('wor_info_id',$spList[0]->wor_info_id)
-        //         ->get();
-
-        //     return view('hire',['data'=>$spList,'list'=>$List,'worklist'=>$List1,'status'=>"true"]);
-        // }
-
-        return view('CommonWorkList',['data'=>$ServiceList,'subcat'=>$id]);
+        return view('hire',['data'=>$spList,'subcat'=>$id]);
     }
 
     public function conformOTP(Request $request){
