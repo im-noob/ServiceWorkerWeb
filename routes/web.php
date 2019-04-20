@@ -42,6 +42,9 @@ Route::get('/hire/submit', 'hireController@hireSubmit');
 
 Route::get('/hire/{id}', 'hireController@hirePage');
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/addToCart','hireController@addToCart');
 
 Route::get('/CartItem','hireController@CartListItem');

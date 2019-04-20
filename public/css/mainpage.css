@@ -25,10 +25,28 @@ body {
   width: 50px;
 }
 
+.nav-text {
+  /* line-height: 20px;
+  font-size: 16px;
+  letter-spacing: .1px;
+  font-weight: 800; */
+  color: #fff;
+  cursor: pointer;
+
+}
+
 .logo-view{
   width:100px;
 }
 
+.bd-navbar .navbar-nav .nav-link.active {
+  font-weight: 600;
+}
+.navbar-brand{
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+}
 .bodyView {
   position: relative;
   margin-top: 70px;
