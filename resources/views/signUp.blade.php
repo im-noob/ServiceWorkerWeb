@@ -4,10 +4,8 @@
     <div class="container ">
         <div class="row ">
             <div class="col-md-6 ">
-                <div class="block">
-                    <h1 class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".3s" >Best Service Provider Of your City</h1>
-                    <p class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".3s" >Get Instant service provider in your affordable Price.</p>
-                </div>
+                <h1>Best Service Provider Of your City</h1>
+                <p>Get Instant service provider in your affordable Price.</p>
             </div>
             <div class="col-md-6">
                 <div class="card">

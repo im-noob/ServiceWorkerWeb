@@ -1,12 +1,12 @@
 @extends('main')
 @section('home')
-		<section class="hero-area">
+	<section class="home-view">
         <div class="container ">
             <div class="row ">
                 <div class="col-md-12 ">
                     <div class="block">
-                        <h1 class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".3s" >Best Service Provider Of your City</h1>
-                        <p class="wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".3s" >Get Instant service provider in your affordable Price.</p>
+                        <h1 style="text-align:center;color:white;" >Best Service Provider Of your City</h1>
+                        <p  style="text-align:center;color:black;" >Get Instant service provider in your affordable Price.</p>
                        
                         <div class="row">
                             <div class = "col-sm-3">   
@@ -34,18 +34,27 @@
             </div>
         </div>
     </section>
-     <br>
+    <br>
+    <section>   
+        <div class= "card salun_template text-center">  
+            <div class="container" >
+                <a href="{{url('/')}}/shop_salun">
+                    <h3 style= "color:whitesmoke;">Local Salon time alaviable <button  class="btn btn-primary"> Click Here </button></h3>
+                </a>
+            </div> 
+        </div>
+    </section>
+        <br>
     <section>   
         <div class= "card">   
             <br>
-            <h3 style= " text-align:center;margin-top:5px;">Recomended Services</h3>  
+            <h3 style= "text-align:center;margin-top:5px;">Recomended Services</h3>  
             <div class= "container" >
-            @for($i = 0 ; $i < 5 ; $i++)
+            @for($i = 0 ; $i < sizeof($data) ; $i++)
                 <h4>{{$data[$i][1]}}</h4>
-                <div class="row">
-                    @for($j=0; $j < 4 ; $j++)
-                    
-                        <div class = "col-md-3">
+                <div class="sub-container">
+                    @for($j=0; $j < sizeof($data[$i][2]) ; $j++)                    
+                        <div class = "sub-item">
                             <a href="{{url('/hire/'.$data[$i][2][$j]->wor_subcat_id.'/')}}" target = "_blank">
                             <img  src="{{url('/')}}/images/company/gallery-1.jpg" class="rounded img1" alt="Cinque Terre">
                             <p>{{$data[$i][2][$j]->subcat_name}}</p>
@@ -69,11 +78,11 @@
                 <div class = "col-md-4">
                     <div class="card">
                     <div class ="container">
-                        <div class = "row">
-                            <div class="col-md-6">
+                        <div class = "feedback-container">
+                            <div class="feedback-item">
                                 <img src="{{$msg->wpic}}" class="rounded povView" alt="UserPic">
                             </div>
-                            <div class="col-md-6">
+                            <div class="feedback-item">
                                 <span style="font-size:20px;color:black;">{{$msg->cname}}</span><br>
                                 <span style="font-size:16px;color:black;">{{$msg->city}}</span><br>
                                 <span style="font-size:10px;color:red;">{{$msg->updated_at}}</span>
@@ -82,11 +91,11 @@
                         <hr>
                         <p>{{$msg->feedback}}.</p>
                         <hr>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <img src="{{$msg->pic}}" class="rounded povView" alt="ServicePic">
+                        <div class="feedback-container">
+                            <div class="feedback-item">
+                                <img src="{{$msg->pic}}" class="rounded cusView" alt="ServicePic">
                             </div>
-                            <div class="col-sm-8">
+                            <div class="feedback-item">
                                 <span style="font-size:18px;color:blue;">{{$msg->name}}</span><br>
                                 <span style="font-size:14px;color:black;background-color:green"> {{$msg->ratting}}* </span>
                             </div>
@@ -128,31 +137,36 @@
 
     <div class="modal fade" id="myModal">
     	<div class="modal-dialog modal-md">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">SingIn / SignUp</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-            <div class = "authHeading" >
-            <h3>Ganga Service</h3>
-            <h6>Get service on your home</h6>
-            <div id="authId">
-                <form>
-                    <div class="form-group">
-                        <input type = "number" class="form-control" id="authPhoneNo"  placeholder="Enter Your Mobile No." required>
+            <div class="modal-content">
+            
+                <!-- Modal Header -->
+                <div class="modal-header">
+                <h4 class="modal-title">SingIn / SignUp</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class = "authHeading" >
+                    <h3>Ganga Service</h3>
+                    <h6>Get service on your home</h6>
+                    @if (session('alert'))
+                        <div class="alert alert-success">
+                            {{ session('alert') }}
+                        </div>
+                    @endif
+                    <div id="authId">
+                        <form>
+                            <div class="form-group">
+                                <input type = "number" class="form-control" id="authPhoneNo"  placeholder="Enter Your Mobile No." required>
+                            </div>
+                        </form>
+                        <button type="button" class="btn btn-primary" onclick= "changeData()" >Contineoue</button>
                     </div>
-                </form>
-                <button type="button" class="btn btn-primary" onclick= "changeData()" >Contineoue</button>
+                    </div>
+                    <br>
+                </div>  
             </div>
-            </div>
-            <br>
-        </div>  
-      </div>
 		</div>
 	</div>
 		
@@ -196,11 +210,11 @@
 							</div>
 					</div>
 				</div>  
-      </div>
-		</div>
-		</div>
-		<script type="text/javascript">
-		
+            </div>
+        </div>
+    </div>
+
+	<script type="text/javascript">	
         function changeData(){
             
             console.log('Method Called');
@@ -224,18 +238,17 @@
                     $(form).attr("method","get");
                     $(form).html(template);
                     $('#authId').append($(form));
-                   // $('#authId').append('<p>Time :  <span id ="time">00:00</span></p>');
+                    // $('#authId').append('<p>Time :  <span id ="time">00:00</span></p>');
                 });
             }
             else{
                 alert('Not a valid Number.');
             }
-		}
-
-		</script>
-		<script type="text/javascript">
+        }
+	</script>
+	<script type="text/javascript">
         $(document).ready(function(){
-            console.log("Profile Open : ",$('#login1').text());
+            //console.log("Profile Open : ",$('#login1').text());
             $('#login1').text("Login/SignUp");
             $('#logout').text("");
 
@@ -243,7 +256,7 @@
 
             $('body').on('click','.cat',function(){
                 var id = $(this).attr('id');
-                console.log('Clicked On table',id);
+                //console.log('Clicked On table',id);
                 $.ajax({
                         url:'{{url('/')}}/selectSub',
                         data:{"form_id":id},
@@ -252,9 +265,14 @@
                     //console.log(JSON.parse(data));
                     $('#list-cat').empty();
                     for (const msg of JSON.parse(data)) {
-                        console.log(msg.wor_subcat_id);
+                       // console.log(msg.wor_subcat_id);
                         var template = '<a class="list-group-item list-group-item-action" href="'+'{{url("/hire/")}}/'+msg.wor_subcat_id+'">'+msg.subcat_name+'</a>';
-                        console.log(template);
+                        //console.log(template);
+                        $('#list-cat').append(template);
+                    }  
+                    if(Object.keys(JSON.parse(data)).length == 0){
+                        var template = '<a class="list-group-item list-group-item-action" href="#">No Record Found</a>';
+                        //console.log(Object.keys(JSON.parse(data)).length);
                         $('#list-cat').append(template);
                     }
                 });

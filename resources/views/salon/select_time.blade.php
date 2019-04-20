@@ -3,8 +3,11 @@
 <section class="bodyView">
         <div class="container">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header feedback-container">
                 <h3>Work List</h3>
+                <div class="shop-cart-item">
+                   <h3> <i class="fas fa-cart-plus"></i> <span class="badge badge-secondary" id="cart_item">0</span></h3> 
+                </div>
             </div>
             @php
                 $size = sizeof($data);
@@ -66,8 +69,11 @@
             </div>
             <br>
             @endfor
-            <div class="card-footer">
-                <span> Total : <i class="fas fa-rupee-sign" id="total">00</i></span>
+            <div class="card-footer feedback-container">
+                <span>Total : <i class="fas fa-rupee-sign" id="total">00</i></span>
+                <div class="shop-cart-item">
+                    <button  class="btn btn-primary">Submit</button> 
+                </div>  
             </div>
         </div>
     </div>
@@ -79,16 +85,22 @@
     function changeView(id){
 
         var val = $('#price'+id).text();
+       
+        var count = $('#cart_item').text();
+        count = parseInt(count)+1;
+        console.log('item:'+count);
+        $('#cart_item').text(count);
+
         var total = $('#total').text();
         total = parseInt(val) + parseInt(total);
+        
         $('#total').text(total);
 
         $.ajax({
             url:'{{url('/')}}/addToCart',
-            data:{"work_id":id,"count":1},
+            data:{"work_id":id},
             type:'get'
         }).done(function(data){
-
             console.log("Data returened:"+data);
             $('#cbtonview'+id).empty();
             $('#cbtonview'+id).append(
@@ -97,7 +109,7 @@
                 '<button class="btn btn-primary" onclick="decreaseVal('+id+')" >-</button>'
             );
         });
-        console.log('view Changed');
+        //console.log('view Changed');
     }
 
     function decreaseVal(id){

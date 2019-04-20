@@ -70,6 +70,13 @@
                     <li class="nav-item active">
                         <a class="nav-link nav-text" id="logout" href="{{url('/')}}/logout" >Logout</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('/')}}/cart" id="cart-menu"><i class="fas fa-cart-plus"></i><span class="badge badge-secondary" >
+                            @if(Session::has('count'))
+                            {{Session::get('count')}}
+                            @endif
+                        </span></a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -82,6 +89,7 @@
     @yield('hire')
     @yield('signupForm')
     @yield('info')
+    @yield('SalonSelect')
     @yield('conformRequest')
     
     <br>

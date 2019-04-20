@@ -34,17 +34,10 @@
 </section>
 
 <script type="text/javascript">
-
-    public function conformOTP()
-    {
-        console.log('Clicked');
-        alert('Submited Conform.');
-        return true;
-    } 
-
     $(document).ready(function(){
         $('#login1').text("");
-        $('#logout').text("");       
+        $('#logout').text(""); 
+        console.log('Conform Otp Is Called.');      
     });
 </script>
 @endsection

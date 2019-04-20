@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use League\Flysystem\Exception;
 use Illuminate\Support\Facades\Redirect;
+use function GuzzleHttp\json_encode;
+use Illuminate\Support\Facades\Session;
 
 class hireController extends Controller
 {
@@ -21,48 +23,16 @@ class hireController extends Controller
 
     public function hirePage($id){
         
-        $spList = DB::table('wor_info_tab')
-            ->join('wor_rate_tab','wor_rate_tab.wor_info_id','=','wor_info_tab.wor_info_id')
-            ->select('name','work_exp','work_hour','no_of_work','rating','pic','no_of_profile_view','wor_info_tab.wor_info_id')
-            ->where('wor_subcat_id',$id)
+
+        $spList = DB::table('wor_list_tab')
+            ->join('wor_price_list','wor_price_list.wor_list_id','=','wor_list_tab.wor_list_id')
+            ->select('wor_list_tab.wor_list_id','work_name','wor_list_tab.pic','work_type','time_taken','price')
+            ->where('wor_list_tab.wor_subcat_id',$id)
+            ->distinct()
             ->get();
 
-        $ServiceList = [];
-        foreach($spList as $msg){
-            $localData = [
-                'name'=>$msg->name,
-                'work_exp'=>$msg->work_exp,
-                'work_hour' => $msg->work_hour,
-                'no_of_work'=>$msg->no_of_work,
-                'rating' => $msg->rating,
-                'pic'=>$msg->pic,
-                'no_of_profile_view' => $msg->no_of_profile_view,
-                'wor_info_id' => $msg->wor_info_id
-            ];
-            
-            $List1 = DB::table('wor_rate_tab')
-                ->join('wor_subcat_tab','wor_subcat_tab.wor_subcat_id','=','wor_rate_tab.wor_subcat_id')
-                ->select('wor_subcat_tab.subcat_name','wor_rate_tab.*')
-                ->where('wor_info_id',$msg->wor_info_id)
-                ->get();
-
-            $localData['priceList'] = $List1; 
-            array_push($ServiceList,$localData);
-        }
-
-        //var_dump($ServiceList);
-        // if(sizeof($spList))
-        // {
-        //     $List1 = DB::table('wor_rate_tab')
-        //         ->join('wor_subcat_tab','wor_subcat_tab.wor_subcat_id','=','wor_rate_tab.wor_subcat_id')
-        //         ->select('wor_subcat_tab.subcat_name','wor_rate_tab.*')
-        //         ->where('wor_info_id',$spList[0]->wor_info_id)
-        //         ->get();
-
-        //     return view('hire',['data'=>$spList,'list'=>$List,'worklist'=>$List1,'status'=>"true"]);
-        // }
-
-        return view('hire',['data'=>$ServiceList,'subcat'=>$id]);
+            //print_r($spList);exit();
+        return view('hire',['data'=>$spList,'subcat'=>$id]);
     }
 
     public function conformOTP(Request $request){
@@ -182,5 +152,44 @@ class hireController extends Controller
         array_push($data,$List1);
         return json_encode($data);
 
+    }
+
+    public function addToCart(Request $request){
+        
+        $work_id = $request->work_id;
+        $count = $request->count;
+
+        $localList = array(
+            'war_id'=>$work_id,
+            'count'=>$count
+        );
+
+        if(session_status() == PHP_SESSION_NONE) 
+        {
+            session_start();
+        }
+
+        $cval = 1;
+        if(Session::has('count')){
+            $cval = Session::get('count');
+            $cval = $cval + 1; 
+        }
+        Session::put('count',$cval);
+
+
+        if(Session::has('cart'))
+        {
+            global $data;
+            $data = Session::get('cart');
+            Session::remove('cart');
+            array_push($data,$localList);
+            Session::put('cart',$data);
+        }else{
+            $data= array();
+            array_push($data,$localList);
+            Session::put('cart',$data);
+        }
+
+        return json_encode($data);
     }
 }
