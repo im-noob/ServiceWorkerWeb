@@ -7,7 +7,6 @@
                     <div class="block">
                         <h1 style="text-align:center;color:white;" >Best Service Provider Of your City</h1>
                         <p  style="text-align:center;color:black;" >Get Instant service provider in your affordable Price.</p>
-                       
                         <div class="row">
                             <div class = "col-sm-3">   
                             </div>
@@ -66,7 +65,7 @@
         </div>
         </div>
     </section>
-    <br>
+    <br> 
     <section>
         <div class="card">
         <div class="container">

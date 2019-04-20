@@ -17,7 +17,7 @@ class salonController extends Controller
 
         $spList = DB::table('wor_list_tab')
         ->join('wor_price_list','wor_price_list.wor_list_id','=','wor_list_tab.wor_list_id')
-        ->select('wor_list_tab.wor_list_id','work_name','wor_list_tab.pic','work_type','time_taken','price')
+        ->select('wor_list_tab.wor_list_id','work_name','wor_list_tab.pic','work_type','time_taken','wor_price_list.price')
         ->where('wor_price_list.wor_info_id',$id)
         ->distinct()
         ->get();

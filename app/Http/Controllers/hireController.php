@@ -26,7 +26,7 @@ class hireController extends Controller
 
         $spList = DB::table('wor_list_tab')
             ->join('wor_price_list','wor_price_list.wor_list_id','=','wor_list_tab.wor_list_id')
-            ->select('wor_list_tab.wor_list_id','work_name','wor_list_tab.pic','work_type','time_taken','price')
+            ->select('wor_list_tab.wor_list_id','work_name','wor_list_tab.pic','work_type','time_taken','wor_price_list.price')
             ->where('wor_list_tab.wor_subcat_id',$id)
             ->distinct()
             ->get();
@@ -134,6 +134,7 @@ class hireController extends Controller
         return view('conformRequest',['otp'=>$num,'url1'=>'/hire/cnfrmotp']);
         
     }
+
     public function getUserInfo(Request $request){
        
         $List = DB::table('wor_info_tab')
@@ -176,20 +177,39 @@ class hireController extends Controller
         }
         Session::put('count',$cval);
 
-
         if(Session::has('cart'))
         {
             global $data;
             $data = Session::get('cart');
             Session::remove('cart');
-            array_push($data,$localList);
+            array_push($data,$work_id);
             Session::put('cart',$data);
         }else{
             $data= array();
-            array_push($data,$localList);
+            array_push($data,$work_id);
             Session::put('cart',$data);
         }
-
         return json_encode($data);
+    }
+
+    public function CartListItem(Request $request){
+
+        if(session_status() == PHP_SESSION_NONE) 
+        {
+            session_start();
+        }
+
+        $data = [];
+        if(Session::has('cart'))
+        {
+            $data = Session::get('cart');
+        }
+        
+        $cartData = DB::table('wor_list_tab')
+            ->join('wor_price_list','wor_price_list.wor_list_id','=','wor_list_tab.wor_list_id')
+            ->select('wor_list_tab.wor_list_id','work_name','wor_list_tab.pic','work_type','time_taken','wor_price_list.price')
+            ->whereIn('wor_list_tab.wor_list_id',$data)
+            ->get();
+        return view('CommonWorkList',['data'=>$cartData]);
     }
 }

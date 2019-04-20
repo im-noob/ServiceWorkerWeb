@@ -56,7 +56,7 @@
                                 <h6 class="card-title">{{$data[$i]->work_name}}</h6>
                                 <span><i class="fas fa-rupee-sign" id="price{{$data[$i]->wor_list_id}}">{{$data[$i]->price}}</i> /- </span>
                                 <div class="bton" id="cbtonview{{$data[$i]->wor_list_id}}" >
-                                    <button class="btn btn-primary" onclick="changeView({{$data[$i]->wor_list_id}})" >Add to Cart</button>                                    
+                                    <button class="btn btn-primary"  onclick="changeView({{$data[$i]->wor_list_id}})"  >Add to Cart</button>                                    
                                 </div> 
                             </div>
                         </div>

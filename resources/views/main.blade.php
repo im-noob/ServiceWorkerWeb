@@ -45,7 +45,7 @@
                     <a class="nav-link" id="logout" href="{{url('/')}}/logout" >Logout</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('/')}}/cart" id="cart-menu"><i class="fas fa-cart-plus"></i><span class="badge badge-secondary" >
+                    <a class="nav-link" href="{{url('/')}}/CartItem" id="cart-menu"><i class="fas fa-cart-plus"></i><span class="badge badge-secondary" >
                     @if(Session::has('count'))
                     {{Session::get('count')}}
                     @endif
