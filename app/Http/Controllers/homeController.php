@@ -31,13 +31,14 @@ class homeController extends Controller
             ->where('wor_cat_id',$cat[0]->wor_cat_id)
             ->get();
 
-        $feedback = DB::table('wor_order_tab')
-                ->join('wor_info_tab','wor_info_tab.wor_info_id','=','wor_order_tab.wor_info_id')
-                ->join('customer_info_tab','customer_info_tab.customer_info_id','=','wor_order_tab.customer_info_Id')
-                ->select('ratting','feedback','wor_order_tab.updated_at','customer_info_tab.cname','customer_info_tab.city','wor_info_tab.name','wor_info_tab.pic as wpic','customer_info_tab.pic')
-                ->skip(0)->take(3)
-                ->orderByDesc('ratting')
-                ->get();
+        $feedback = [];
+        // $feedback = DB::table('wor_order_tab')
+        //         ->join('wor_info_tab','wor_info_tab.wor_info_id','=','wor_order_tab.wor_info_id')
+        //         ->join('customer_info_tab','customer_info_tab.customer_info_id','=','wor_order_tab.customer_info_Id')
+        //         ->select('ratting','feedback','wor_order_tab.updated_at','customer_info_tab.cname','customer_info_tab.city','wor_info_tab.name','wor_info_tab.pic as wpic','customer_info_tab.pic')
+        //         ->skip(0)->take(3)
+        //         ->orderByDesc('ratting')
+        //         ->get();
         //var_dump($feedback);
         return view('home',['data'=>$dataArray,'category'=>$cat,'subcat'=>$subCat,'feedback'=>$feedback]);
     }

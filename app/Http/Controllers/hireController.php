@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use League\Flysystem\Exception;
 use Illuminate\Support\Facades\Redirect;
+use function GuzzleHttp\json_encode;
+use Illuminate\Support\Facades\Session;
 
 class hireController extends Controller
 {
@@ -29,8 +31,7 @@ class hireController extends Controller
             ->distinct()
             ->get();
 
-        //print_r($spList);exit();
-
+            //print_r($spList);exit();
         return view('hire',['data'=>$spList,'subcat'=>$id]);
     }
 
@@ -151,5 +152,44 @@ class hireController extends Controller
         array_push($data,$List1);
         return json_encode($data);
 
+    }
+
+    public function addToCart(Request $request){
+        
+        $work_id = $request->work_id;
+        $count = $request->count;
+
+        $localList = array(
+            'war_id'=>$work_id,
+            'count'=>$count
+        );
+
+        if(session_status() == PHP_SESSION_NONE) 
+        {
+            session_start();
+        }
+
+        $cval = 1;
+        if(Session::has('count')){
+            $cval = Session::get('count');
+            $cval = $cval + 1; 
+        }
+        Session::put('count',$cval);
+
+
+        if(Session::has('cart'))
+        {
+            global $data;
+            $data = Session::get('cart');
+            Session::remove('cart');
+            array_push($data,$localList);
+            Session::put('cart',$data);
+        }else{
+            $data= array();
+            array_push($data,$localList);
+            Session::put('cart',$data);
+        }
+
+        return json_encode($data);
     }
 }

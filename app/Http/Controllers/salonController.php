@@ -8,10 +8,8 @@ class salonController extends Controller
 {
     public function selectSalon(Request $request)
     {
-
         $userList = DB::table('wor_info_tab')
             ->get();
-
         return view('salon.SalunSelect',['data'=>$userList]);
     }
 
@@ -24,7 +22,7 @@ class salonController extends Controller
         ->distinct()
         ->get();
         
-        return view('hire',['data'=>$spList]);
+        return view('salon.select_time',['data'=>$spList]);
         
     }
 }

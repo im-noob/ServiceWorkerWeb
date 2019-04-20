@@ -30,9 +30,6 @@
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul  class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('/')}}/">Home</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" id="Myservice" data-toggle="modal" data-target="#service" >My Services</a>
                 </li>
                 <li class="nav-item">
@@ -46,6 +43,13 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="logout" href="{{url('/')}}/logout" >Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url('/')}}/cart" id="cart-menu"><i class="fas fa-cart-plus"></i><span class="badge badge-secondary" >
+                    @if(Session::has('count'))
+                    {{Session::get('count')}}
+                    @endif
+                    </span></a>
                 </li>
             </ul>
             </div>

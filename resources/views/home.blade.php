@@ -238,7 +238,7 @@
                     $(form).attr("method","get");
                     $(form).html(template);
                     $('#authId').append($(form));
-                   // $('#authId').append('<p>Time :  <span id ="time">00:00</span></p>');
+                    // $('#authId').append('<p>Time :  <span id ="time">00:00</span></p>');
                 });
             }
             else{

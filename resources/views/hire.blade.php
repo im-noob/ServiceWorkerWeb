@@ -80,17 +80,23 @@
 
         var val = $('#price'+id).text();
         var total = $('#total').text();
-
         total = parseInt(val) + parseInt(total);
-        
         $('#total').text(total);
 
-        $('#cbtonview'+id).empty();
-        $('#cbtonview'+id).append(
-            '<button class="btn btn-primary" onclick="increaseVal('+id+')" >+</button>'+
-            '<span class="bton-item" id="'+id+'">1</span>'+
-            '<button class="btn btn-primary" onclick="decreaseVal('+id+')" >-</button>'
-        );
+        $.ajax({
+            url:'{{url('/')}}/addToCart',
+            data:{"work_id":id,"count":1},
+            type:'get'
+        }).done(function(data){
+
+            console.log("Data returened:"+data);
+            $('#cbtonview'+id).empty();
+            $('#cbtonview'+id).append(
+                '<button class="btn btn-primary" onclick="increaseVal('+id+')" >+</button>'+
+                '<span class="bton-item" id="'+id+'">1</span>'+
+                '<button class="btn btn-primary" onclick="decreaseVal('+id+')" >-</button>'
+            );
+        });
         console.log('view Changed');
     }
 

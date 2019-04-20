@@ -138,7 +138,9 @@ body {
   text-align: center;
 }
 
-
+.shop-cart-item {
+  text-align: right;
+}
 
 .grid-container {
   position: relative;

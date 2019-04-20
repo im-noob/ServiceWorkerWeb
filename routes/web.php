@@ -42,6 +42,8 @@ Route::get('/hire/submit', 'hireController@hireSubmit');
 
 Route::get('/hire/{id}', 'hireController@hirePage');
 
+Route::get('/addToCart','hireController@addToCart');
+
 Route::get('/shop_salun','salonController@selectSalon');
 
 Route::get('/shop_details/{id}','salonController@SalonDetails');
