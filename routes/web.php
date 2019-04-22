@@ -12,10 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'homeController@homeView');
+Route::get('/', 'IndexController@homeView');
 
 
-Route::get('/selectSub', 'homeController@getSubcategory');
+Route::get('/selectSub', 'IndexController@getSubcategory');
 
 Route::get('/profile', 'authController@authenticate');
 
@@ -45,6 +45,7 @@ Route::get('/hire/{id}', 'hireController@hirePage');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/addToCart','hireController@addToCart');
 
 Route::get('/CartItem','hireController@CartListItem');
