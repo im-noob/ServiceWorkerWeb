@@ -32,7 +32,7 @@
 </head>
 
 		<div class="container">
-			<h2 class="signup-active">sarkariformbharo.com</h2>
+			<h2 class="signup-active">GangaServices.com</h2>
 			<div>
 			
 			
@@ -83,7 +83,8 @@
 			@if(!session()->has('newDevC'))
 				
 
-					<section>
+					<form method="POST" action="{{url('/')}}/regPartnerSubmit">
+						@csrf
 						<div class="container">
 							<div class="row justify-content-center">
 								<div class="col-12 col-md-8 col-lg-8 col-xl-6">
@@ -97,7 +98,7 @@
 
 									<div class="row align-items-center">
 										<div class="col mt-4">
-											<input type="text" class="form-control" placeholder="Your Name">
+											<input type="text" class="form-control" placeholder="Your Name" required>
 										</div>
 									</div>
 
@@ -110,7 +111,7 @@
 
 									<div class="row align-items-center mt-4">
 										<div class="col">
-											<input type="number" inputmode="numeric" class="form-control" placeholder="Primary Contact">
+											<input type="number" inputmode="numeric" class="form-control" placeholder="Primary Contact" required>
 										</div>
 										<div class="col">
 											<input type="number" inputmode="numeric" class="form-control" placeholder="Secondry Contact">
@@ -141,7 +142,7 @@
 
 									<div class="row align-items-center">
 										<div class="col mt-4">
-											<textarea class="form-control" id="addressBox" rows="3" placeholder="Address"></textarea>
+											<textarea class="form-control" id="addressBox" rows="3" placeholder="Address"  required></textarea>
 										</div>
 									</div>
 
@@ -174,15 +175,25 @@
 									</div>
 									<div class="row align-items-center mt-4">
 										<div class="col-sm-6">
-												<input type="text" inputmode="latin-name" class="form-control" placeholder="Work Name">
+												<input type="text" id="workname" inputmode="latin-name" class="form-control" placeholder="Work Name">
 										</div>
 										<div class="col-sm-4">
-												<input type="number" inputmode="latin-name" class="form-control" placeholder="cost">
+												<input type="number" id="workPrice" inputmode="latin-name" class="form-control" placeholder="cost">
 										</div>
 										<div class="col-sm-2">
-											<button class="btn btn-primary">+ ADD</button>
+											<button type="button" class="btn btn-primary"  id="addWorkList">+ ADD</button>
 										</div>
 									</div>
+
+									<div id="workpriceDIV" class="row align-items-center mt-4 text-white bg-primary mb-3" style="">
+										<div class="col" id="workListDiv">
+											<div class="card-header">Work Name</div>
+										</div>
+										<div class="col" id="priceListDiv">
+											<div class="card-header">Price</div>
+										</div>
+									</div>
+
 									<div class="row align-items-center">
 										<div class="col mt-4">
 											<textarea class="form-control" id="remarksBox" rows="3" placeholder="remarks"></textarea>
@@ -193,20 +204,42 @@
 										<div class="col">
 											<div class="form-check">
 												<label class="form-check-label">
-													<input type="checkbox" class="form-check-input">
+													<input type="checkbox" class="form-check-input"  required>
 													I Read and Accept <a href="https://www.gangaservices.com">Terms and Conditions</a>
 												</label>
 											</div>
 
-											<button class="btn btn-primary mt-4">Submit</button>
+											<button class="btn btn-primary mt-4" type="submit">Submit</button>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</section>
+					</form>
 			@endif
 			
 		</div>
+
+		<script>
+			$(function(){
+					$("#workpriceDIV").hide();
+					$("#addWorkList").click(function(){
+						$("#workpriceDIV").show();
+
+						// collecting value
+						$workName = $("#workname").val();
+						$workPrice = $("#workPrice").val();
+
+						// adding to list
+						$("#workListDiv").append('<div class="card-text">'+$workName+'</div>');
+						$("#priceListDiv").append('<div class="card-text">'+$workPrice+'</div>');
+						
+						// putting blank vlue
+						$("#workname").val("");
+						$("#workPrice").val("");
+						console.log("workname,price",$workName,$workPrice);
+					})
+			})
+		</script>
 </body>
 </html>

@@ -54,7 +54,10 @@
                 <a class="nav-link nav-text" href="#">Blog</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link nav-text"  href="{{url('/')}}/signup" >Partners</a>
+                <a class="nav-link nav-text"  href="{{url('/')}}/signup" >Join US</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link nav-text"  href="{{url('/')}}/regPartner" >Partners</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link nav-text" id="login1" data-toggle="modal" data-target="#myModal" >Login/SignUp</a>

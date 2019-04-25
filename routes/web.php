@@ -55,3 +55,4 @@ Route::get('/shop_salun','salonController@selectSalon');
 Route::get('/shop_details/{id}','salonController@SalonDetails');
 
 Route::get('/regPartner','home@regPartner');
+Route::post('/regPartnerSubmit','home@regPartnerSubmit');
