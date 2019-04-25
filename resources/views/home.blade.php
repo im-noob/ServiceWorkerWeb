@@ -50,7 +50,7 @@
                     @for($j=0; $j < sizeof($data[$i][2]) ; $j++)                    
                         <div class = "sub-item">
                             <a href="{{url('/hire/'.$data[$i][2][$j]->wor_subcat_id.'/')}}" target = "_blank">
-                            <img  src="{{url('/')}}/{{$data[$i][2][$j]->pic}}" class="rounded img1" alt="Cinque Terre">
+                            <img  src="{{url('founder/')}}/public/{{$data[$i][2][$j]->pic}}" class="rounded img1" alt="Cinque Terre">
                             <p>{{$data[$i][2][$j]->subcat_name}}</p>
                             </a>
                         </div> 

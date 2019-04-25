@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
+	 
 	    
 			<meta name="theme-color" content="#2874f0"/>
 			<meta name="keywords" content="GangaService, GangaServices,beauty, decoration, Service, Bahgalpur, Saloon, online, etc"/>
@@ -42,42 +42,12 @@
 							<strong>{{Session::get('newDevC')}}</strong>	
 						</div>
 					@endif
-					<!-- email all ready in use -->
-					@if(session()->has('emailused'))
+					
+					@foreach ($errors->all() as $message) 
 						<div class="alert alert-danger"> 
-									<strong>{{Session::get('emailused')}}</strong>
+							<strong>{{$message}}</strong>
 						</div>
-					@endif
-						
-					@if($errors->has('Devname'))
-						<div class="alert alert-danger"> 
-							<strong> {{$errors->first('Devname')}}</strong>                 
-						</div>
-					@endif
-
-					@if($errors->has('fathername'))
-						<div class="alert alert-danger"> 
-							<strong> {{$errors->first('fathername')}}</strong>                 
-						</div>
-					@endif
-
-					@if($errors->has('email'))
-						<div class="alert alert-danger"> 
-							<strong> {{$errors->first('email')}}</strong>                 
-						</div>
-					@endif
-
-					@if($errors->has('phone'))
-						<div class="alert alert-danger"> 
-							<strong> {{$errors->first('phone')}}</strong>                 
-						</div>
-					@endif
-
-					@if($errors->has('college'))
-						<div class="alert alert-danger"> 
-							<strong> {{$errors->first('college')}}</strong>                 
-						</div>
-					@endif
+					@endforeach
 			</div>
 
 			@if(!session()->has('newDevC'))
@@ -91,30 +61,30 @@
 									<div class="row">
 										<div class="col text-center">
 											<h1>Register to become a Partner</h1>
-											<p class="text-h3">Ganga Services Team Welcomes you to be a partner. </p>
+				 							<p class="text-h3">Ganga Services Team Welcomes you to be a partner. </p>
 										</div>
 									</div>
 
 
 									<div class="row align-items-center">
 										<div class="col mt-4">
-											<input type="text" class="form-control" placeholder="Your Name" required>
+											<input type="text" class="form-control" placeholder="Your Name" name="name" value="{{ old('name') }}" required>
 										</div>
 									</div>
 
 									<div class="row align-items-center mt-4">
 										<div class="col">
-											<input type="email" class="form-control" placeholder="Email">
+										<input type="email" class="form-control" placeholder="Email" name="email" value="{{old('email')}}">
 										</div>
 									</div>
 
 
 									<div class="row align-items-center mt-4">
 										<div class="col">
-											<input type="number" inputmode="numeric" class="form-control" placeholder="Primary Contact" required>
+											<input type="number" inputmode="numeric" class="form-control" placeholder="Primary Contact" name="number1" value="{{old('number1')}}" required>
 										</div>
 										<div class="col">
-											<input type="number" inputmode="numeric" class="form-control" placeholder="Secondry Contact">
+										<input type="number" inputmode="numeric" class="form-control" placeholder="Secondry Contact" name="number2" value="{{old('number2')}}">
 										</div>
 									</div>
 
@@ -123,13 +93,13 @@
 									<div class="row align-items-center  form-check mt-4">
 										<div>Select Gender</div>
 										<div class="col   form-check">
-												<input class="form-check-input" type="radio" name="exampleRadios" id="male" value="" checked>		
+												<input class="form-check-input" type="radio" name="gender" id="male" value="male" >		
 												<label class="form-check-label" for="male">
 													Male
 												</label>
 										</div>
 										<div class="col  form-check">
-												<input class="form-check-input" type="radio" name="exampleRadios" id="female" value="">		
+												<input class="form-check-input" type="radio" name="gender" id="female" value="female">		
 												<label class="form-check-label" for="female">
 													Female
 												</label>
@@ -142,7 +112,7 @@
 
 									<div class="row align-items-center">
 										<div class="col mt-4">
-											<textarea class="form-control" id="addressBox" rows="3" placeholder="Address"  required></textarea>
+											<textarea class="form-control" id="addressBox" rows="3" placeholder="Address" name="address" required >{{old('address')}}</textarea>
 										</div>
 									</div>
 
@@ -153,14 +123,13 @@
 										<div>Select The Area where you can provide Service?</div>
 
 										<div class="col">
-
-												@forelse($cityName as $city)
+												@forelse($areaName as $area)
 													<label class="form-check-label mt-4 col-sm-3">
-														<input type="checkbox" class="form-check-input">{{$city->city_name}}
+														<input type="checkbox" class="form-check-input" name="areaName[]" value="{{$area->arealist_id}}">{{$area->area_name}} 
 													</label>
 												@empty
 													<label class="form-check-label  mt-4 col-sm-3">
-														<input type="checkbox" class="form-check-input">Bahgalpur
+														<input type="checkbox" class="form-check-input" name="areaName[]" value="-1">Bahgalpur
 													</label>
 												@endforelse
 												
@@ -193,10 +162,10 @@
 											<div class="card-header">Price</div>
 										</div>
 									</div>
-
+									<input type="hidden" name="workListArr" id="workListArr" value=""/>
 									<div class="row align-items-center">
 										<div class="col mt-4">
-											<textarea class="form-control" id="remarksBox" rows="3" placeholder="remarks"></textarea>
+											<textarea class="form-control" id="remarksBox" rows="3" placeholder="remarks" name="remarks">{{old('remarks')}}</textarea>
 										</div>
 									</div>
 
@@ -204,7 +173,7 @@
 										<div class="col">
 											<div class="form-check">
 												<label class="form-check-label">
-													<input type="checkbox" class="form-check-input"  required>
+													<input type="checkbox" class="form-check-input" name="tandc"  required>
 													I Read and Accept <a href="https://www.gangaservices.com">Terms and Conditions</a>
 												</label>
 											</div>
@@ -222,6 +191,8 @@
 
 		<script>
 			$(function(){
+
+					$workList = [];
 					$("#workpriceDIV").hide();
 					$("#addWorkList").click(function(){
 						$("#workpriceDIV").show();
@@ -229,7 +200,7 @@
 						// collecting value
 						$workName = $("#workname").val();
 						$workPrice = $("#workPrice").val();
-
+						
 						// adding to list
 						$("#workListDiv").append('<div class="card-text">'+$workName+'</div>');
 						$("#priceListDiv").append('<div class="card-text">'+$workPrice+'</div>');
@@ -237,7 +208,22 @@
 						// putting blank vlue
 						$("#workname").val("");
 						$("#workPrice").val("");
-						console.log("workname,price",$workName,$workPrice);
+						$listObj = {
+							workName:$workName,
+							workPrice:$workPrice,
+						}
+
+						//pushing to main array 
+						$workList.push($listObj);
+
+						//making json
+						$jsonWorkList = JSON.stringify($workList);
+
+						// puting json in feilds
+						$("#workListArr").val($jsonWorkList);
+						console.log($listObj);
+						console.log($workList);
+						// console.log("workname,price",$workName,$workPrice);
 					})
 			})
 		</script>
