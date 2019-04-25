@@ -178,27 +178,30 @@ body {
 }
 
 .salun_template {
-  background-image: url("../images/pricing-bg.jpg");
+  background-image: url("../images/saloon.png");
   background-size: cover;
-  height: 100px;
+  background-position: center;
+  height: 800px;
   position: relative;
 }
 
 
-.signup-view {
-    background-image: url("../images/backpic.jpg");
+/* .signup-view {
+    background-image: url("../images/backpic.png");
     background-size: cover;
+    background-position: center;
     height: 100vh;
     position: relative;
     display: flex;
     align-items: center;
     align-content: center;
-  }
+  } */
 
-  .home-view {
-    background-image: url("../images/backpic.jpg");
+  .home-view,.signup-view {
+    background-image: url("../images/backpic.png");
     background-size: cover;
-    height: 100vh;
+    background-position: center;
+    height: 60vh;
     position: relative;
     display: flex;
     align-items: center;
@@ -277,3 +280,9 @@ body {
     margin-top: 20px;
   }
   
+/* title color bole nav bar */
+.navbar-dark .navbar-nav .active>.nav-link{
+  color: #fff;
+  font-weight: 700;
+  font-size: larger;
+}

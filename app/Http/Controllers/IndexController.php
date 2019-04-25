@@ -43,6 +43,7 @@ class IndexController extends Controller
         
 
         $feedback = [];
+        $cityName = DB::table('citylist_table')->get();
         // $feedback = DB::table('wor_order_tab')
         //         ->join('wor_info_tab','wor_info_tab.wor_info_id','=','wor_order_tab.wor_info_id')
         //         ->join('customer_info_tab','customer_info_tab.customer_info_id','=','wor_order_tab.customer_info_Id')
@@ -51,7 +52,7 @@ class IndexController extends Controller
         //         ->orderByDesc('ratting')
         //         ->get();
         //var_dump($feedback);
-        return view('home',['data'=>$dataArray,'category'=>$cat,'subcat'=>$subCat,'feedback'=>$feedback]);
+        return view('home',['data'=>$dataArray,'category'=>$cat,'subcat'=>$subCat,'feedback'=>$feedback,'cityName'=>$cityName]);
     }
 
     public function getSubcategory(Request $request){

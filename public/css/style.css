@@ -410,8 +410,9 @@ a:focus, a:hover {
 }
 
 .hero-area {
-  background-image: url("../images/backpic.jpg");
+  background-image: url("../images/backpic.png");
   background-size: cover;
+  background-position: center;
   height: 100vh;
   position: relative;
   display: -webkit-box;

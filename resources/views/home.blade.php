@@ -5,27 +5,31 @@
             <div class="row ">
                 <div class="col-md-12 ">
                     <div class="block">
-                        <h1 style="text-align:center;color:white;" >Best Service Provider Of your City</h1>
-                        <p  style="text-align:center;color:black;" >Get Instant service provider in your affordable Price.</p>
+                        <h1 style="text-align:center;color:white;" >Best Service Provider Of your City Bhagalpur</h1>
+                        <h3  style="text-align:center;color:white;" >Get Instant service provider in your affordable Price.</h3>
                         <div class="row">
-                            <div class = "col-sm-3">   
+                            <div class = "offset-sm-3 col-sm-6 col-md-3 form-group">
+                                <select id="cityListDropDown btn btn-primary dropdown-menu" style="width: 100%; padding: 0.3em;">
+                                    <option value="-1">Choose Area</option>
+                                    @forelse($cityName as $city)
+                                        <option value="{{$city->city_id}}" class="dropdown-item" href="#">{{$city->city_name}}</option>
+                                    @empty
+                                        <option  value="0">Bhagalpur</option>
+                                    @endforelse
+                                </select>   
                             </div>
-                            <div class = "col-sm-2" >
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Choose City
+                            {{-- <div class = "col-sm-2" >
+                                <div class="dropdown" id="dropdownDiv">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="cityListDropDownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Choose Area
                                     </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Bhagalpur</a>
-                                        <a class="dropdown-item" href="#">Patna</a>
-                                        <a class="dropdown-item" href="#">Purniya</a>
-                                    </div>
+                                   
                                 </div>
-                            </div>
-                            <div class ="col-sm-7">
-                                <form class="form-inline my-2 my-lg-0">
-                                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                </form>
+                            </div> --}}
+                            <div class ="col-md-3 col-sm-6 col-md-*">
+                                {{-- <forcm class="form-inline"> --}}
+                                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                                {{-- </cform> --}}
                             </div>
                         </div>
                     </div>
@@ -33,17 +37,8 @@
             </div>
         </div>
     </section>
-    <br>
-    <section>   
-        <div class= "card salun_template text-center">  
-            <div class="container" >
-                <a href="{{url('/')}}/shop_salun">
-                    <h3 style= "color:whitesmoke;">Local Salon time alaviable <button  class="btn btn-primary"> Click Here </button></h3>
-                </a>
-            </div> 
-        </div>
-    </section>
-        <br>
+
+
     <section>   
         <div class= "card">   
             <br>
@@ -65,7 +60,21 @@
         </div>
         </div>
     </section>
-    <br> 
+
+
+    <section>
+        <div class="">
+            <div class="card bg-dark text-white" style="height: 8em;">
+                <img src="{{url('/')}}/images/saloon.png" class="card-img" alt="...">
+                <div class="card-img-overlay" style="text-align: center;">
+                    <a href="{{url('/')}}/shop_salun">
+                        <h2 style= "color:white">Local Salon Available Click To see </h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section>
         <div class="card">
         <div class="container">
@@ -147,20 +156,42 @@
                 <!-- Modal body -->
                 <div class="modal-body">
                     <div class = "authHeading" >
-                    <h3>Ganga Service</h3>
-                    <h6>Get service on your home</h6>
                     @if (session('alert'))
                         <div class="alert alert-success">
                             {{ session('alert') }}
                         </div>
                     @endif
                     <div id="authId">
-                        <form>
+
+
+                        <form method="POST" action="http://localhost/laravel/ServiceMan/cpanel/public/login">
+                            @csrf
+                            <div class="form-group row">
+                                <label for="email" class="col-md-4 col-form-label">Phone</label>
+                                <div class="col-md-8">
+                                    <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+                                </div>
+                            </div>
+                            <button type="sendOTP" class="btn btn-primary btn-lg btn-block">
+                                Get OTP
+                            </button>
+
+                            <div class="form-group row">
+                                <label for="password" class="col-md-4 col-form-label">OTP</label>
+                                <div class="col-md-8">
+                                    <input id="password" type="password" class="form-control" name="password" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">
+                                Login/SignUP
+                            </button>
+                        </form>
+                        {{-- <form>
                             <div class="form-group">
                                 <input type = "number" class="form-control" id="authPhoneNo"  placeholder="Enter Your Mobile No." required>
                             </div>
                         </form>
-                        <button type="button" class="btn btn-primary" onclick= "changeData()" >Contineoue</button>
+                        <button type="button" class="btn btn-primary" onclick= "changeData()" >Contineoue</button> --}}
                     </div>
                     </div>
                     <br>
@@ -182,31 +213,31 @@
         <!-- Modal body -->
         <div class="modal-body">
 					<div class="row">
-							<div class="col-md-6">
-								<h4>Category</h4>
-								<div class="list-group" id="list-tab" role="tablist">
-										@php
-											$i = 0;
-										@endphp
-										@foreach($category as $msg)
-											@if($i++ == 0)
-												<a class="list-group-item list-group-item-action active cat" id="{{$msg->wor_cat_id}}" data-toggle="list" href="#subcat" role="tab" aria-controls="prince">{{$msg->wor_cat_name}}</a>
-											@else
-												<a class="list-group-item list-group-item-action cat" id="{{$msg->wor_cat_id}}" data-toggle="list" href="#subcat" role="tab" aria-controls="prince">{{$msg->wor_cat_name}}</a>
-											@endif
-										@endforeach
-									</div>
-							</div>
-							<div class="col-md-6">
-								<div id="subcat">
-									<h4>Subcategory</h4>
-									<div class="list-group" id="list-cat" role="tablist">
-										@foreach($subcat as $msg)
-											<a class="list-group-item list-group-item-action" href="{{url('/hire/'.$msg->wor_subcat_id.'/')}}" >{{$msg->subcat_name}}</a>	
-										@endforeach
-									</div>
-								</div>
-							</div>
+                        <div class="col-md-6">
+                            <h4>Category</h4>
+                            <div class="list-group" id="list-tab" role="tablist">
+                                    @php
+                                        $i = 0;
+                                    @endphp
+                                    @foreach($category as $msg)
+                                        @if($i++ == 0)
+                                            <a class="list-group-item list-group-item-action active cat" id="{{$msg->wor_cat_id}}" data-toggle="list" href="#subcat" role="tab" aria-controls="prince">{{$msg->wor_cat_name}}</a>
+                                        @else
+                                            <a class="list-group-item list-group-item-action cat" id="{{$msg->wor_cat_id}}" data-toggle="list" href="#subcat" role="tab" aria-controls="prince">{{$msg->wor_cat_name}}</a>
+                                        @endif
+                                    @endforeach
+                                </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="subcat">
+                                <h4>Subcategory</h4>
+                                <div class="list-group" id="list-cat" role="tablist">
+                                    @foreach($subcat as $msg)
+                                        <a class="list-group-item list-group-item-action" href="{{url('/hire/'.$msg->wor_subcat_id.'/')}}" >{{$msg->subcat_name}}</a>	
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
 					</div>
 				</div>  
             </div>
@@ -275,7 +306,15 @@
                         $('#list-cat').append(template);
                     }
                 });
-            });			
+            });		
+
+
+            // City List Action
+           
+            $("#cityListDropDown").change(function(){
+                console.log($("#cityListDropDown").val());
+                console.log("on changge");
+            })		
         });
     </script>
 @endsection

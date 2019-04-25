@@ -38,33 +38,37 @@
                 Ganga Services
             </a>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-            <ul  class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" id="Myservice" data-toggle="modal" data-target="#service" >My Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"  href="{{url('/')}}/signup" >Become A professional</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="login1" data-toggle="modal" data-target="#myModal" >Login/SignUp</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="logout" href="{{url('/')}}/logout" >Logout</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('/')}}/CartItem" id="cart-menu"><i class="fas fa-cart-plus"></i><span class="badge badge-secondary" >
+                    <ul class="navbar-nav mr-auto" style="align-items: center;">
+
+            <li class="nav-item active">
+                <a class="nav-link nav-text" href="{{url('/')}}/">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link nav-text" id="Myservice" data-toggle="modal" data-target="#service" >Services</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link nav-text" href="#">Blog</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link nav-text"  href="{{url('/')}}/signup" >Partners</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link nav-text" id="login1" data-toggle="modal" data-target="#myModal" >Login/SignUp</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link nav-text" id="logout" href="{{url('/')}}/logout" >Logout</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('/')}}/cart" id="cart-menu"><i class="fas fa-cart-plus"></i><span class="badge badge-secondary" >
                     @if(Session::has('count'))
                     {{Session::get('count')}}
                     @endif
-                    </span></a>
-                </li>
+                </span></a>
+            </li>
             </ul>
             </div>
         </nav>
@@ -129,5 +133,29 @@
             <h6>Design and Developed by <a>GangaServices.com Team</a></h6>
         </div>
     </footer>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/5cbdf5e7d6e05b735b43bb74/default';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    <!-- Global site tag (gtag.js) - Google Analytics 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138813418-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-138813418-1');
+    </script>-->
+
   </body>
 </html>
