@@ -39,9 +39,7 @@
 </section>
 <script type="text/javascript">
     $(document).ready(function(){
-        console.log("Profile Open : ",$('#login1').text());
-        $('#login1').text("");
-        $('#logout').text("Logout");
+        
     });
 </script>
 

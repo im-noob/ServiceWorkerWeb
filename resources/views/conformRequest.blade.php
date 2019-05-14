@@ -35,8 +35,7 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#login1').text("");
-        $('#logout').text(""); 
+        
         console.log('Conform Otp Is Called.');      
     });
 </script>

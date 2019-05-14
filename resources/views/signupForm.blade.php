@@ -88,8 +88,7 @@
 </section>
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#login1').text("");
-        $('#logout').text("Logout");       
+        
     });
 </script>
 @endsection

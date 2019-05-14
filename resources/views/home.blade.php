@@ -5,19 +5,21 @@
             <div class="row ">
                 <div class="col-md-12 ">
                     <div class="block">
-                        <h1 style="text-align:center;color:white;" >Best Service Provider Of your City Bhagalpur</h1>
-                        <h3  style="text-align:center;color:white;" >Get Instant service provider in your affordable Price.</h3>
+                        <h1 style="text-align:center;color:white; margin-top: 15%;" >Best Service Provider Of your City Bhagalpur</h1>
+                        <h3  style="text-align:center;color:white; margin: 5%;" >Get Instant service provider in your affordable Price.</h3>
+                        {{-- <div class="alert alert-success" role="alert" id="searchResultSuccess">Search Somthing..</div> --}}
                         <div class="row">
-                            <div class = "offset-sm-3 col-sm-6 col-md-3 form-group">
-                                <select id="cityListDropDown btn btn-primary dropdown-menu" style="width: 100%; padding: 0.3em;">
-                                    <option value="-1">Choose Area</option>
+                            <div class = "col-md-6 col-sm-6 form-group">
+                                <select id="cityListDropDown" style="width: 100%; padding: 0.3em;     height: 130%;" class="col-xl-10 d-flex custom-select custom-select-sm">
+                                    <option value="-1" hidden>Choose Area</option>
                                     @forelse($cityName as $city)
-                                        <option value="{{$city->city_id}}" class="dropdown-item" href="#">{{$city->city_name}}</option>
+                                        <option value="{{$city->arealist_id}}" class="dropdown-item" href="#">{{$city->area_city_name}}</option>
                                     @empty
                                         <option  value="0">Bhagalpur</option>
                                     @endforelse
                                 </select>   
                             </div>
+                            
                             {{-- <div class = "col-sm-2" >
                                 <div class="dropdown" id="dropdownDiv">
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="cityListDropDownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -26,60 +28,136 @@
                                    
                                 </div>
                             </div> --}}
-                            <div class ="col-md-3 col-sm-6 col-md-*">
+
+
+
+                            <div class ="col-md-6 col-sm-6 col-md-*">
                                 {{-- <forcm class="form-inline"> --}}
-                                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                                    <input class="form-control col-xl-10 d-flex justify-content-start" type="search" placeholder="Search service" aria-label="Search" id="searchBox">
                                 {{-- </cform> --}}
                             </div>
                         </div>
+                        <div class="alert alert-danger" role="alert" id="searchResult">Search Somthing..</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
     <section>   
         <div class= "card">   
             <br>
-            <h3 style= "text-align:center;margin-top:5px;">Recomended Services</h3>  
-            <div class= "container" >
-            @for($i = 0 ; $i < sizeof($data) ; $i++)
-                <h4>{{$data[$i][1]}}</h4>
-                <div class="sub-container">
-                    @for($j=0; $j < sizeof($data[$i][2]) ; $j++)                    
-                        <div class = "sub-item">
-                            <a href="{{url('/hire/'.$data[$i][2][$j]->wor_subcat_id.'/')}}" target = "_blank">
-                            <img  src="{{url('founder/')}}/public/{{$data[$i][2][$j]->pic}}" class="rounded img1" alt="Cinque Terre">
-                            <p>{{$data[$i][2][$j]->subcat_name}}</p>
-                            </a>
-                        </div> 
-                    @endfor
-                </div>
-            @endfor
-        </div>
-        </div>
-    </section>
+            <H2 style= "text-align:center;margin-top:25px; font-weight: 800; ">Recomended Services</H2>  
+
+            <div class="container">
+                
+            
+            
+
+                @for($i = 0 ; $i < sizeof($data) ; $i++)
+                    <h4 class="mt-5 " style="
+                        font-weight: 600;
+                        color: #242424;"
+                    >{{$data[$i][1]}}</h4>
+                    
+                    <div class="row scrollbar-ripe-malinka " style="display: flex;flex-wrap: nowrap;overflow-x: auto;">
+                        @for($j=0; $j < sizeof($data[$i][2]) ; $j++)                    
+                            <div class="col-5 col-md-3 col-lg-3 col-xl-3" style="padding-right: 5px; padding-left: 5px;    padding-bottom: 10px;">
+                                <div class = "card shadow-lg p-1 bg-white rounded">
+                                        <a 
+                                            href="{{url('/hire/home/'.$data[$i][2][$j]->wor_subcat_id.'/')}}" 
+                                            style="color:#343434; text-decoration:none"    
+                                        >
+                                         
+                                      <img  
+                                            src="{{url('founder/')}}/public/{{$data[$i][2][$j]->pic}}" 
+                                            onerror="this.src = 'https://i.imgur.com/e2Ji5su.jpg';"
+                                            class="rounded img1" alt="Service Image"
+                                            style="overflow: hidden;-radius: 4px;"
+                                        >
+                                        <div style="font-weight: 600; margin-block-start: 10px;">{{$data[$i][2][$j]->subcat_name}}</div>
+                                    </a>
+                                </div> 
+                            </div>
+                        @endfor 
+                        
+                    </div>
+                    
+                @endfor
 
 
-    <section>
-        <div class="">
-            <div class="card bg-dark text-white" style="height: 8em;">
-                <img src="{{url('/')}}/images/saloon.png" class="card-img" alt="...">
-                <div class="card-img-overlay" style="text-align: center;">
-                    <a href="{{url('/')}}/shop_salun">
-                        <h2 style= "color:white">Local Salon Available Click To see </h2>
-                    </a>
-                </div>
+            
             </div>
         </div>
     </section>
 
+
+    
     <section>
+        <a href="{{url('/')}}/shop_salun">
+            <div class="">
+                <div class="card bg-dark text-white" style="height: 8em; background-image:  url('{{url('/')}}/images/saloon.png'); " >
+                    <div class="card-img-overlay" style="text-align: center;">
+                        
+                            <h2 style= "color:white">Local Salon Available Click To see </h2>
+                        
+                    </div>
+                </div>
+            </div>
+        </a>
+    </section>
+    
+
+    {{-- Feed Back --}}
+    <section class="caintiner" style="margin: 4em">
+        <div class="d-flex justify-content-center mb-3">
+            <H2 style= "text-align:center;margin-top:5px; font-weight: 800; ">Customer Review</H2>  
+            
+        </div>
+        <div class="row">
+            @foreach ($feedback as $item)
+                <div class="col-sm-4 mb-4">
+                    <div class="card" style="border-radius: 8px">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                            <img src="{{url('founder/')}}/public/{{$item->cuspic}}" onerror="this.src = 'https://i.imgur.com/QtXcFQM.png';" height="48" width="48"/><span style="margin: 10px">{{$item->cname}}</span>
+                            </h5>
+                            <p class="card-text" style="color: #646464;">{{{$item->feedback}}}</p>
+                            <div class="card-text" style=" font-weight: 800">
+                                    <span style="background-color: #4caf50;color:white; padding: 2px;">{{$item->ratting}}<i class="fas fa-star"></i></span>
+                                    <span style="color: #00aced;">Review</span>
+                            </div>
+                            <hr>
+                            <p class="card-text" style="letter-spacing: .9px;
+                                    color: #949494;
+                                    margin-top: 20px;
+                                    font-size: 10px;
+                                    font-weight: 600;
+                                    text-transform: uppercase;">Professional Hired
+                            </p>
+                            <h5 class="card-title">
+                            <img src="{{url('founder/')}}/public/{{$item->worpic}}" onerror="this.src = 'https://i.imgur.com/QtXcFQM.png';"  height="48" width="48"/>
+                                <span style="margin: 10px">{{$item->name}}</span>
+                            </h5>
+                            
+                        </div>
+                    </div>
+        
+                </div>
+            @endforeach
+            
+
+
+            
+
+        </div>
+    </section>
+    {{-- <section>
         <div class="card">
         <div class="container">
             <div class="d-flex justify-content-center mb-3">
-                <div class="p-2 "><h3>Customer Review</h3></div>
+                <H2 style= "text-align:center;margin-top:5px; font-weight: 800; ">Customer Review</H2>  
+                
             </div>
             <div class="row">
                 @foreach($feedback as $msg)
@@ -116,26 +194,28 @@
         </div>
         <br>
         </div>
-    </section>
-    <br>
+    </section> --}}
+    
+
+
     <section>
         <div class="card">
             <div class = "container">
                 <div class="row">
                     <div class="col-sm-6">
-                        <div class="p-2 "><img src="{{url('/')}}/images/company/gallery-1.jpg" class="rounded img1" alt="Cinque Terre"></div>
+                        <div class="p-2 "><img src="{{url('/')}}/images/company/gallery-1.jpg" class="rounded img1 img-fluid" alt="Cinque Terre"></div>
                     </div>
                     <div class="col-sm-6">
                         <br>
                         <h2>Download the App</h2>
                         <p>Get the book of 100+ service provider in your pocket</p>
                         <div class="row">
-                            <div class="col-sm-6">
-                                    <img src="{{url('/')}}/images/google-play.png" class="rounded" alt="Cinque Terre">
+                            <div class="col-sm-12">
+                                    <a href="https://play.google.com/"><img src="{{url('/')}}/images/google-play.png" class="rounded" alt="Cinque Terre"></a>
                             </div>
-                            <div class="col-sm-6">
+                            {{-- <div class="col-sm-6">
                                     <img src="{{url('/')}}/images/app-store.png" class="rounded" alt="Cinque Terre">
-                            </div>          
+                            </div>           --}}
                         </div>
                     </div>
                 </div>
@@ -143,178 +223,60 @@
         </div>
     </section>
 
-    <div class="modal fade" id="myModal">
-    	<div class="modal-dialog modal-md">
-            <div class="modal-content">
-            
-                <!-- Modal Header -->
-                <div class="modal-header">
-                <h4 class="modal-title">SingIn / SignUp</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <div class = "authHeading" >
-                    @if (session('alert'))
-                        <div class="alert alert-success">
-                            {{ session('alert') }}
-                        </div>
-                    @endif
-                    <div id="authId">
 
 
-                        <form method="POST" action="http://localhost/laravel/ServiceMan/cpanel/public/login">
-                            @csrf
-                            <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label">Phone</label>
-                                <div class="col-md-8">
-                                    <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
-                                </div>
-                            </div>
-                            <button type="sendOTP" class="btn btn-primary btn-lg btn-block">
-                                Get OTP
-                            </button>
 
-                            <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label">OTP</label>
-                                <div class="col-md-8">
-                                    <input id="password" type="password" class="form-control" name="password" required>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-lg btn-block">
-                                Login/SignUP
-                            </button>
-                        </form>
-                        {{-- <form>
-                            <div class="form-group">
-                                <input type = "number" class="form-control" id="authPhoneNo"  placeholder="Enter Your Mobile No." required>
-                            </div>
-                        </form>
-                        <button type="button" class="btn btn-primary" onclick= "changeData()" >Contineoue</button> --}}
-                    </div>
-                    </div>
-                    <br>
-                </div>  
-            </div>
-		</div>
-	</div>
-		
-
-	<div class="modal fade" id="service" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Our Service</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-					<div class="row">
-                        <div class="col-md-6">
-                            <h4>Category</h4>
-                            <div class="list-group" id="list-tab" role="tablist">
-                                    @php
-                                        $i = 0;
-                                    @endphp
-                                    @foreach($category as $msg)
-                                        @if($i++ == 0)
-                                            <a class="list-group-item list-group-item-action active cat" id="{{$msg->wor_cat_id}}" data-toggle="list" href="#subcat" role="tab" aria-controls="prince">{{$msg->wor_cat_name}}</a>
-                                        @else
-                                            <a class="list-group-item list-group-item-action cat" id="{{$msg->wor_cat_id}}" data-toggle="list" href="#subcat" role="tab" aria-controls="prince">{{$msg->wor_cat_name}}</a>
-                                        @endif
-                                    @endforeach
-                                </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div id="subcat">
-                                <h4>Subcategory</h4>
-                                <div class="list-group" id="list-cat" role="tablist">
-                                    @foreach($subcat as $msg)
-                                        <a class="list-group-item list-group-item-action" href="{{url('/hire/'.$msg->wor_subcat_id.'/')}}" >{{$msg->subcat_name}}</a>	
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-					</div>
-				</div>  
-            </div>
-        </div>
-    </div>
-
+    
 	<script type="text/javascript">	
-        function changeData(){
+        // function changeData(){
             
-            console.log('Method Called');
-            var mobileno = $('#authPhoneNo').val();
+        //     console.log('Method Called');
+        //     var mobileno = $('#authPhoneNo').val();
 
-            if(parseInt(mobileno) && mobileno.length == 10){
+        //     if(parseInt(mobileno) && mobileno.length == 10){
 
-                $.ajax({
-                    url:'{{url('/')}}/generateOtp',
-                    data:{"mobileno":mobileno},
-                    type:'GET'
-                }).done(function(data){
-                    console.log(data);
-                    $('#authId').empty();
-                    var form = document.createElement("FORM");
-                    var template = '<div class="form-group">'+
-                                    '<input type = "text" class="form-control" name="otp"  placeholder="Enter OTP">'+
-                                    '<br><button type="submit"  class="btn btn-primary form-control" >Verify OTP</button>'+
-                                    '</div>';
-                    $(form).attr("action","{{url('/')}}/profile");
-                    $(form).attr("method","get");
-                    $(form).html(template);
-                    $('#authId').append($(form));
-                    // $('#authId').append('<p>Time :  <span id ="time">00:00</span></p>');
-                });
-            }
-            else{
-                alert('Not a valid Number.');
-            }
-        }
-	</script>
+        //         $.ajax({
+        //             url:'{{url('/')}}/generateOtp',
+        //             data:{"mobileno":mobileno},
+        //             type:'GET'
+        //         }).done(function(data){
+        //             console.log(data);
+        //             $('#authId').empty();
+        //             var form = document.createElement("FORM");
+        //             var template = '<div class="form-group">'+
+        //                             '<input type = "text" class="form-control" name="otp"  placeholder="Enter OTP">'+
+        //                             '<br><button type="submit"  class="btn btn-primary form-control" >Verify OTP</button>'+
+        //                             '</div>';
+        //             $(form).attr("action","{{url('/')}}/profile");
+        //             $(form).attr("method","get");
+        //             $(form).html(template);
+        //             $('#authId').append($(form));
+        //             // $('#authId').append('<p>Time :  <span id ="time">00:00</span></p>');
+        //         });
+        //     }
+        //     else{
+        //         alert('Not a valid Number.');
+        //     }
+        // }
+    </script>
+
+    {{-- Search Plugin --}}
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="{{url('/')}}/js/searchable.js"></script>
+    <script type="text/javascript">
+        $url ="{{url('/')}}";
+        $("#searchResult").hide();
+    </script>
+    {{-- Search Plugin --}}
+
 	<script type="text/javascript">
         $(document).ready(function(){
-            //console.log("Profile Open : ",$('#login1').text());
-            $('#login1').text("Login/SignUp");
-            $('#logout').text("");
 
-            document.getElementById('login1').removeAttribute("href")        
-
-            $('body').on('click','.cat',function(){
-                var id = $(this).attr('id');
-                //console.log('Clicked On table',id);
-                $.ajax({
-                        url:'{{url('/')}}/selectSub',
-                        data:{"form_id":id},
-                        type:'GET'
-                }).done(function(data){
-                    //console.log(JSON.parse(data));
-                    $('#list-cat').empty();
-                    for (const msg of JSON.parse(data)) {
-                       // console.log(msg.wor_subcat_id);
-                        var template = '<a class="list-group-item list-group-item-action" href="'+'{{url("/hire/")}}/'+msg.wor_subcat_id+'">'+msg.subcat_name+'</a>';
-                        //console.log(template);
-                        $('#list-cat').append(template);
-                    }  
-                    if(Object.keys(JSON.parse(data)).length == 0){
-                        var template = '<a class="list-group-item list-group-item-action" href="#">No Record Found</a>';
-                        //console.log(Object.keys(JSON.parse(data)).length);
-                        $('#list-cat').append(template);
-                    }
-                });
-            });		
-
-
-            // City List Action
-           
-            $("#cityListDropDown").change(function(){
-                console.log($("#cityListDropDown").val());
-                console.log("on changge");
-            })		
+            //focusing search box
+            $("#searchBox").focus();
+            
+            	
         });
     </script>
 @endsection

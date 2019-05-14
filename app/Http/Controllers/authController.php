@@ -19,9 +19,7 @@ class authController extends Controller
         return $num;
     }
 
-    public function logout(Request $request){
-        return Redirect::to('/');
-    }
+    
 
     public function authenticate(Request $request){
         

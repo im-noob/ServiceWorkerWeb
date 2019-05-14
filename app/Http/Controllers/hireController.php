@@ -7,6 +7,7 @@ use League\Flysystem\Exception;
 use Illuminate\Support\Facades\Redirect;
 use function GuzzleHttp\json_encode;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class hireController extends Controller
 {
@@ -21,18 +22,48 @@ class hireController extends Controller
         return view('info');
     }
 
-    public function hirePage($id){
+    public function hirePage($type,$id){
         
+        $spList = null;
+        if ($type == "home") {
+            $spList = DB::table('wor_list_tab')
+                        ->join('wor_price_list','wor_price_list.wor_list_id','=','wor_list_tab.wor_list_id')
+                        ->select('wor_list_tab.wor_list_id','work_name','wor_list_tab.pic','work_type','wor_price_list.price','info')
+                        ->where('wor_list_tab.wor_subcat_id',$id)
+                        ->where('status',13)
+                        // ->distinct()
+                        ->get();
 
-        $spList = DB::table('wor_list_tab')
-            ->join('wor_price_list','wor_price_list.wor_list_id','=','wor_list_tab.wor_list_id')
-            ->select('wor_list_tab.wor_list_id','work_name','wor_list_tab.pic','work_type','time_taken','wor_price_list.price')
-            ->where('wor_list_tab.wor_subcat_id',$id)
-            ->distinct()
-            ->get();
 
             //print_r($spList);exit();
+            
+        }else if($type == "shop"){
+
+
+            $spList = DB::table('wor_list_tab')
+                        ->join('wor_price_list','wor_price_list.wor_list_id','=','wor_list_tab.wor_list_id')
+                        ->join('wor_info_tab','wor_info_tab.wor_info_id','=','wor_price_list.wor_info_id')
+                        ->select('wor_list_tab.wor_list_id','work_name','wor_list_tab.pic','work_type','wor_price_list.price','info')
+                        ->where('wor_info_tab.shop_id',$id)
+                        ->where('wor_info_tab.status',13)
+                        // ->distinct()
+                        ->get();
+
+
+            //print_r($spList);exit();
+            // return view('hire',['data'=>$spList,'subcat'=>$id]);
+        }else if($type == "search"){
+            $spList = DB::table('wor_list_tab')
+                        ->join('wor_price_list','wor_price_list.wor_list_id','=','wor_list_tab.wor_list_id')
+                        ->select('wor_list_tab.wor_list_id','work_name','wor_list_tab.pic','work_type','wor_price_list.price','info')
+                        ->where('wor_list_tab.work_name','LIKE', '%'.$id.'%')
+                        ->where('status',13)
+                        // ->distinct()
+                        ->get();
+
+        }
         return view('hire',['data'=>$spList,'subcat'=>$id]);
+        
     }
 
     public function conformOTP(Request $request){
@@ -192,24 +223,41 @@ class hireController extends Controller
         return json_encode($data);
     }
 
+
+    //my cdoe for cart lis tiem details 
     public function CartListItem(Request $request){
 
-        if(session_status() == PHP_SESSION_NONE) 
-        {
-            session_start();
+        $cityList = DB::table('citylist_table')
+            ->get();
+
+        $areaList = DB::table('arealist_table')
+            ->join('citylist_table','citylist_table.city_id','=','arealist_table.cityList_id')
+            ->select(DB::raw('concat(area_name,", ",city_name)  as area_city_name') ,'arealist_id')
+            ->get();
+
+        $auth = "not chcked";
+        $userID = null;
+        $userData = null;
+
+        //checking fo loignin
+        if(Auth::check()){
+            //geting use data when logined
+            $auth = 1;
+            $userID = Auth::id();
+            $userData = DB::table('customer_info_tab')
+                            ->select('cname','city','area_list_id','phone','cpin','address')
+                            ->where('customer_info_id',$userID)
+                            ->first();
+        }else{
+            $auth = 0;
         }
 
-        $data = [];
-        if(Session::has('cart'))
-        {
-            $data = Session::get('cart');
-        }
-        
-        $cartData = DB::table('wor_list_tab')
-            ->join('wor_price_list','wor_price_list.wor_list_id','=','wor_list_tab.wor_list_id')
-            ->select('wor_list_tab.wor_list_id','work_name','wor_list_tab.pic','work_type','time_taken','wor_price_list.price')
-            ->whereIn('wor_list_tab.wor_list_id',$data)
-            ->get();
-        return view('CommonWorkList',['data'=>$cartData]);
+        return view('CommonWorkList',[
+                                        'cityList'=>$cityList,
+                                        'areaList'=>$areaList,
+                                        'Auth'=>$auth,
+                                        'userID'=>$userID,
+                                        'userData'=> $userData, 
+                                    ]);
     }
 }
