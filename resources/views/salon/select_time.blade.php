@@ -21,7 +21,7 @@
                 <div class="col-md-4">
                     <div class="card">
                         <div class="salonList-container">
-                            <img src="{{url('/')}}{{$data[$i]->pic}}" class="card-img" alt="logo">
+                            <img src="{{url('/')}}{{$data[$i]->pic}}" class="card-img" alt="{{$data[$i]->work_name}} ganga services">
                             <div class="left-item">
                                 <h6 class="card-title">{{$data[$i]->work_name}}</h6>
                                 <span><i class="fas fa-rupee-sign" id="price{{$data[$i]->wor_list_id}}">{{$data[$i]->price}}</i> /- </span>
@@ -37,7 +37,7 @@
                 <div class="col-md-4">
                     <div class="card">
                         <div class="salonList-container">
-                            <img src="{{url('/')}}{{$data[$i]->pic}}" class="card-img" alt="logo">
+                            <img src="{{url('/')}}{{$data[$i]->pic}}" class="card-img" alt="{{$data[$i]->work_name}} ganga services ">
                             <div class="left-item">
                                 <h6 class="card-title">{{$data[$i]->work_name}}</h6>
                                 <span><i class="fas fa-rupee-sign" id="price{{$data[$i]->wor_list_id}}">{{$data[$i]->price}}</i> /- </span>
@@ -54,7 +54,7 @@
                 <div class="col-md-4">
                     <div class="card">
                         <div class="salonList-container">
-                            <img src="{{url('/')}}{{$data[$i]->pic}}" class="card-img" alt="logo">
+                            <img src="{{url('/')}}{{$data[$i]->pic}}" class="card-img" alt="{{$data[$i]->work_name}} ganga services">
                             <div class="left-item">
                                 <h6 class="card-title">{{$data[$i]->work_name}}</h6>
                                 <span><i class="fas fa-rupee-sign" id="price{{$data[$i]->wor_list_id}}">{{$data[$i]->price}}</i> /- </span>

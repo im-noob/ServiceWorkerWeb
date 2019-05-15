@@ -5,7 +5,7 @@
         text-align: center;
         color: white;">
             <div class="card bg-dark text-white">
-                <img src="https://i.imgur.com/6uGo1uM.png" class="card-img round img-fluid" alt="..." style="">
+                <img src="https://i.imgur.com/6uGo1uM.png" class="card-img round img-fluid" alt="Helping Customer Ganga Service" style="">
                 <div class="card-img-overlay">
                     <h1 class="card-title ">We Love Helping</h1>
                 </div>
@@ -22,19 +22,19 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://i.imgur.com/PD6wDBE.png" class="d-block w-100" alt="...">
+                                <img src="https://i.imgur.com/PD6wDBE.png" class="d-block w-100" alt="We love helping Customer Support Ganga Services">
                                 <div class="carousel-caption  d-sm-block">
                                     <h3>We Love Helping</h3>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="https://i.imgur.com/6uGo1uM.png" class="d-block w-100" alt="...">
+                                <img src="https://i.imgur.com/6uGo1uM.png" class="d-block w-100" alt="24X7 Call support Ganga Services">
                                 <div class="carousel-caption  d-sm-block">
                                     <h3>We are always here to help you</h3>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="https://i.imgur.com/JqPU6vL.png" class="d-block w-100" alt="...">
+                                <img src="https://i.imgur.com/JqPU6vL.png" class="d-block w-100" alt="Send Feedback to improve us  ganga services">
                                 <div class="carousel-caption  d-sm-block">
                                     <h3>Just Leave Feedback for us</h3>
                                 </div>

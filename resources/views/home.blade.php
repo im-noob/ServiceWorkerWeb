@@ -32,9 +32,9 @@
 
 
                             <div class ="col-md-6 col-sm-6 col-md-*">
-                                {{-- <forcm class="form-inline"> --}}
+                                {{-- <form class="form-inline" action="{{ url('/')}}/hire/search/"> --}}
                                     <input class="form-control col-xl-10 d-flex justify-content-start" type="search" placeholder="Search service" aria-label="Search" id="searchBox">
-                                {{-- </cform> --}}
+                                {{-- </form> --}}
                             </div>
                         </div>
                         <div class="alert alert-danger" role="alert" id="searchResult">Search Somthing..</div>
@@ -72,7 +72,8 @@
                                       <img  
                                             src="{{url('founder/')}}/public/{{$data[$i][2][$j]->pic}}" 
                                             onerror="this.src = 'https://i.imgur.com/e2Ji5su.jpg';"
-                                            class="rounded img1" alt="Service Image"
+                                            class="rounded img1" 
+                                            alt="{{$data[$i][2][$j]->subcat_name}} gangaservices"
                                             style="overflow: hidden;-radius: 4px;"
                                         >
                                         <div style="font-weight: 600; margin-block-start: 10px;">{{$data[$i][2][$j]->subcat_name}}</div>
@@ -94,9 +95,9 @@
 
     
     <section>
-        <a href="{{url('/')}}/shop_salun">
+        <a href="{{url('/')}}/shopsalun">
             <div class="">
-                <div class="card bg-dark text-white" style="height: 8em; background-image:  url('{{url('/')}}/images/saloon.png'); " >
+                <div class="card bg-dark text-white" style="height: 8em; background-image:  url('{{url('/')}}/images/saloon.webp'); " >
                     <div class="card-img-overlay" style="text-align: center;">
                         
                             <h2 style= "color:white">Local Salon Available Click To see </h2>
@@ -120,7 +121,7 @@
                     <div class="card" style="border-radius: 8px">
                         <div class="card-body">
                             <h5 class="card-title">
-                            <img src="{{url('founder/')}}/public/{{$item->cuspic}}" onerror="this.src = 'https://i.imgur.com/QtXcFQM.png';" height="48" width="48"/><span style="margin: 10px">{{$item->cname}}</span>
+                            <img src="{{url('founder/')}}/public/{{$item->cuspic}}" alt="{{$item->cname}} gangaservices.com" onerror="this.src = 'https://i.imgur.com/QtXcFQM.png';" height="48" width="48"/><span style="margin: 10px">{{$item->cname}}</span>
                             </h5>
                             <p class="card-text" style="color: #646464;">{{{$item->feedback}}}</p>
                             <div class="card-text" style=" font-weight: 800">
@@ -136,7 +137,7 @@
                                     text-transform: uppercase;">Professional Hired
                             </p>
                             <h5 class="card-title">
-                            <img src="{{url('founder/')}}/public/{{$item->worpic}}" onerror="this.src = 'https://i.imgur.com/QtXcFQM.png';"  height="48" width="48"/>
+                            <img src="{{url('founder/')}}/public/{{$item->worpic}}" onerror="this.src = 'https://i.imgur.com/QtXcFQM.png';" alt="{{$item->name}} gangaservices" height="48" width="48"/>
                                 <span style="margin: 10px">{{$item->name}}</span>
                             </h5>
                             
@@ -166,7 +167,7 @@
                     <div class ="container">
                         <div class = "feedback-container">
                             <div class="feedback-item">
-                                <img src="{{$msg->wpic}}" class="rounded povView" alt="UserPic">
+                                <img src="{{$msg->wpic}}" class="rounded povView" alt="{{$msg->cname}} gangaservices">
                             </div>
                             <div class="feedback-item">
                                 <span style="font-size:20px;color:black;">{{$msg->cname}}</span><br>
@@ -203,7 +204,7 @@
             <div class = "container">
                 <div class="row">
                     <div class="col-sm-6">
-                        <div class="p-2 "><img src="{{url('/')}}/images/company/gallery-1.jpg" class="rounded img1 img-fluid" alt="Cinque Terre"></div>
+                        <div class="p-2 "><img src="{{url('/')}}/images/company/gallery-1.webp" class="rounded img1 img-fluid" alt="Download Android app gangaservices"></div>
                     </div>
                     <div class="col-sm-6">
                         <br>
@@ -211,10 +212,10 @@
                         <p>Get the book of 100+ service provider in your pocket</p>
                         <div class="row">
                             <div class="col-sm-12">
-                                    <a href="https://play.google.com/"><img src="{{url('/')}}/images/google-play.png" class="rounded" alt="Cinque Terre"></a>
+                                    <a href="https://play.google.com/"><img src="{{url('/')}}/images/google-play.png" class="rounded" alt="gangaservices app on playstore"></a>
                             </div>
                             {{-- <div class="col-sm-6">
-                                    <img src="{{url('/')}}/images/app-store.png" class="rounded" alt="Cinque Terre">
+                                    <img src="{{url('/')}}/images/app-store.png" class="rounded" alt="gangaservices app on playstore">
                             </div>           --}}
                         </div>
                     </div>
@@ -260,7 +261,7 @@
         // }
     </script>
 
-    {{-- Search Plugin --}}
+      {{-- Search Plugin --}}
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="{{url('/')}}/js/searchable.js"></script>
@@ -269,13 +270,24 @@
         $("#searchResult").hide();
     </script>
     {{-- Search Plugin --}}
-
+    
 	<script type="text/javascript">
         $(document).ready(function(){
 
             //focusing search box
             $("#searchBox").focus();
             
+            $('#searchBox').bind("keypress", function(e){
+                // 'Go' key code is 13
+                if (e.which === 13) {
+                    $baseURL = "{{url('/')}}/hire/search/";
+                    $searchText = $(this).val().trim();
+                    if($searchText>0){
+                        window.location.href = $baseURL+$searchText;
+                    }
+                    
+                } 
+            });
             	
         });
     </script>

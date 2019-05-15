@@ -21,9 +21,9 @@ Route::get('/CartItem','hireController@CartListItem');
 
 
 // saloon list
-Route::get('/shop_salun','salonController@selectSalon');
+Route::get('/shopsalun','salonController@selectSalon');
 //saloon shop details
-Route::get('/shop_details/{id}','salonController@SalonDetails');
+Route::get('/shopdetails/{id}','salonController@SalonDetails');
 
 
 

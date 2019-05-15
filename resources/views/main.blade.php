@@ -4,9 +4,9 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#2874f0"/>
-	<meta name="keywords" content="GangaService, GangaServices,beauty, decoration, Service, Bahgalpur, Saloon, online, etc"/>
+	<meta name="keywords" content="GangaService, GangaServices,Saloon, decoration, Service, Bahgalpur, Saloon, online,web Developer, beauty parlour, etc"/>
 	<meta name="google-site-verification" content="GXUqCRblVI0vfyaIcsSyTu8VIF5_ak8O8i67KGg0cNA" />
-    <meta name="Description" content="A Best Service Provider of your city Bhagalpur">
+    <meta name="Description" content="Best Service Provider of your city Bhagalpur for Saloon, mehndi, decoration, web Developer, beauty parlour, app developement,Local Servie, Best Service Provider">
     
     {{-- CSRF --}}
     @csrf
@@ -27,7 +27,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{url('/')}}/PWA/favicon-16x16.png">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{url('/')}}/ms-icon-144x144.png">
-    <link rel="manifest" href="{{url('/')}}/manifest.json">
 
     <!-- PWA:END -->
 
@@ -37,10 +36,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
 
-    <title>GangaServices</title>
+    <title>GangaServices | Best Service Provider of your city Bhagalpur</title>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"/>
     <link rel="stylesheet" href="{{url('/')}}/css/style.css"/>
@@ -55,10 +55,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 
+   
     <!-- font awsome -->
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+
     <!-- dexie DB Loading  -->
-    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dexie/2.0.4/dexie.min.js"></script>
+
     <!-- Cart System .js -->
     <script src="{{url('/')}}/js/CartSystem.js"></script>
     
@@ -69,7 +72,7 @@
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             
             <a class="navbar-brand" href="{{url('/')}}">
-                <img src="https://i.imgur.com/CWMqgHO.png"  width="30" height="30"  alt="BeautiDeco Logo" />
+                <img src="https://i.imgur.com/CWMqgHO.png"  width="30" height="30"  alt="GangaServices Logo" />
                 Ganga Services
             </a>
 

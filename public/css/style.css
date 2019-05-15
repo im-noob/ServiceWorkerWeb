@@ -1110,7 +1110,7 @@ a:focus, a:hover {
 }
 
 .top-footer h3 {
-  font-size: 16px;
+  font-size: 22px;
   line-height: 1.5;
   color: #fff;
   font-weight: 400;
@@ -1120,7 +1120,7 @@ a:focus, a:hover {
 }
 
 .top-footer p {
-  font-size: 13px;
+  font-size: 19px;
   line-height: 30px;
   color: #bdbdbd;
   font-weight: 300;
@@ -1129,7 +1129,7 @@ a:focus, a:hover {
 }
 
 .top-footer li a {
-  font-size: 13px;
+  font-size: 19px;
   line-height: 30px;
   color: #bdbdbd;
   font-weight: 300;

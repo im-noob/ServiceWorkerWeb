@@ -215,7 +215,7 @@
                 '<div id="rowListCartValue'+$wor_list_id+'">'+
                     '<div class="row" >'+
                     '    <div class="col-3" style="align-self: center">'+
-                    '        <img src="{{url('founder/')}}/public/'+$pic+'" onerror="this.src = \'https://i.imgur.com/e2Ji5su.jpg\';" class="card-img"  alt="...">'+
+                    '        <img src="{{url('founder/')}}/public/'+$pic+'" onerror="this.src = \'https://i.imgur.com/e2Ji5su.jpg\';" class="card-img"  alt="'+$name+'  ganga services">'+
                     '    </div>'+
                     '    <div class="col-6">'+
                     '            <h5 class="card-title">'+$name+'</h5>'+

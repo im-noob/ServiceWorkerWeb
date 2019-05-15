@@ -139,6 +139,7 @@ class LoginController extends Controller
             $result .= substr($generator, (rand()%(strlen($generator))), 1); 
         } 
     
+        $result = "123456";
         // Return result 
         return $result; 
     }

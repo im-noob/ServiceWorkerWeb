@@ -17,6 +17,10 @@
 			<input type="hidden" name="productinfo" value="{{$productinfo}}"/>
 			<input type="hidden" name="surl"  size="64" value="{{$surl}}" />
 			<input type="hidden" name="furl"  size="64" value="{{$furl}}" />
+			
+			<input type="hidden" name="udf1"  size="64" value="{{$udf1}}" />
+
+
 			<input type="hidden" type="hidden" name="service_provider" value="payu_paisa" />
 			<input type="hidden" type="submit" value="Submit"  />
 		</form>

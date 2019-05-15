@@ -24,7 +24,7 @@
                     <DIV class="col-md-4 mb-4">
                         <div class="card">
                             <div class="">
-                                <img id="ppic{{$data[$i]->wor_list_id}}" src="{{url('founder/')}}/public/{{$data[$i]->pic}}" class="card-img-top img-thumbnail rounded img-fluid" onerror="this.src = 'https://i.imgur.com/QtXcFQM.png';"  alt="logo" style="    height: 200px;">
+                                <img id="ppic{{$data[$i]->wor_list_id}}" src="{{url('founder/')}}/public/{{$data[$i]->pic}}" class="card-img-top img-thumbnail rounded img-fluid" onerror="this.src = 'https://i.imgur.com/QtXcFQM.png';"  alt="{{$data[$i]->work_name}}  ganga services" style="    height: 200px;">
                                 <div class="card-body">
                                     <h4 class="card-title" style="margin-top: 10%;" id="pname{{$data[$i]->wor_list_id}}">{{$data[$i]->work_name}}</h4>
                                     <p class="card-text">{{$data[$i]->info}}</p>

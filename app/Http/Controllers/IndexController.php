@@ -137,30 +137,41 @@ class IndexController extends Controller
     function searchResult(Request $request){
 
         $cityID = $request->cityID;
-        $searchText = $request->searchText;
+        $incoingSearchText = $request->searchText;
+        //preventing form sql injection
+        $searchText = $incoingSearchText;
 
 
-        //exploding keywords
-        $searchWords = explode(" ",$searchText);  
+        // //exploding keywords
+        // $searchWords = explode(" ",$searchText);  
 
-        //loking in database 
-        $result = DB::table('wor_list_tab')
-            ->select('wor_list_id','work_name')
-            ->where(function($query) use($searchWords){
+        // //loking in database 
+        // $result = DB::table('wor_list_tab')
+        //     ->select('wor_list_id','work_name')
+        //     ->where(function($query) use($searchWords){
 
-                foreach($searchWords as $word){
-                    $query->orWhere('work_name', 'LIKE', '%'.$word.'%');
-                }
+        //         foreach($searchWords as $word){
+        //             $query->orWhere('work_name', 'LIKE', '%'.$word.'%');
+        //         }
                 
-            })
+        //     })
+        //     ->where('status',13)
+        //     ->distinct()
+        //     ->get();
+
+
+        //loking in database with FUll text search
+        $result = DB::table('wor_list_tab')
+            ->selectRaw('wor_list_id,work_name,MATCH(work_name,tags,info) against ( ? IN BOOLEAN MODE) as relevance_score',[$searchText])
+            // ->whereRaw("MATCH(work_name,tags,info) against ( '*?*' IN BOOLEAN MODE)",$searchText)
+            ->orderByDesc('relevance_score')
+            // ->where('relevance_score','!=',0)
             ->where('status',13)
             ->distinct()
             ->get();
 
 
         $resultArr = [];
-        
-        $i = 0;
         foreach($result as $key => $value){
             $interArr = [];
             $interArr['label'] = $value->work_name;

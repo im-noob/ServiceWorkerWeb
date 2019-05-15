@@ -170,7 +170,7 @@ class payuPayment extends Controller
         $amount = $totalPrice;
         
         $txnid =  $lotID."-".$userID."-".time();
-        $rememberToken = Str::random(256);
+        $rememberToken = Str::random(128);
         // ."-".time();
 
         
@@ -259,7 +259,7 @@ class payuPayment extends Controller
         $_POST['txnid'] = $txnid;
         
         //user defined rememberToken to avoid payment tempring 
-        // $_POST['udf1'] = $rememberToken;
+        $_POST['udf1'] = $rememberToken;
 
 
 
@@ -334,7 +334,11 @@ class payuPayment extends Controller
             $action = $PAYU_BASE_URL . '/_payment';
           }
 
+        } elseif(!empty($posted['hash'])) {
+          $hash = $posted['hash'];
+          $action = $PAYU_BASE_URL . '/_payment';
         }
+
 
 
 
@@ -355,7 +359,9 @@ class payuPayment extends Controller
                                                 'phone'=>$_POST['phone'],
                                                 'productinfo'=>$_POST['productinfo'] ,
                                                 'surl'=>$_POST['surl'],
-                                                'furl'=>$_POST['furl']
+                                                'furl'=>$_POST['furl'],
+
+                                                'udf1'=>$_POST['udf1'],
                                             ]
                         );
         }
@@ -373,11 +379,11 @@ class payuPayment extends Controller
 
 
 
-    function payment_success_fail(){
+    function payment_success_fail(Request $request){
 
-
+        print_r($request->headers->get('origin'));
         // var_dump($_POST);
-        // return;
+        return;
         $status=$_POST["status"];
 
 
@@ -396,13 +402,14 @@ class payuPayment extends Controller
             $cardnum  = $_POST["cardnum"];
         }
 
-
+        //remember token 
+        $rememberToken = $_POST("udf1");
         // to show
         $amount=$_POST["amount"];
         $productinfo=$_POST["productinfo"];
         
         // echo("$status.$unmappedstatus.$txnid.$mode.$field9.$payuMoneyId.$paymentTime.$cardnum");
-        // return;
+        // return;$udf1
         // status success vv dd 
         // unmappedstatus userCancelled vv
         // txnid vv
@@ -423,6 +430,7 @@ class payuPayment extends Controller
         if($status == "success"){
             DB::table('payment_tab')
                 ->where('transaction_id', $txnid)
+                ->where('rememberToken', $rememberToken)
                 ->update([
                     'payment_status' => 'success',
                     'unmappedstatus' => $unmappedstatus,

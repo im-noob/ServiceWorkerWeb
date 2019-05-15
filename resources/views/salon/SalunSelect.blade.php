@@ -39,7 +39,7 @@
                             
 
                                 {{-- <div class="col-sm-6">
-                                    <a href="{{url('/shop_details/'.$shop->shop_id.'/')}}"  >
+                                    <a href="{{url('/shopdetails/'.$shop->shop_id.'/')}}"  >
                                         <div class="card">
                                             <div class="salonList-container">
                                                 <img src="{{$shop->pic}}" class="card-img" alt="pic">
@@ -61,7 +61,7 @@
                                                 src="{{$shop->pic}}" 
                                                 class="card-img round img-fluid"
                                                 style="height: 100%; width: 100%" 
-                                                alt="..."
+                                                alt="{{$shop->shop_name}} ganga services"
                                                 onerror="this.src = 'https://i.imgur.com/e2Ji5su.jpg';">
                                             
                                         </div>
@@ -165,14 +165,14 @@
 
 
                                         '<div class="col-sm-6" style="margin-bottom: 15px">'+
-                                        '    <a href="{{url('/')}}/shop_details/'+$shop[i].shop_id+'" style="text-decoration: none;" >'+
+                                        '    <a href="{{url('/')}}/shopdetails/'+$shop[i].shop_id+'" style="text-decoration: none;" >'+
                                         '        <div class="realShadow row no-gutters">'+
                                         '            <div class="col-md-4">'+
                                         '                <img '+
                                         '                    src="{{url('/')}}/'+$shop[i].pic+'"'+ 
                                         '                    class="card-img round img-fluid"'+
                                         '                    style="height: 100%; width: 100%"'+ 
-                                        '                    alt="..."'+
+                                        '                    alt="'+$shop[i].shop_name+'ganga services"'+
                                         '                    onerror="this.src = \'https://i.imgur.com/e2Ji5su.jpg\';">'+
                                                         
                                         '            </div>'+
