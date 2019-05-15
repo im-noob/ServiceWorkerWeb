@@ -159,14 +159,14 @@ class IndexController extends Controller
         //     ->distinct()
         //     ->get();
 
-
+        /************************ KEEP IN MIND HERE WHERE CAN BE VARNABLE to SQL Attack ************************* */
         //loking in database with FUll text search
         $result = DB::table('wor_list_tab')
             ->selectRaw('wor_list_id,work_name,MATCH(work_name,tags,info) against ( ? IN BOOLEAN MODE) as relevance_score',[$searchText])
-            // ->whereRaw("MATCH(work_name,tags,info) against ( '*?*' IN BOOLEAN MODE)",$searchText)
+            ->whereRaw("MATCH(work_name,tags,info) against ( '*".$searchText."*' IN BOOLEAN MODE)")
             ->orderByDesc('relevance_score')
-            // ->where('relevance_score','!=',0)
             ->where('status',13)
+            ->limit(10)
             ->distinct()
             ->get();
 
