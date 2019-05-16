@@ -300,7 +300,7 @@
                     $('#list-cat').empty();
                     for (const msg of JSON.parse(data)) {
                        // console.log(msg.wor_subcat_id);
-                        var template = '<a class="list-group-item list-group-item-action" href="'+'{{url("/hire/")}}/'+msg.wor_subcat_id+'">'+msg.subcat_name+'</a>';
+                        var template = '<a class="list-group-item list-group-item-action" href="'+'{{url("/hire/home")}}/'+msg.wor_subcat_id+'">'+msg.subcat_name+'</a>';
                         //console.log(template);
                         $('#list-cat').append(template);
                     }  

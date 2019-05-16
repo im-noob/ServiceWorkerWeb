@@ -381,9 +381,9 @@ class payuPayment extends Controller
 
     function payment_success_fail(Request $request){
 
-        print_r($request->headers->get('origin'));
-        // var_dump($_POST);
-        return;
+        // print_r($request->headers->get('origin'));
+        // // var_dump($_POST);
+        // return;
         $status=$_POST["status"];
 
 
@@ -402,8 +402,7 @@ class payuPayment extends Controller
             $cardnum  = $_POST["cardnum"];
         }
 
-        //remember token 
-        $rememberToken = $_POST("udf1");
+        
         // to show
         $amount=$_POST["amount"];
         $productinfo=$_POST["productinfo"];
@@ -428,6 +427,8 @@ class payuPayment extends Controller
         // /* inserting success data in database */
  
         if($status == "success"){
+            //remember token 
+            $rememberToken = $_POST["udf1"];
             DB::table('payment_tab')
                 ->where('transaction_id', $txnid)
                 ->where('rememberToken', $rememberToken)

@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -147,30 +148,16 @@
 	</div>
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script type="text/javascript" src="{{url('/')}}/js/AccessLevel/searchable.js"></script>
-	<script type="text/javascript">
-		$url ="{{url('/')}}";
-		console.log($url);
-		console.log("sending post message");
+	<script>
 
-		/* clearing cart:STARt */
-		var db = new Dexie("cartItem_database");
-		db.version(1).stores({
-					cartItems: '++id, wor_list_id, price, name, pic, noofitem'
-		});
-		function ClearAllCartTable() {
-					db.cartItems.clear();
-		}
+			$url ="{{url('/')}}";
+			console.log($url);
 
-		ClearAllCartTable();
-		/* clearing cart:END */
+			// window.postMessage("Success",$url);
+			setTimeout(() => {
+				window.location.href = $url;
+			}, 5000);
 
-
-		// window.postMessage("Success",$url);
-		setTimeout(() => {
-			window.location.href = $url;
-		}, 5000);
 	</script>
-	
 </body>
 </html>
