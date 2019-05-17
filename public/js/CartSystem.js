@@ -102,7 +102,7 @@
 
             var price = $('#price'+id).text();
             var name = $("#pname"+id).text();
-            var pic = $("#ppic"+id).attr("src");
+            var pic = $("#ppic"+id).attr("srcOrginal");
 
             var total = $('#total').text();
             total = parseInt(price) + parseInt(total);
