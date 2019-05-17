@@ -16,6 +16,9 @@
                                         Please Login/Singup Before Proceding...
                                     </div>
                                     <!-- alert:END-->
+                                    <!-- alert:START -->
+                                    <div class="alert alert-danger" role="alert" id="invalidMsg"></div>
+                                    <!-- alert:END-->
                     
                                     <!-- Modal body -->
                                     <div class="modal-body">
@@ -35,7 +38,7 @@
                                                         <div class="form-group row">
                                                             <label for="phoneno" class="col-md-4 col-form-label">Phone</label>
                                                             <div class="col-md-8">
-                                                                <input id="phoneno" type="text" class="form-control" name="phoneno" value="" inputmode="numeric" pattern="[0-9]{10}" id="phonenoBox" required autofocus>
+                                                                <input id="phoneno" type="tel" class="form-control" name="phoneno" value="" inputmode="numeric" pattern="[0-9]{10}" id="phonenoBox" required autofocus>
                                                             </div>
                                                         </div>
                                                         <button type="button" class="btn btn-primary btn-lg btn-block" id="getOTP">
@@ -97,11 +100,24 @@
             //login signup section
             $("#verifyotpsignupDiv").hide();
             $("#loginalert").hide();
+            $("#invalidMsg").hide();
 
+            $("#phoneno").on('keypress',function(e){
+                if (e.which == 13) {
+                    $("#getOTP").click();
+                }else{
+                    $("#verifyotpsignupDiv").hide();
+                }
+            });
             $("#getOTP").click(function(){
                 phoneno = $("#phoneno").val();
                 if(!phonenumberVerify(phoneno)){
-                    alert("invalid Phone Number");
+                    // alert("Invalid Phone Number");
+                    $("#invalidMsg").text("Not a valid 10 digit mobile no..").show();
+                    setTimeout(() => {
+                        $("#invalidMsg").hide();
+                        $("#phoneno").focus();
+                    }, 5000);
                     return;
                 }
                 console.log("sending otp to:",phoneno);
@@ -137,7 +153,16 @@
                 
             });
 
+            
             //verifyOTP
+            $('#OTPBox').bind("keypress", function(e){
+                // 'Go' key code is 13
+                if (e.which === 13) {
+                    console.log("enter presse");
+                    $('#verifyotpsignup').click();
+                } 
+            });
+            
             $("#verifyotpsignup").click(function(){
                 $phoneno = $("#phoneno").val();
                 if(!phonenumberVerify(phoneno)){

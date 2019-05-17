@@ -156,7 +156,7 @@
 			// window.postMessage("Success",$url);
 			setTimeout(() => {
 				window.location.href = $url;
-			}, 5000);
+			}, 2000);
 
 	</script>
 </body>
