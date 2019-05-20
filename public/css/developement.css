@@ -1,4 +1,8 @@
+/* NAv bar hover */
 
+#navBar :hover{
+    background-color: none;
+}
 /* Curousel image height  */
 .carousel-item>img{
     height: 450px;
@@ -82,4 +86,10 @@
     left: 0;
     color: #BFAFB2;
     cursor: pointer;
+}
+
+
+/* shadow */
+.realShadow{
+    box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
 }
