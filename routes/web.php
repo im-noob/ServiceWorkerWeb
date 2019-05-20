@@ -122,3 +122,7 @@ Route::group(['middleware' => ['auth']], function () {
 Route::post('sendReviewByUser', 'MyOrder_c@submitReview');
 Route::post('sendReportByUser', 'MyOrder_c@submitReport');
 
+// SOFTWARE DEVELOPEMENT
+Route::get('softwareService',function(){
+    return view('softwareService.main');
+});

@@ -27,8 +27,8 @@ class hireController extends Controller
         $spList = null;
         if ($type == "home") {
             $spList = DB::table('wor_list_tab')
-                        ->join('wor_price_list','wor_price_list.wor_list_id','=','wor_list_tab.wor_list_id')
-                        ->select('wor_list_tab.wor_list_id','work_name','wor_list_tab.pic','work_type','wor_price_list.price','info')
+                        // ->join('wor_price_list','wor_price_list.wor_list_id','=','wor_list_tab.wor_list_id')
+                        ->select('wor_list_tab.wor_list_id','work_name','wor_list_tab.pic','work_type','price','info')
                         ->where('wor_list_tab.wor_subcat_id',$id)
                         ->where('status',13)
                         // ->distinct()
@@ -54,8 +54,8 @@ class hireController extends Controller
             // return view('hire',['data'=>$spList,'subcat'=>$id]);
         }else if($type == "search"){
             $spList = DB::table('wor_list_tab')
-                        ->join('wor_price_list','wor_price_list.wor_list_id','=','wor_list_tab.wor_list_id')
-                        ->select('wor_list_tab.wor_list_id','work_name','wor_list_tab.pic','work_type','wor_price_list.price','info')
+                        // ->join('wor_price_list','wor_price_list.wor_list_id','=','wor_list_tab.wor_list_id')
+                        ->select('wor_list_tab.wor_list_id','work_name','wor_list_tab.pic','work_type','price','info')
                         ->where('wor_list_tab.work_name','LIKE', '%'.$id.'%')
                         ->where('status',13)
                         // ->distinct()
