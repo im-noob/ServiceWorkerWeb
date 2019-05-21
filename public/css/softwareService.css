@@ -1,0 +1,149 @@
+/* NAv bar hover */
+
+
+/* Curousel image height  */
+.carousel-item>img{
+    height: 450px;
+}
+
+/* Only Phoen CSS */
+
+/* PC VIEW active */
+@media all and (min-width:992px) and (max-width: 2000px) {
+    .mobile-cta {
+        display: none;
+    } 
+    .onlyonPhone{
+        display: none;
+    }
+
+}
+
+/* Mobile VIEW active */
+@media all and (min-width:0px) and (max-width: 991px) {
+    
+    .onlyonPC{
+        display: none;
+    }
+}
+  
+ 
+
+/* Phone button floating  */
+.mobile-cta {
+    position: fixed;
+    bottom: 64px;
+    width: 42px;
+    z-index: 999;
+    /* display: none; */
+    right: 10px;
+    -webkit-transition: 0.6s;
+    -moz-transition: 0.6s;
+    -o-transition: 0.6s;
+    transition: 0.6s;
+}
+
+/* Phone button floating  */
+.phone-flot-button{
+    text-decoration: none;
+    cursor: pointer;
+    background: #1dbc55;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.46);
+    color: #fff;
+    font-size: 22px;
+    padding-top: 4px;
+    margin-bottom: 10px;
+}
+
+
+/* White text */
+.whitetext{
+    color: white;
+}
+
+
+
+/* shadow */
+.realShadow{
+    box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+}
+
+
+
+.facebook-hover:hover{
+    color:#3b5998;
+}
+
+.twitter-hover:hover{
+    color:#55acee;
+}
+
+.instagram-hover:hover{
+    color:#dd3571;
+}
+
+.linkedin-hover:hover{
+    color:#007bb6;
+}
+
+.whatsapp-hover:hover{
+    color:#58f574;
+}
+
+.googlePlus-hover:hover{
+    color:#d04337;
+}
+
+.youtube-hover:hover{
+    color:#ee1c1b;
+}
+
+
+/* Link Wihout Decoration */
+.nonDecoLink{
+    text-decoration: none; 
+    color: white; 
+    cursor: pointer;
+}
+.nonDecoLink:hover{
+    text-decoration: none; 
+    color: white; 
+    cursor: pointer;
+}
+
+.nonDecoLinkFooter{
+    text-decoration: none; 
+    color: #5a5b5c;
+    cursor: pointer;
+}
+.nonDecoLinkFooter:hover{
+    text-decoration: none; 
+    color: white; 
+    cursor: pointer;
+}
+
+
+
+/* Fotter */
+footer{
+    background: #141516;
+    color:#5a5b5c;
+}
+
+/* Vertica line */
+.drawVertilineOnStart{
+    width: 1px;
+    height: 32px;
+    content: '';
+    position: absolute;
+    background: #666666;
+    left: -50px;
+    top: 0;
+}

@@ -26,17 +26,119 @@
 
     <!-- Slik Sliderbar:END -->
 
-    <link rel='stylesheet' type='text/css' media='screen' href='{{url('/')}}/css/developement.css'>
-    <script src='{{url('/')}}/js/developement.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='{{url('/')}}/css/softwareService.css'>
+    <script src='{{url('/')}}/js/softwareService.js'></script>
 </head>
 <body>
+
+    {{-- NabBar:START --}}
+    @component('softwareService.Components.transparentNav',['heightOfTransparency'=> 376])
+    @endcomponent
+    {{-- NAvbar:END --}}
     
     {{-- Section:START --}}
     @yield('main')
     {{-- Section:END --}}
 
 
+    {{-- Fotter:START --}}
+    <footer>
+        <div class="container"  style="text-align: center;">
 
+
+            {{-- Only for pc:START --}}
+            <div class="row onlyonPC mb-4">
+                {{-- Header --}}
+                <div class="col-md-4 mt-4 " >
+                    <h2 style="font-size: 40px;">Ganga Services</h2>
+                    <div style="text-align: start;"><a class="nonDecoLinkFooter"><i class="fas fa-phone" ></i> Call Us 96082 40612 </a></div>
+                </div>
+
+                {{-- Service List --}}
+                <div class="col-md-4 mt-4 ">
+                    <div class="row">
+                        <h4 class="offset-4">Services</h4>
+                    </div>
+                    <div class="row">
+                        <a href="{{url('/')}}/"  class="nonDecoLinkFooter offset-4">Mobile Application</a>
+                    </div>
+                    <div class="row">
+                        <a href="{{url('/')}}/"  class="nonDecoLinkFooter offset-4">Software Development</a>
+                    </div>
+                    <div class="row">
+                        <a href="{{url('/')}}/"  class="nonDecoLinkFooter offset-4">CMS Development</a>
+                    </div>
+                    <div class="row">
+                        <a href="{{url('/')}}/"  class="nonDecoLinkFooter offset-4">Corporate Branding</a>
+                    </div>
+                    <div class="row">
+                        <a href="{{url('/')}}/"  class="nonDecoLinkFooter offset-4">Digital Marketing</a>
+                    </div>
+                </div>
+
+                {{-- About Links --}}
+                <div class="col-md-4 mt-4 ">
+                    <div class="row">
+                        <h4 class="offset-4">About</h4>
+                    </div>
+                    <div class="row">
+                        <a href="{{url('/')}}/"  class="nonDecoLinkFooter offset-4">The Company</a>
+                    </div>
+                    <div class="row">
+                        <a href="{{url('/')}}/"  class="nonDecoLinkFooter offset-4">Methodology</a>
+                    </div>
+                    <div class="row">
+                        <a href="{{url('/')}}/"  class="nonDecoLinkFooter offset-4">Contact US</a>
+                    </div>
+                </div>
+            </div>
+            {{-- Only for pc:STOP --}}
+
+
+            {{-- Only For Phone:START --}}
+            <div class="row onlyonPhone">
+                <div class="col-sm-12  mt-4">
+                    <div>
+                        <h2>Ganga Services</h2>
+                    </div>
+                </div>
+            </div>
+            {{-- Only For Phone:END --}}
+
+
+
+            {{-- Universal Footer --}}
+            <div class="row">
+
+                {{-- Copyrights --}}
+                <div class="col-sm-12 col-md-4 mb-2 ">
+                    <div>Copyright 2019 © Ganga Services.</div><div> All Rights Reserved.</div>
+                </div>
+
+                {{-- Social Links --}}
+                <div class="col-sm-12 col-md-4 mb-2 mx-auto" >
+                    <div class="" style="text-align: center">
+                        <a href="https://www.facebook.com/gangaservices/" target="_blank" style="padding: 10px"><i class="whitetext fab fa-facebook-f facebook-hover"></i></a>
+                        <a href="https://www.twitter.com/gangaservices/" target="_blank"  style="padding: 10px"><i class="whitetext fab fa-twitter twitter-hover"></i></a>
+                        <a href="https://www.instagram.com/ganga_services/" target="_blank"  style="padding: 10px"><i class="whitetext fab fa-instagram instagram-hover"></i></a>
+                        <a href="https://www.linkedin.com/company/gangaservices/" target="_blank"  style="padding: 10px" ><i class="whitetext fab fa-linkedin-in linkedin-hover"></i></a>
+                    </div>
+                </div>
+
+                {{-- Terms and policy --}}
+                <div class="col-sm-12 col-md-4 mb-2 mx-auto" >
+                    <div class="" style="text-align: center">
+                        <a href="https://www.facebook.com/gangaservices/" class="nonDecoLinkFooter" target="_blank" style="padding: 10px; ">Privacy Policy</a>
+                        |
+                        <a href="https://www.linkedin.com/company/gangaservices/" class="nonDecoLinkFooter" target="_blank"  style="padding: 10px; " >Terms & Condition</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+    
+    {{-- Fotter:END --}}
 
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">

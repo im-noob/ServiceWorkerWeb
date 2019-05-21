@@ -2,60 +2,6 @@
 @section('main')
     {{-- cursole:START --}}
     <div class="container-fluid" style="padding: 0">
-        {{-- Nav Bar:START --}}
-        <nav id ="navBar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary" style="background-color: #007bff3b!important;">
-        
-            <a class="navbar-brand" href="{{url('/')}}" style="font-size: 30px;font-weight: 900;">
-                <img src="https://i.imgur.com/CWMqgHO.png"  width="30" height="30"  alt="GangaServices Logo" />
-                Ganga Services
-            </a>
-
-            <button id="navBarToggerBtton" class="navbar-toggler realShadow" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mr-auto" style="align-items: center;">
-
-                    <li class="nav-item active">
-                        <a class="nav-link nav-text" href="{{url('/')}}/">Home</a>
-                    </li>
-
-                    <li class="nav-item active">
-                            <a class="nav-link nav-text"  href="{{url('/')}}/regPartner" >Work</a>
-                    </li>
-
-                    <li class="nav-item dropdown active">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Services
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Mobile Application</a>
-                            <a class="dropdown-item" href="#">Software Development</a>
-                            <a class="dropdown-item" href="#">Corporate Branding</a>
-                            <a class="dropdown-item" href="#">Corporate Branding</a>
-                            <a class="dropdown-item" href="#">Digital Marketing</a>
-                            <a class="dropdown-item" href="#">Web & CMS Development</a>
-                        </div>
-                    </li>
-
-                    <li class="nav-item active">
-                        <a class="nav-link nav-text"  href="{{url('/')}}/regPartner" >About</a>
-                    </li>
-    
-                    <li class="nav-item active">
-                        <a class="nav-link nav-text"  href="{{url('/')}}/regPartner" >Contact Us</a>
-                    </li>
-
-
-                    <li class="nav-item active">
-                        <a class="nav-link nav-text"  href="{{url('/')}}/regPartner" >Request Info</a>
-                    </li>
-
-
-                </ul>
-            </div>
-        </nav>
-        {{-- Nav Bar:END --}}
 
         <div class="bd-example">
             <div id="carouselcontactus" class="carousel slide carousel-fade" data-ride="carousel">
@@ -104,6 +50,7 @@
     </div>
     {{-- cursole:END --}}
 
+
     {{-- section:1:START --}}
     <section class="mt-5 mb-5">
         <div class="container">
@@ -114,6 +61,9 @@
         </div>
     </section>
     {{-- section:1:END --}}
+
+
+    {{-- OUR Service:START --}}
     <section>
         <div class="container">
             <div class="row">
@@ -184,29 +134,31 @@
             </div>
         </div>
     </section>
+    {{-- OUR Service:END --}}
 
+
+    
     {{-- Happy Customer:START --}}
-    <section class="mt-4 mb-4 ">
-        <div class="container" style="padding: 0;">
-            <Div class="autoplay">
-                <div class="col-sm-3 card happy-brand" style="background-color: white" >
-                    <img class="img-fluid m-4  rounded mx-auto" src="http://jetprogramme.org/wp-content/uploads/2017/03/Square-Instagram-Logo.png"/>
-                </div>
-                <div class="col-sm-3 card happy-brand">
-                    <img class="img-fluid m-4 rounded mx-auto" src="http://jetprogramme.org/wp-content/uploads/2017/03/Square-Instagram-Logo.png"/>
-                </div>
-                <div class="col-sm-3 card happy-brand">
-                    <img class="img-fluid m-4 rounded mx-auto" src="http://jetprogramme.org/wp-content/uploads/2017/03/Square-Instagram-Logo.png"/>
-                    
-                </div>
-                <div class="col-sm-3 card happy-brand">
-                    <img class="img-fluid m-4 rounded mx-auto" src="http://jetprogramme.org/wp-content/uploads/2017/03/Square-Instagram-Logo.png"/>
-                    
-                </div>
-            </Div>
-        </div>
-    </section>
+    @component('softwareService.Components.slickSlider')
+        @slot('innerData')
+            <div class="col-sm-3 card happy-brand" style="background-color: white" >
+                <img class="img-fluid m-4  rounded mx-auto" src="http://jetprogramme.org/wp-content/uploads/2017/03/Square-Instagram-Logo.png"/>
+            </div>
+            <div class="col-sm-3 card happy-brand">
+                <img class="img-fluid m-4 rounded mx-auto" src="http://jetprogramme.org/wp-content/uploads/2017/03/Square-Instagram-Logo.png"/>
+            </div>
+            <div class="col-sm-3 card happy-brand">
+                <img class="img-fluid m-4 rounded mx-auto" src="http://jetprogramme.org/wp-content/uploads/2017/03/Square-Instagram-Logo.png"/>
+                
+            </div>
+            <div class="col-sm-3 card happy-brand">
+                <img class="img-fluid m-4 rounded mx-auto" src="http://jetprogramme.org/wp-content/uploads/2017/03/Square-Instagram-Logo.png"/>
+                
+            </div>
+        @endslot
+    @endcomponent
     {{-- Happy Customer:END --}}
+
 
     {{-- Enquery:START --}}
     <section style="background-color: #fb2224">
@@ -222,14 +174,14 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="row whitetext" style="FONT-SIZE: 30PX;  ">
-                                <a href="tel:+919608240612" style="text-decoration: none; color: white; cursor: pointer">8340669783</a>
+                                <a href="tel:+919608240612" class="nonDecoLink">9608240612</a>
                             </div>
                             <div class="row whitetext" style="font-size: 20px; direction: rtl;">
                                 Call us anytime
                             </div>
                         </div>
                         <div class="col-4" style="align-self: center;">
-                            <a href="tel:+919608240612" style="text-decoration: none; color: white; cursor: pointer"><i class="fas fa-phone fa-3x whitetext"></i></a>
+                            <a href="tel:+919608240612" class="nonDecoLink"><i class="fas fa-phone fa-3x whitetext"></i></a>
                         </div>
                     </div>
                 </div>
@@ -242,13 +194,13 @@
                 <div class="d-flex justify-content-start col-md-4  mb-3" >
                     <div class="row">
                         <div class="col-4" style="align-self: center;">
-                            <a href="javascript:void(Tawk_API.toggle())" style="text-decoration: none; color: white; cursor: pointer">
+                            <a href="javascript:void(Tawk_API.toggle())" class="nonDecoLink">
                                 <i class="fas fa-location-arrow fa-3x whitetext startChart"></i>
                             </a>
                         </div>
                         <div class="col-8">
                             <div class="row whitetext startChart" style="FONT-SIZE: 30PX;">
-                                <a href="javascript:void(Tawk_API.toggle())" style="text-decoration: none; color: white; cursor: pointer">Live Chat </a>
+                                <a href="javascript:void(Tawk_API.toggle())" class="nonDecoLink">Live Chat </a>
                             </div>
                             <div class="row  whitetext" style="FONT-SIZE: 20PX;">
                                 discuss your plan
@@ -286,53 +238,8 @@
     <script>
         $(function(){
 
-            /************* DONT REMOVE WORKING CODE :START ********************/
-            // on scroll checking nav bar color if not on top
-            $(window).on('scroll',function(){
-                addRemoveBackground();
-            })
-            function addRemoveBackground(){
-                // Geting scroll Height
-                $scrollHight = $(window).scrollTop();
-
-                // adding class when scroll hight is grater 
-                if($scrollHight>376){
-                    $("#navBar").removeAttr('style');
-                }else{
-                    $("#navBar").attr('style','background-color: #007bff3b!important;');
-                }
-            }
-            /************* DONT REMOVE WORKING CODE :END ********************/
-
-
-            // nav bar color on togger button for mobiel only
-            $("#navBarToggerBtton").click(function(){
-                $iscollapsed = $("#navbarNav").hasClass('show')
-                console.log($iscollapsed);
-                if($iscollapsed){
-                    $("#navBar").attr('style','background-color: #007bff3b!important;');
-                    addRemoveBackground();
-                }else{
-                    $("#navBar").removeAttr('style');
-                    // addRemoveBackground();
-                }
-            });
-            // Starting slide bear for happy clints
-            $('.autoplay').slick({
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                focusOnSelect: true,
-                // dots: true,
-                prevArrow: '<div class="slick-prev buttonSilckParent prevArrowBtn"><i class="fa fa-angle-left fa-4x " aria-hidden="true"></i></div>',
-                nextArrow: '<div class="slick-next buttonSilckParent nextArrowBtn"><i class="fa fa-angle-right fa-4x " aria-hidden="true"></i></div>'
-            });
-
             // opening twak chat on request
             $(".startChart").click(function(){
-                console.log("clicked startchat");
-
                 //checking if mobile
                 var isMobile = false; //initiate as false
                 // device detection
