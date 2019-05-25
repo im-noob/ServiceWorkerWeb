@@ -90,7 +90,7 @@
                     </li>
                     
                     <li class="nav-item active">
-                        <a class="nav-link nav-text"  href="{{url('/')}}/regPartner" >Partners</a>
+                        <a class="nav-link nav-text"  href="{{url('/')}}/partner/public" >Partners</a>
                     </li>
 
 

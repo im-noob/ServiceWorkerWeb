@@ -15,7 +15,7 @@
             @endphp
 
             @if($size <= 0)
-                <p>No List is avaliable.</p>
+                <p style="text-align: center; font-size: x-large;">No List is avaliable.</p>
             @endif
 
             <div class="row card-body">
@@ -45,18 +45,21 @@
             </div>
 
 
+            @if($size>0)
             
-            <div class="card-footer">
-                <div class="row">
-                    <div class="col-sm-6 "  style="align-self:center">
-                            <span style="font-size: x-large;"> Total : <i class="fas fa-rupee-sign" id="total">00</i></span>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-sm-6 "  style="align-self:center">
+                                <span style="font-size: x-large;"> Total : <i class="fas fa-rupee-sign" id="total">00</i></span>
+                        </div>
+
+                        <a class="col-sm-6" href="{{url('/')}}/CartItem">
+                            <button class="btn btn-primary btn-lg">Continue To Cart  <i style="font-size:large" class="fas fa-long-arrow-alt-right"></i></button>
+                        </a>
                     </div>
-                    <a class="col-sm-6" href="{{url('/')}}/CartItem">
-                        <button class="btn btn-primary btn-lg">Continue To Cart  <i style="font-size:large" class="fas fa-long-arrow-alt-right"></i></button>
-                    </a>
                 </div>
-            </div>
-            
+
+            @endif
 
 
         </div>

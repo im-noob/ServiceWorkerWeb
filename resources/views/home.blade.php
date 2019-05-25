@@ -125,8 +125,9 @@
                             </h5>
                             <p class="card-text" style="color: #646464;">{{{$item->feedback}}}</p>
                             <div class="card-text" style=" font-weight: 800">
+                                    <span style="color: #00aced;">Ratting</span>
                                     <span style="background-color: #4caf50;color:white; padding: 2px;">{{$item->ratting}}<i class="fas fa-star"></i></span>
-                                    <span style="color: #00aced;">Review</span>
+
                             </div>
                             <hr>
                             <p class="card-text" style="letter-spacing: .9px;
@@ -153,49 +154,20 @@
 
         </div>
     </section>
-    {{-- <section>
+
+
+    {{-- Quick Register:START --}}
+    <section>
         <div class="card">
-        <div class="container">
-            <div class="d-flex justify-content-center mb-3">
-                <H2 style= "text-align:center;margin-top:5px; font-weight: 800; ">Customer Review</H2>  
-                
-            </div>
-            <div class="row">
-                @foreach($feedback as $msg)
-                <div class = "col-md-4">
-                    <div class="card">
-                    <div class ="container">
-                        <div class = "feedback-container">
-                            <div class="feedback-item">
-                                <img src="{{$msg->wpic}}" class="rounded povView" alt="{{$msg->cname}} gangaservices">
-                            </div>
-                            <div class="feedback-item">
-                                <span style="font-size:20px;color:black;">{{$msg->cname}}</span><br>
-                                <span style="font-size:16px;color:black;">{{$msg->city}}</span><br>
-                                <span style="font-size:10px;color:red;">{{$msg->updated_at}}</span>
-                            </div>
-                        </div>
-                        <hr>
-                        <p>{{$msg->feedback}}.</p>
-                        <hr>
-                        <div class="feedback-container">
-                            <div class="feedback-item">
-                                <img src="{{$msg->pic}}" class="rounded cusView" alt="ServicePic">
-                            </div>
-                            <div class="feedback-item">
-                                <span style="font-size:18px;color:blue;">{{$msg->name}}</span><br>
-                                <span style="font-size:14px;color:black;background-color:green"> {{$msg->ratting}}* </span>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div> 
-                @endforeach
+            <div class="container">
+                <div class="d-flex justify-content-center">
+                    <a style="text-decoration: none; " href="{{url('/')}}/regPartner"><H2 style= "text-align:center;margin-top:5px; font-weight: 800; ">Are you intrested to work with Us ? Just Make a query</H2></a>  
+                </div>
             </div>
         </div>
-        <br>
-        </div>
-    </section> --}}
+    </section>
+    {{-- Quick Register:END --}}
+
     
 
 
