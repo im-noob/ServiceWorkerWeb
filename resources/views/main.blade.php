@@ -65,6 +65,9 @@
     <!-- Cart System .js -->
     <script src="{{url('/')}}/js/CartSystem.js"></script>
     
+    // Goolge Structed Data
+    @component('components.StructuredData')
+    @endcomponent
   </head>
   <body>
     <section>
@@ -76,7 +79,7 @@
                 Ganga Services
             </a>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -355,9 +358,9 @@ function googleTranslateElementInit() {
                 <div class="col-sm-4 col-md-4 col-lg-4">
                     <ul>
                         <li><h3>Our Services</h3></li>
-                        <li><a href="#">Ganga Services</a></li>
-                        <li><a href="#">Ganga Cart</a></li>
-                        <li><a href="#">SSGF</a></li>
+                        <li><h4><a href="#">Ganga Services</a></h4></li>
+                        <li><h4><a href="#">Ganga Cart</a></h4></li>
+                        <li><h4><a href="#">SSGF</a></h4></li>
                     </ul>
                 </div>
                  End of .col-sm-4 -->
@@ -366,11 +369,10 @@ function googleTranslateElementInit() {
                 <div class="col-sm-4 col-md-4 col-lg-4">
                 <ul>
                     <li><h3>Quick Links</h3></li>
-                    <li><a href="{{url('/')}}/regPartner">Partners</a></li>
-                    <li><a href="{{url('/')}}/about">About</a></li>
-                    <!-- XTTT 
-                    <li><a href="{{url('/')}}/contact">Contact US</a></li>
-                    -->
+                    <li><h4><a href="{{url('/')}}/regPartner">Partners</a></h4></li>
+                    <li><h4><a href="{{url('/')}}/partners/public">Quick Join</a></h4></li>
+                    <li><h4><a href="{{url('/')}}/about">About</a></h4></li>
+                    <li><h4><a href="{{url('/')}}/contact">Contact US</a></h4></li>
                 </ul>
                 </div>
                 <!--  End of .col-sm-4 -->
@@ -378,12 +380,12 @@ function googleTranslateElementInit() {
                 <div class="col-sm-4 col-md-4 col-lg-4">
                 <ul>
                     <li><h3>Connect with us Socially</h3></li>
-                    <li><a href="http://facebook.com/gangaservices">Facebook</a></li>
-                    <li><a href="https://www.youtube.com/channel/UC612tWYpQW3OEKuYddfXoXQ">Youtube</a></li>
+                    <li><h4><a href="http://facebook.com/gangaservices">Facebook</a></h4></li>
+                    <li><h4><a href="https://www.youtube.com/channel/UC612tWYpQW3OEKuYddfXoXQ">Youtube</a></li>
 
                     <!--
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Pinterest</a></li>
+                    <li><h4><a href="#">Twitter</a></h4></li>
+                    <li><h4><a href="#">Pinterest</a></h4></li>
                     -->
 
                 </ul>
