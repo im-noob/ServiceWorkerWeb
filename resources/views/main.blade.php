@@ -153,6 +153,7 @@
         @yield('about')
         @yield('MyOrder')
         @yield('auth.login')
+        @yield('productDetails')
         @component('components.login')
         @endcomponent
         <!-- Blade Part:END -->

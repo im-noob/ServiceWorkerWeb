@@ -126,6 +126,7 @@ class IndexController extends Controller
         return view('home',['data'=>$dataArray,'category'=>$cat,'subcat'=>$subCat,'feedback'=>$feedback,'cityName'=>$cityName]);
     }
 
+    //for service seciton popup
     public function getSubcategory(Request $request){
         $subCat = DB::table('wor_subcat_tab')
         ->where('wor_cat_id',$request->form_id)

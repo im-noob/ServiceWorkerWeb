@@ -18,6 +18,7 @@ class home extends Controller
         return view('Registration',['areaName'=>$cityName]);
 
     }
+    
     function regPartnerSubmit(Request $request){
 
         $name = $request->name;

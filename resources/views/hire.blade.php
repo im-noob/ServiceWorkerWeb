@@ -23,15 +23,20 @@
                    
                     <DIV class="col-md-4 mb-4">
                         <div class="card">
-                            <div class="">
-                                <img id="ppic{{$data[$i]->wor_list_id}}" srcOrginal = "{{$data[$i]->pic}}" src="{{url('founder/')}}/public/{{$data[$i]->pic}}" class="card-img-top img-thumbnail rounded img-fluid" onerror="this.src = 'https://i.imgur.com/QtXcFQM.png';"  alt="{{$data[$i]->work_name}}  ganga services" style="    height: 200px;">
+                            <div>
                                 <div class="card-body">
-                                    <h4 class="card-title" style="margin-top: 10%;" id="pname{{$data[$i]->wor_list_id}}">{{$data[$i]->work_name}}</h4>
-                                    <p class="card-text">{{$data[$i]->info}}</p>
+                                    <a href=" {{url('/')}}/Productdetails/{{$type}}/{{$data[$i]->wor_list_id}}"  style="text-decoration: none">
+                                        <img id="ppic{{$data[$i]->wor_list_id}}" srcOrginal = "{{$data[$i]->pic}}" src="{{url('founder/')}}/public/{{$data[$i]->pic}}" class="card-img-top img-thumbnail rounded img-fluid" onerror="this.src = 'https://i.imgur.com/QtXcFQM.png';"  alt="{{$data[$i]->work_name}}  ganga services" style="    height: 200px;">
+                                        
+                                        <h4 class="card-title" style="margin-top: 10%;" id="pname{{$data[$i]->wor_list_id}}">{{$data[$i]->work_name}}</h4>
+                                        <p class="card-text">{{$data[$i]->info}}</p>
+                                        
+                                        <span><i class="fas fa-rupee-sign" id="price{{$data[$i]->wor_list_id}}">{{$data[$i]->price}}</i> /- </span>
                                     
-                                    <span><i class="fas fa-rupee-sign" id="price{{$data[$i]->wor_list_id}}">{{$data[$i]->price}}</i> /- </span>
+                                    </a>
+                                    
                                     <div class="bton" id="cbtonview{{$data[$i]->wor_list_id}}" >
-                                    <button class="btn btn-primary" onclick="changeView({{$data[$i]->wor_list_id}})" >Add to Cart</button>                                    
+                                        <button class="btn btn-primary addToCartButton" onclick="changeView({{$data[$i]->wor_list_id}})" >Add to Cart</button>                                    
                                     </div> 
                                 </div>
                             </div>
@@ -86,7 +91,9 @@
 
         
     })
-    
+    $(function(){
+        
+    })
     
     
    

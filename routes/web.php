@@ -126,3 +126,7 @@ Route::post('sendReportByUser', 'MyOrder_c@submitReport');
 Route::get('softwareService',function(){
     return view('softwareService.main');
 });
+
+
+// Get Details Of Prodcut
+Route::get('Productdetails/{type}/{id}', 'hireController@showDetails');
