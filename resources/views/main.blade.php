@@ -93,7 +93,7 @@
                     </li>
                     
                     <li class="nav-item active">
-                        <a class="nav-link nav-text"  href="{{url('/')}}/partner/public" >Partners</a>
+                        <a class="nav-link nav-text"  href="{{url('/')}}/partners/public" >Partners</a>
                     </li>
 
 
@@ -369,7 +369,8 @@ function googleTranslateElementInit() {
                 <div class="col-sm-4 col-md-4 col-lg-4">
                 <ul>
                     <li><h3>Quick Links</h3></li>
-                    <li><h4><a href="{{url('/')}}/regPartner">Partners</a></h4></li>
+                    <li><h4><a href="{{url('/')}}/partners/public">Partners</a></h4></li>
+                    <li><h4><a href="{{url('/')}}/regPartner">Quik Partners</a></h4></li>
                     <li><h4><a href="{{url('/')}}/partners/public">Quick Join</a></h4></li>
                     <li><h4><a href="{{url('/')}}/about">About</a></h4></li>
                     <li><h4><a href="{{url('/')}}/contact">Contact US</a></h4></li>
