@@ -111,7 +111,7 @@
             $('#cbtonview'+id).empty();
             $('#cbtonview'+id).append(
                 '<button class="btn btn-primary" onclick="decreaseVal('+id+')" >-</button>'+
-                '<span class="bton-item" id="itemCount'+id+'">1</span>'+
+                '<span class="bton-item ml-2 mr-2" id="itemCount'+id+'">1</span>'+
                 '<button class="btn btn-primary" onclick="increaseVal('+id+')" >+</button>'
             );
             console.log('view Changed');

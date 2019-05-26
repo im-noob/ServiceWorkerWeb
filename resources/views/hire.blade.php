@@ -35,9 +35,17 @@
                                     
                                     </a>
                                     
-                                    <div class="bton" id="cbtonview{{$data[$i]->wor_list_id}}" >
-                                        <button class="btn btn-primary addToCartButton" onclick="changeView({{$data[$i]->wor_list_id}})" >Add to Cart</button>                                    
-                                    </div> 
+                                    {{-- Importing Add to Cart Button:START --}}
+                                    @component('components.AddToCartButton')
+                                        @slot('uniqueIDForButtonID')
+                                            {{$data[$i]->wor_list_id}}
+                                        @endslot
+                                        
+                                        @slot('extrabuttonclass')
+                                        @endslot
+                                    @endcomponent
+                                    {{-- Importing Add to Cart Button:END --}}
+
                                 </div>
                             </div>
                         </div>
@@ -74,25 +82,25 @@
 
 <script type="text/javascript">
 
-    //checking for already added cart
-    var totalPriceOnLoad = 0 ;
-    AllCartItemWorkListID.forEach(function(wor_list_id){
-        db.cartItems.where("wor_list_id").anyOf(wor_list_id).each(function(cartItem){
-            $('#cbtonview'+wor_list_id).empty();
-            $('#cbtonview'+wor_list_id).append(
-                '<button class="btn btn-primary" onclick="decreaseVal('+wor_list_id+')" >-</button>'+
-                '<span class="bton-item" id="itemCount'+wor_list_id+'">'+cartItem.noofitem+'</span>'+
-                '<button class="btn btn-primary" onclick="increaseVal('+wor_list_id+')" >+</button>'
-            );
-            totalPriceOnLoad += cartItem.noofitem * cartItem.price;
-            $('#total').text(totalPriceOnLoad);
-            // console.log(cartItem.wor_list_id,)
-        }); 
-
-        
-    })
+    
     $(function(){
-        
+        //checking for already added cart
+        var totalPriceOnLoad = 0 ;
+        AllCartItemWorkListID.forEach(function(wor_list_id){
+            db.cartItems.where("wor_list_id").anyOf(wor_list_id).each(function(cartItem){
+                $('#cbtonview'+wor_list_id).empty();
+                $('#cbtonview'+wor_list_id).append(
+                    '<button class="btn btn-primary" onclick="decreaseVal('+wor_list_id+')" >-</button>'+
+                    '<span class="bton-item" id="itemCount'+wor_list_id+'">'+cartItem.noofitem+'</span>'+
+                    '<button class="btn btn-primary" onclick="increaseVal('+wor_list_id+')" >+</button>'
+                );
+                totalPriceOnLoad += cartItem.noofitem * cartItem.price;
+                $('#total').text(totalPriceOnLoad);
+                // console.log(cartItem.wor_list_id,)
+            }); 
+
+            
+        })    
     })
     
     

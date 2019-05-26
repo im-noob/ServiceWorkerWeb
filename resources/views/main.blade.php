@@ -142,7 +142,7 @@
     </section>        
 
 
-    <div style="margin-top: 57.72px">
+    <div style="margin-top: 30px;">
         <!-- Blade Part:START -->
         @yield('home')
         @yield('profile')

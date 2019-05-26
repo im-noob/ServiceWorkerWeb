@@ -263,10 +263,48 @@ class hireController extends Controller
 
     function showDetails($type,$id){
 
-        echo($type);
-        echo($id);
-        return view('productDetails',[
+        $DetailsList = null;
+        if ($type == "home") {
+            $DetailsList = DB::table('wor_list_tab')
+                        // ->join('wor_price_list','wor_price_list.wor_list_id','=','wor_list_tab.wor_list_id')
+                        ->select('wor_list_id','work_name','pic','backpic','work_type','price','info')
+                        ->where('wor_list_id',$id)
+                        ->where('status',13)
+                        // ->distinct()
+                        ->first();
 
+
+            //print_r($DetailsList);exit();
+            
+        }else if($type == "shop"){
+
+
+            $DetailsList = DB::table('wor_list_tab')
+                        ->join('wor_price_list','wor_price_list.wor_list_id','=','wor_list_tab.wor_list_id')
+                        ->join('wor_info_tab','wor_info_tab.wor_info_id','=','wor_price_list.wor_info_id')
+                        ->select('wor_list_tab.wor_list_id','work_name','wor_list_tab.pic','work_type','wor_price_list.price','info')
+                        ->where('wor_info_tab.shop_id',$id)
+                        ->where('wor_info_tab.status',13)
+                        // ->distinct()
+                        ->get();
+
+
+            //print_r($DetailsList);exit();
+            // return view('hire',['data'=>$DetailsList,'subcat'=>$id]);
+        }else if($type == "search"){
+            $DetailsList = DB::table('wor_list_tab')
+                        // ->join('wor_price_list','wor_price_list.wor_list_id','=','wor_list_tab.wor_list_id')
+                        ->select('wor_list_tab.wor_list_id','work_name','wor_list_tab.pic','work_type','price','info')
+                        ->where('wor_list_tab.work_name','LIKE', '%'.$id.'%')
+                        ->where('status',13)
+                        // ->distinct()
+                        ->get();
+
+        }
+
+
+        return view('productDetails',[
+            'DetailsList'=>$DetailsList
         ]);
         
     }
