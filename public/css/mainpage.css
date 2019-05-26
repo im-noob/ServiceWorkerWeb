@@ -581,3 +581,10 @@ h3{
 .checkedStar {
   color: orange;
 }
+
+
+/* border radions top */
+.roundTop {
+  border-top-left-radius: 10px!important;
+  border-top-right-radius: 10px!important;
+}

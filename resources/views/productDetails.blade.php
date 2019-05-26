@@ -16,7 +16,7 @@
 
     {{-- Info:START --}}
     <section>
-        <div class="container card" style="padding: 0;border-top-left-radius: 10px;border-top-right-radius: 10px">
+        <div class="container card roundTop" style="padding: 0;">
             <div class="card-body">
                 <h2 class="card-title" style="font-weight: 600;font-family: Axiforma-Regular,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;">About The Product</h5>
                 <p class="card-text" ">{{$DetailsList->info}}</p>
@@ -68,27 +68,94 @@
     {{-- ADD To CArt and Continus Cart BUTTON:END --}}
     
     {{-- Latet Customer Review:START --}}
-    <section>
-        <div class="container card">
-            <h3 style="font-weight: 700">Latest Customer Review</h3>
+    <section class="mt-4">
+        <div class="container card roundTop">
+            <h3 style="font-weight: 700" class="mt-2">Latest Customer Review</h3>
             <span class="text-muted">For {{$DetailsList->work_name}}   </span>
-            <section style="background-color: #f5f5f5;border-radius: 4px">
+            
+            {{-- Average and total Review:START --}}
+            <section style="background-color: #f5f5f5;border-radius: 4px; padding: 25px" class="mt-3">
                 <div class="row">
-                    <div class="col-sm-2">
-                        <i class="fas fa-star"></i>
+                    <div class="col-2" style="text-align: center;align-self: center;">
+                        <i class="fas fa-star fa-2x" style="color:#4179ea"></i>
                     </div>
-                    <div class="col-sm-10">
+                    <div class="col-9 ml-2">
                         <div class="row">
-                            <span style="font-weight: 700;">4.7 out of 5 start</span>
-                            <span class="text-muted">average rating </span>
+                            <span style="font-weight: 700;">{{$avgRatting}} out of 5 star</span>
+                            
                         </div>
                         <div class="row">
-                            <span style="font-weight: 700;">17,765 review</span>
+                            <span class="text-muted">average rating of our service</span>
                         </div>
                     </div>
                 </div>
 
+                <div class="row mt-4">
+                        <div class="col-2" style="text-align: center;align-self: center;">
+                            <i class="fas fa-grin-alt fa-2x" style="color:#4179ea"></i>
+                        </div>
+                        <div class="col-9 ml-2">
+                            <div class="row">
+                                <span style="font-weight: 700;">{{$countRatting}} review/rating</span>
+                            </div>
+                            <div class="row">
+                                <span class="text-muted">of our service by user </span>
+                                
+                            </div>
+                        </div>
+                    </div>
+
             </section>
+            {{-- Average and total Review:END --}}
+
+            <section class="mb-4 mt-4">
+                <div class="container">
+
+                    @forelse ($rattingList as $rating)
+                        <div>
+                            {{-- Showing message only when there is not any empty feedback --}}
+                            @if (strlen($rating->feedback))
+                                <div class="row mb-2 ml-1">
+                                        <i class="fas fa-quote-left class="col-2"" style="color: #ddd"></i>
+                                        <span class="col-10">  {{$rating->feedback}}</span>
+                                </div>
+                            @endif
+
+                            <div class="row">
+                                <div class="col-3">
+                                    <img src="{{$rating->pic}}" onerror = "this.src = 'https://i.imgur.com/CWMqgHO.png';" alt="..." class="img-thumbnail">
+                                </div>
+                                <div class="col-7">
+                                    <div class="row">
+                                        <div>
+                                            {{-- Showing name anonymous if no name --}}
+                                            @if (strlen($rating->cname))
+                                                {{$rating->cname}}
+                                            @else
+                                                Anonymous
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="text-muted">{{$rating->feedback_date}}</div>
+                                    </div>
+                                </div>
+                                <div class="col-2" style="align-self: center;">
+                                    <i class="fas fa-star" style="color:#228d27">{{$rating->ratting}}</i>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                    @empty
+                        <div style="text-align: center;">No Review Found on this Service</div>
+                    @endforelse
+                    
+                    
+
+
+                </div>
+            </section>
+
         </div>
     </section>
     {{-- Latet Customer Review:END --}}

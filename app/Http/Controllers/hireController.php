@@ -272,7 +272,38 @@ class hireController extends Controller
                         ->where('status',13)
                         // ->distinct()
                         ->first();
+            // Averag3 ratting
+            $avgRattingRaw = DB::table('feedback_table')
+                        ->join('cart_tab','cart_tab.cart_id','=','feedback_table.cartID')
+                        ->select('ratting')
+                        ->where('cart_tab.wor_list_id',$id)
+                        ->avg('ratting');
 
+            // rounding off to 1 digit
+            $avgRatting = round($avgRattingRaw,1);
+            // echo("avg\n");
+            // print_r($avgRatting);
+
+            // Total ratting
+            $countRatting = DB::table('feedback_table')
+                        ->join('cart_tab','cart_tab.cart_id','=','feedback_table.cartID')
+                        ->select('ratting')
+                        ->where('cart_tab.wor_list_id',$id)
+                        ->count();
+            // echo("Count\n");
+            // print_r($countRatting);
+
+            //Rattig List 
+            $rattingList = DB::table('feedback_table')
+                            ->join('cart_tab','cart_tab.cart_id','=','feedback_table.cartID')
+                            ->join('customer_info_tab','customer_info_tab.customer_info_id','=','feedback_table.cutomer_id')
+                            ->select('customer_info_tab.cname as cname','customer_info_tab.pic as pic','ratting','feedback',DB::raw('date_format(feedback_table.created_at, "%M %Y") as feedback_date'))
+                            ->where('cart_tab.wor_list_id',$id)
+                            ->where('ratting','>',4.0)
+                            ->limit(5)
+                            ->get();
+            // echo("List\n");
+            // print_r($rattingList);
 
             //print_r($DetailsList);exit();
             
@@ -302,9 +333,12 @@ class hireController extends Controller
 
         }
 
-
+        // return;
         return view('productDetails',[
-            'DetailsList'=>$DetailsList
+            'DetailsList'=>$DetailsList,
+            'avgRatting'=>$avgRatting,
+            'countRatting'=>$countRatting,
+            'rattingList'=>$rattingList,
         ]);
         
     }
