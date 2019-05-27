@@ -142,17 +142,17 @@
     @component('softwareService.Components.slickSlider')
         @slot('innerData')
             <div class="col-sm-3 card happy-brand" style="background-color: white" >
-                <img class="img-fluid m-4  rounded mx-auto" src="http://jetprogramme.org/wp-content/uploads/2017/03/Square-Instagram-Logo.png"/>
+                <img class="img-fluid m-4  rounded mx-auto" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png"/>
             </div>
             <div class="col-sm-3 card happy-brand">
-                <img class="img-fluid m-4 rounded mx-auto" src="http://jetprogramme.org/wp-content/uploads/2017/03/Square-Instagram-Logo.png"/>
+                <img class="img-fluid m-4 rounded mx-auto" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png"/>
             </div>
             <div class="col-sm-3 card happy-brand">
-                <img class="img-fluid m-4 rounded mx-auto" src="http://jetprogramme.org/wp-content/uploads/2017/03/Square-Instagram-Logo.png"/>
+                <img class="img-fluid m-4 rounded mx-auto" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png"/>
                 
             </div>
             <div class="col-sm-3 card happy-brand">
-                <img class="img-fluid m-4 rounded mx-auto" src="http://jetprogramme.org/wp-content/uploads/2017/03/Square-Instagram-Logo.png"/>
+                <img class="img-fluid m-4 rounded mx-auto" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png"/>
                 
             </div>
         @endslot

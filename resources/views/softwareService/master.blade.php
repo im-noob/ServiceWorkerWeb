@@ -2,8 +2,49 @@
 <html>
 <head>
     <meta charset='utf-8'>
-    <title>Ganga Services | Mobile App Development | Website Development | Software Development | Digital Marketing </title>
+    <title>Best Design & Development Company in India Ranked # 1 for Top Services | GangaServices</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+	<meta name="theme-color" content="#2874f0"/>
+	<meta name="keywords" content="GangaService, GangaServices,Saloon, decoration, Service, Bahgalpur, Saloon, online,web Developer, beauty parlour, etc"/>
+	<meta name="google-site-verification" content="GXUqCRblVI0vfyaIcsSyTu8VIF5_ak8O8i67KGg0cNA" />
+    <meta name="Description" content="Ganga Service India is a top-ranked digital company backed by the best designers, developers and Marketers in India. Ganga Services creates leading-edge software, mobile apps & digital marketing strategies, making businesses grow into industry leaders.">
+    
+
+
+
+    <!-- PWA:START-->
+    <link rel="manifest" href="{{url('/')}}/manifest.json">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="{{url('/')}}/images/icons/icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{url('/')}}/images/icons/icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{url('/')}}/images/icons/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{url('/')}}/images/icons/icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{url('/')}}/images/icons/icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{url('/')}}/images/icons/icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{url('/')}}/images/icons/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{url('/')}}/images/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{url('/')}}/images/icons/icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{url('/')}}/images/icons/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{url('/')}}/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{url('/')}}/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url('/')}}/images/icons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{url('/')}}/images/icons/icon-144x144.png">
+
+    <script>
+        // CODELAB: Register service worker.
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+          navigator.serviceWorker.register('{{url('/')}}/service-worker.js')
+                .then((reg) => {
+                  console.log('Service worker registered.', reg);
+                });
+          });
+        }
+    
+    </script>
+    <!-- PWA:END -->
+
 
     <!-- Bootstrap:START -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -21,8 +62,8 @@
     <!-- Font Awesome:END -->
 
     <!-- Slik Sliderbar:START -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <!-- Slik Sliderbar:END -->
 
