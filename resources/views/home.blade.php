@@ -72,9 +72,9 @@
                                       <img  
                                             src="{{url('founder/')}}/public/{{$data[$i][2][$j]->pic}}" 
                                             onerror="this.src = 'https://i.imgur.com/e2Ji5su.jpg';"
-                                            class="rounded img1" 
+                                            class="rounded img1 img-responsive" 
                                             alt="{{$data[$i][2][$j]->subcat_name}} gangaservices"
-                                            style="overflow: hidden;-radius: 4px;"
+                                            style="overflow: hidden;-radius: 4px;height: 100px;"
                                         >
                                         <div style="font-weight: 600; margin-block-start: 10px;">{{$data[$i][2][$j]->subcat_name}}</div>
                                     </a>

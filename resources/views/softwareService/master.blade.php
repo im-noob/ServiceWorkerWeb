@@ -86,12 +86,11 @@
     <footer>
         <div class="container"  style="text-align: center;">
 
-
             {{-- Only for pc:START --}}
             <div class="row onlyonPC mb-4">
                 {{-- Header --}}
                 <div class="col-md-4 mt-4 " >
-                    <h2 style="font-size: 40px;">Ganga Services</h2>
+                    <h2 style="font-size: 48px;">Ganga Services</h2>
                     <div style="text-align: start;"><a class="nonDecoLinkFooter"><i class="fas fa-phone" ></i> Call Us 96082 40612 </a></div>
                 </div>
 

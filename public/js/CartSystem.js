@@ -53,13 +53,22 @@
 
             console.log(itemCount);
             if(itemCount > 0){
-                
-                
-                
 
                 $('#itemCount'+id).text(itemCount);
                 updateRow(id,itemCount);
                 getTotal();
+            }else if(itemCount == 0){
+
+                // Changing button to add to cart
+                $('#cbtonview'+id).empty();
+                $('#cbtonview'+id).append(
+                    '<button class="btn btn-primary addToCartButton " onclick="changeView('+id+')" >Add to Cart</button>'
+                );
+
+                $('#itemCount'+id).text(itemCount);
+                updateRow(id,itemCount);
+                getTotal();
+                deleteRow(id);
             }
 
         }

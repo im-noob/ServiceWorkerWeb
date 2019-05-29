@@ -588,3 +588,38 @@ h3{
   border-top-left-radius: 10px!important;
   border-top-right-radius: 10px!important;
 }
+
+
+
+
+
+
+/* Deveice accordign CSS */
+/* start of desktop styles */
+@media screen and (max-width: 991px) {
+  /* start of large tablet styles */
+  .img-responsive {
+    /* min-width: 70%;
+    height: 150px; */
+
+  }
+}
+ 
+@media screen and (max-width: 767px) {
+  /* start of medium tablet styles */
+  /* Adding a fixed/percentage min-width could ensure that the image doesn't get too small */
+  .img-responsive {
+    /* min-width: 30%;
+    height: 120px; */
+
+  }
+}
+ 
+@media screen and (max-width: 479px) {
+  /* start of phone styles */
+  /* It's possible to hide the image if the screen becomes too small */
+  .img-responsive {
+    /* min-width: 10%;
+    height: 100px; */
+  }
+ }

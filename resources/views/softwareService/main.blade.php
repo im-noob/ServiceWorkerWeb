@@ -10,30 +10,44 @@
                     <li data-target="#carouselcontactus" data-slide-to="1" ></li>
                     <li data-target="#carouselcontactus" data-slide-to="2" ></li>
                     <li data-target="#carouselcontactus" data-slide-to="3" ></li>
+                    <li data-target="#carouselcontactus" data-slide-to="4" ></li>
+                    <li data-target="#carouselcontactus" data-slide-to="5" ></li>
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{url('/')}}/images/Development/watertree.jpg" class="d-block w-100" alt="We love helping Customer Support Ganga Services">
+                        <img src="{{url('/')}}/images/SoftwareService/coding0.jpg" class="d-block w-100 darken50" alt="We love helping Customer Support Ganga Services">
                         <div class="carousel-caption  d-sm-block">
-                            <h3>We Love Helping</h3>
+                            <h3  class="largeFontForPC1">Innovative and Customized Development</h3>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{url('/')}}/images/Development/city.jpg" class="d-block w-100" alt="24X7 Call support Ganga Services">
+                        <img src="{{url('/')}}/images/SoftwareService/coding1.jpg" class="d-block w-100 darken50" alt="We love helping Customer Support Ganga Services">
                         <div class="carousel-caption  d-sm-block">
-                            <h3>We are always here to help you</h3>
+                            <h3  class="largeFontForPC1">User Friendly UI</h3>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{url('/')}}/images/Development/iceberger.jpg" class="d-block w-100" alt="Send Feedback to improve us  ganga services">
+                        <img src="{{url('/')}}/images/SoftwareService/coding2.jpg" class="d-block w-100 darken50" alt="24X7 Call support Ganga Services">
                         <div class="carousel-caption  d-sm-block">
-                            <h3>Just Leave Feedback for us</h3>
+                            <h3  class="largeFontForPC1">Experienced Development Team</h3>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{url('/')}}/images/Development/waterpull.jpg" class="d-block w-100" alt="Send Feedback to improve us  ganga services">
+                        <img src="{{url('/')}}/images/SoftwareService/coding3.jpg" class="d-block w-100 darken50" alt="Send Feedback to improve us  ganga services">
                         <div class="carousel-caption  d-sm-block">
-                            <h3>Just Leave Feedback for us</h3>
+                            <h3  class="largeFontForPC1">Flexible Price</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{url('/')}}/images/SoftwareService/coding4.jpg" class="d-block w-100 darken50" alt="Send Feedback to improve us  ganga services">
+                        <div class="carousel-caption  d-sm-block">
+                            <h3  class="largeFontForPC1">Award Winning Support</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{url('/')}}/images/SoftwareService/coding5.jpg" class="d-block w-100 darken50" alt="Send Feedback to improve us  ganga services">
+                        <div class="carousel-caption  d-sm-block">
+                            <h3  class="largeFontForPC1">Timely Delivery</h3>
                         </div>
                     </div>
                 </div>
@@ -68,12 +82,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 mt-2">
-                    <div class="card bg-dark text-white">
-                        <img src="{{url('/')}}/images/Development/watertree.jpg" class="card-img rounded mx-auto" alt="" height="390px">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text">Last updated 3 mins ago</p>
+                    <div class="card bg-dark text-white  img-hover-zoom">
+                        <img class="darken50" src="{{url('/')}}/images/SoftwareService/mobile-application.jpg" class="card-img rounded mx-auto" alt="" height="390px">
+                        <div class="card-img-overlay"  style="text-align: center;">
+                            <h1 class="card-title">Mobile App Developement<div>(Android & IOS)</div></h1>
                         </div>
                     </div>
                 </div>
@@ -82,47 +94,38 @@
                     <div class="row">
 
                         <div class="col-sm-6 mt-2">
-                            <div class="card bg-dark text-white">
-                                <img src="{{url('/')}}/images/Development/watertree.jpg" class="card-img rounded mx-auto" alt="" height="190px" >
-                                <div class="card-img-overlay">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text">Last updated 3 mins ago</p>
+                            <div class="card bg-dark text-white  img-hover-zoom">
+                                <img class="darken50" src="{{url('/')}}/images/SoftwareService/Web-CMS-Development.jpg" class="card-img rounded mx-auto" alt="" height="190px" >
+                                <div class="card-img-overlay"  style="text-align: center;">
+                                    <h1 class="card-title">Web and CMS Developement</h1>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-sm-6 mt-2">
-                            <div class="card bg-dark text-white">
-                                <img src="{{url('/')}}/images/Development/watertree.jpg" class="card-img rounded mx-auto" alt="" height="190px" >
-                                <div class="card-img-overlay">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text">Last updated 3 mins ago</p>
+                            <div class="card bg-dark text-white  img-hover-zoom">
+                                <img class="darken50" src="{{url('/')}}/images/SoftwareService/Digital-Marketing.jpg" class="card-img rounded mx-auto" alt="" height="190px" >
+                                <div class="card-img-overlay"  style="text-align: center;">
+                                    <h1 class="card-title">Digital Marketing</h1>
                                 </div>
                             </div>
                         </div>
-            
                     </div>
                     <div class="row">
                         <div class="col-sm-6 mt-2">
-                            <div class="card bg-dark text-white">
-                                <img src="{{url('/')}}/images/Development/watertree.jpg" class="card-img rounded mx-auto" alt="" height="190px" >
-                                <div class="card-img-overlay">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text">Last updated 3 mins ago</p>
+                            <div class="card bg-dark text-white  img-hover-zoom">
+                                <img class="darken50" src="{{url('/')}}/images/SoftwareService/software-developement.jpg" class="card-img rounded mx-auto" alt="" height="190px" >
+                                <div class="card-img-overlay"  style="text-align: center;">
+                                    <h1 class="card-title">Software Developement</h1>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-sm-6 mt-2">
-                            <div class="card bg-dark text-white">
-                                <img src="{{url('/')}}/images/Development/watertree.jpg" class="card-img rounded mx-auto" alt="" height="190px" >
-                                <div class="card-img-overlay">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text">Last updated 3 mins ago</p>
+                            <div class="card bg-dark text-white  img-hover-zoom">
+                                <img class="darken50" src="{{url('/')}}/images/SoftwareService/corporate-branding.jpg" class="card-img rounded mx-auto" alt="" height="190px" >
+                                <div class="card-img-overlay"  style="text-align: center;">
+                                    <h1 class="card-title">Corporate Branding</h1>
                                 </div>
                             </div>
                         </div>
@@ -139,6 +142,7 @@
 
     
     {{-- Happy Customer:START --}}
+    <H2 class="mt-5" style= "text-align:center;margin-top:5px; font-weight: 800; ">Our Happy Clients</H2>      
     @component('softwareService.Components.slickSlider')
         @slot('innerData')
             <div class="col-sm-3 card happy-brand" style="background-color: white" >

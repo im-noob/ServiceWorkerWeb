@@ -88,7 +88,7 @@
                             </select>
 
                             <div class="form-group mb-3" style="    margin-top: 20px;">
-                                <textarea name="messageCUS"  class="form-control" id="messageContactUS" rows="3" placeholder="Address*" required></textarea>
+                                <textarea name="messageCUS"  class="form-control" id="messageContactUS" rows="3" placeholder="Message*" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         

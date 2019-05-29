@@ -29,7 +29,10 @@
                                         <img id="ppic{{$data[$i]->wor_list_id}}" srcOrginal = "{{$data[$i]->pic}}" src="{{url('founder/')}}/public/{{$data[$i]->pic}}" class="card-img-top img-thumbnail rounded img-fluid" onerror="this.src = 'https://i.imgur.com/QtXcFQM.png';"  alt="{{$data[$i]->work_name}}  ganga services" style="    height: 200px;">
                                         
                                         <h4 class="card-title" style="margin-top: 10%;" id="pname{{$data[$i]->wor_list_id}}">{{$data[$i]->work_name}}</h4>
-                                        <p class="card-text">{{$data[$i]->info}}</p>
+                                        <p class="card-text">
+                                            {{substr($data[$i]->info,0,100)}}..
+                                            <span style="color:blue;">more</span>
+                                        </p>
                                         
                                         <span><i class="fas fa-rupee-sign" id="price{{$data[$i]->wor_list_id}}">{{$data[$i]->price}}</i> /- </span>
                                     
@@ -40,7 +43,7 @@
                                         @slot('uniqueIDForButtonID')
                                             {{$data[$i]->wor_list_id}}
                                         @endslot
-                                        
+                                         
                                         @slot('extrabuttonclass')
                                         @endslot
                                     @endcomponent
