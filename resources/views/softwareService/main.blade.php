@@ -146,17 +146,17 @@
     @component('softwareService.Components.slickSlider')
         @slot('innerData')
             <div class="col-sm-3 card happy-brand" style="background-color: white" >
-                <img class="img-fluid m-4  rounded mx-auto" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png"/>
+                <img class="img-fluid m-4  rounded mx-auto" src="http://hardigurdi.com/images/icon.png" style="height: 100px;">
             </div>
             <div class="col-sm-3 card happy-brand">
-                <img class="img-fluid m-4 rounded mx-auto" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png"/>
+                <img class="img-fluid m-4 rounded mx-auto" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png" style="height: 100px;"/>
             </div>
             <div class="col-sm-3 card happy-brand">
-                <img class="img-fluid m-4 rounded mx-auto" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png"/>
+                <img class="img-fluid m-4 rounded mx-auto" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png" style="height: 100px;"/>
                 
             </div>
             <div class="col-sm-3 card happy-brand">
-                <img class="img-fluid m-4 rounded mx-auto" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png"/>
+                <img class="img-fluid m-4 rounded mx-auto" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png" style="height: 100px;"/>
                 
             </div>
         @endslot
@@ -217,21 +217,20 @@
             </div>
         </div>
 
-        {{-- Float button :call --}}
-        <div class="mobile-cta">
-            <a href="mailto:help.gangaservices@gmail.com?subject=Call me&body=I'm Intrested" class="phone-flot-button" style="    background-color: red;">
-                <i class="fas fa-envelope" style="color:white"></i>
-            </a>
-            <a href="tel:+919608240612" class="phone-flot-button">
-                <i class="fas fa-phone"></i>
-            </a>
-            <a href="sms:+919608240612" class="phone-flot-button" style="background-color: #222425">
-                <i class="far fa-comment-alt"></i>
-            </a>
-            <a href="https://wa.me/918340669783/?text=I%27m%20Intrested.%20Please%20call%20me%20back." class="phone-flot-button">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-        </div>
+        @component('softwareService.Components.ContactFloatingButton')
+            @slot('emailID')
+                help.gangaservices@gmail.com
+            @endslot
+            @slot('phoneForTEL')
+                +919608240612
+            @endslot
+            @slot('phoneForSMS')
+                +919608240612
+            @endslot
+            @slot('phoneForWhatsapp')
+                918340669783
+            @endslot
+        @endcomponent
         
         
 

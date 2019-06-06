@@ -10,9 +10,7 @@
 
 /* PC VIEW active */
 @media all and (min-width:992px) and (max-width: 2000px) {
-    .mobile-cta {
-        display: none;
-    } 
+   
     .onlyonPhone{
         display: none;
     }
@@ -32,40 +30,6 @@
     }
 }
   
- 
-
-/* Phone button floating  */
-.mobile-cta {
-    position: fixed;
-    bottom: 64px;
-    width: 42px;
-    z-index: 999;
-    /* display: none; */
-    right: 10px;
-    -webkit-transition: 0.6s;
-    -moz-transition: 0.6s;
-    -o-transition: 0.6s;
-    transition: 0.6s;
-}
-
-/* Phone button floating  */
-.phone-flot-button{
-    text-decoration: none;
-    cursor: pointer;
-    background: #1dbc55;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    display: block;
-    overflow: hidden;
-    text-align: center;
-    box-sizing: border-box;
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.46);
-    color: #fff;
-    font-size: 22px;
-    padding-top: 4px;
-    margin-bottom: 10px;
-}
 
 
 /* White text */

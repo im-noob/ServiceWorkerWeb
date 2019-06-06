@@ -25,6 +25,7 @@ class contact extends Controller
             'title'=> $request->OptionCUS,
             'discription'=> $request->messageCUS,
         ]);
+        
         return back()->with('success','Request successfully submitted!');
 
         
