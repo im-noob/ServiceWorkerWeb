@@ -44,6 +44,56 @@
         </div>
     </section>
 
+
+    {{-- CardList:START --}}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3" >
+                    <div class="advCard">
+                        <a href="#" style="text-decoration: none" >
+                            <i class="fas fa-cut fa-rotate-270 fa-2x" style="font-size: 3em;"></i>
+                            <div class="mt-3">NearBy Saloon</div>
+                            <i class="fas fa-long-arrow-alt-right fa-2x arrowOnadvCard"></i>
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="col-sm-6 col-md-3" >
+                    <div class="advCard">
+                        <a href="#" style="text-decoration: none" >
+                            <i class="fas fa-graduation-cap fa-2x" style="font-size: 3em;"></i>
+                            <div class="mt-3">Institution</div>
+                            <i class="fas fa-long-arrow-alt-right fa-2x arrowOnadvCard"></i>
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="col-sm-6 col-md-3" >
+                    <div class="advCard">
+                        <a href="#" style="text-decoration: none" >
+                            <i class="fas fa-microchip fa-2x" style="font-size: 3em;"></i>
+                            <div class="mt-3">Software</div>
+                            <i class="fas fa-long-arrow-alt-right fa-2x arrowOnadvCard"></i>
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="col-sm-6 col-md-3" >
+                    <div class="advCard">
+                        <a href="#" style="text-decoration: none" >
+                            <i class="fas fa-award fa-2x" style="font-size: 3em;"></i>
+                            <div class="mt-3">Near By Saloon</div>
+                            <i class="fas fa-long-arrow-alt-right fa-2x arrowOnadvCard"></i>
+                        </a>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    {{-- CardList:STOP --}}
     <section>   
         <div class= "card">   
             <br>
