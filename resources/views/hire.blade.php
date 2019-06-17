@@ -6,7 +6,7 @@
 </script>
 <section class="bodyView">
         <div class="container">
-        <div class="card">
+        <div class="card" style="box-shadow: none;">
             <div class="card-header">
                 <h3>Work List</h3>
             </div>

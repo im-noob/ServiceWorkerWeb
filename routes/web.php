@@ -127,6 +127,22 @@ Route::get('softwareService',function(){
     return view('softwareService.main');
 });
 
-
+ 
 // Get Details Of Prodcut
 Route::get('Productdetails/{type}/{id}', 'hireController@showDetails');
+
+// Institution Routes
+Route::get('Institution',function(){
+    return view('Institution.Institution');
+});   
+
+//Get Instituion via ajax
+Route::post('getInstitution', 'Institution_c@getInstitutionList');
+
+// Institution details
+Route::get('InstitutionDetails', function () {
+    return view('Institution.InstitutionDetails');
+});
+
+// InstitutionDetails ajax
+Route::post('getDetailsForInstitution', 'Institution_c@getInstitutionDetails');

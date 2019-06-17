@@ -173,6 +173,8 @@
         @yield('productDetails')
         @component('components.login')
         @endcomponent
+        @yield('Institution')
+        @yield('InstitutionDetails')
         <!-- Blade Part:END -->
 
     </div>

@@ -45,54 +45,52 @@
     </section>
 
 
-    {{-- CardList:START --}}
+    {{-- CardList:START 
     <section>
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-md-3" >
-                    <div class="advCard">
-                        <a href="#" style="text-decoration: none" >
+                    <a href="{{url('/')}}/shopsalun" style="text-decoration: none" >
+                        <div class="advCard">
                             <i class="fas fa-cut fa-rotate-270 fa-2x" style="font-size: 3em;"></i>
                             <div class="mt-3">NearBy Saloon</div>
                             <i class="fas fa-long-arrow-alt-right fa-2x arrowOnadvCard"></i>
-                        </a>
-                    </div>
-                    
+                        </div>
+                    </a> 
                 </div>
                 <div class="col-sm-6 col-md-3" >
-                    <div class="advCard">
-                        <a href="#" style="text-decoration: none" >
+                    <a href="{{url('/')}}/Institution" style="text-decoration: none" >
+                        <div class="advCard">
                             <i class="fas fa-graduation-cap fa-2x" style="font-size: 3em;"></i>
                             <div class="mt-3">Institution</div>
                             <i class="fas fa-long-arrow-alt-right fa-2x arrowOnadvCard"></i>
-                        </a>
-                    </div>
-                    
+                        </div>
+                    </a>                    
                 </div>
                 <div class="col-sm-6 col-md-3" >
-                    <div class="advCard">
-                        <a href="#" style="text-decoration: none" >
+                    <a href="{{url('/')}}/softwareService" style="text-decoration: none" >
+                        <div class="advCard">
                             <i class="fas fa-microchip fa-2x" style="font-size: 3em;"></i>
                             <div class="mt-3">Software</div>
                             <i class="fas fa-long-arrow-alt-right fa-2x arrowOnadvCard"></i>
-                        </a>
-                    </div>
-                    
+                        </div>
+                    </a>                    
                 </div>
                 <div class="col-sm-6 col-md-3" >
-                    <div class="advCard">
-                        <a href="#" style="text-decoration: none" >
+                    <a href="{{url('/')}}/contact" style="text-decoration: none" >
+                        <div class="advCard">
                             <i class="fas fa-award fa-2x" style="font-size: 3em;"></i>
-                            <div class="mt-3">Near By Saloon</div>
+                            <div class="mt-3">Contact Us</div>
                             <i class="fas fa-long-arrow-alt-right fa-2x arrowOnadvCard"></i>
-                        </a>
-                    </div>
-                    
+                        </div>
+                    </a>                    
                 </div>
-                
             </div>
         </div>
     </section>
+    --}}
+
+
     {{-- CardList:STOP --}}
     <section>   
         <div class= "card">   

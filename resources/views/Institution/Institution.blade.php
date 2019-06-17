@@ -1,15 +1,15 @@
 @extends('main')
-@section('SalonSelect')
+@section('Institution')
 <section class="bodyView">
     <div class="card">
         <div class="container ">
 
 
-                <h3>Search Salon near you.</h3>
+                <h3>Search Institution near you.</h3>
                 <div class="row">
                     
-                    <div class = "col-md-6 col-sm-6 form-group">
-                        <select id="cityListDropDownForSaloon" style="height: 100%;"  class="custom-select custom-select-sm">
+                    {{-- <div class = "col-md-6 col-sm-6 form-group">
+                        <select id="cityListDropDownForInstitution" style="height: 100%;"  class="custom-select custom-select-sm">
                             <option value="-1" hidden>Choose Area</option>
                             @forelse($cityName as $city)
                                 <option value="{{$city->arealist_id}}" class="dropdown-item" href="#">{{$city->area_city_name}}</option>
@@ -17,57 +17,66 @@
                                 <option  value="0">Bhagalpur</option>
                             @endforelse
                         </select>   
-                    </div>
+                    </div> --}}
                     <div class="col-sm-6">
                             <div class="form-group">
-                                <button id="searchForShop"  class="form-control btn btn-primary  btn-block" ><i class="fas fa-search"> Search</i></button>
+                                <button id="searchForInstitution"  class="form-control btn btn-primary  btn-block" ><i class="fas fa-search"> Search</i></button>
                             </div>
                     </div>
                     
                 </div>
         </div>
 
-
         <div class="card">
             <div class="container" >
                 <div class="card-hrader">
-                    <h4>Local Salon List</h4>
+                    <h4>Local Institution List</h4>
                 </div>
-                <div id="shopListArea" class="row">
-                        @forelse ($saloonshoplist as $shop)
+                <div id="InstitutionListArea" class="row">
+
+
+                   {{-- Place Holder:START --}}
+                    <div class="timeline-wrapper" style="width: 100%">
+                        <div class="timeline-item">
+                        <div class="animated-background">
+                            <div class="background-masker header-top"></div>
+                            <div class="background-masker header-left"></div>
+                            <div class="background-masker header-right"></div>
+                            <div class="background-masker header-bottom"></div>
+                            <div class="background-masker subheader-left"></div>
+                            <div class="background-masker subheader-right"></div>
+                            <div class="background-masker subheader-bottom"></div>
+                            <div class="background-masker content-top"></div>
+                            <div class="background-masker content-first-end"></div>
+                            <div class="background-masker content-second-line"></div>
+                            <div class="background-masker content-second-end"></div>
+                            <div class="background-masker content-third-line"></div>
+                            <div class="background-masker content-third-end"></div>
+                        </div>
+                        </div>
+                    </div>
+                    {{-- Place Holder:END --}}
+                        {{-- @forelse ($InstitutionInstitutionlist as $Institution)
                             
 
-                                {{-- <div class="col-sm-6">
-                                    <a href="{{url('/shopdetails/'.$shop->shop_id.'/')}}"  >
-                                        <div class="card">
-                                            <div class="salonList-container">
-                                                <img src="{{$shop->pic}}" class="card-img" alt="pic">
-                                                <div class="salonList-item">
-                                                    <h5 class="card-title">{{$shop->shop_name}}</h5>
-                                                    <p class="card-text">Address : {{$shop->address}}</p>
-                                                    <p class="card-text">Location : {{$shop->ratting}}  </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div> --}}
+                                
 
                             <div class="col-sm-6" style="margin-bottom: 15px">
-                                <a href="{{url('/hire/shop/'.$shop->shop_id.'/')}}" style="color: black;    text-decoration: none;" >
+                                <a href="{{url('/hire/Institution/'.$Institution->Institution_id.'/')}}" style="color: black;    text-decoration: none;" >
                                     <div class="realShadow row no-gutters">
                                         <div class="col-md-4">
                                             <img 
-                                                src="{{$shop->pic}}" 
+                                                src="{{$Institution->pic}}" 
                                                 class="card-img round img-fluid"
                                                 style="height: 100%; width: 100%" 
-                                                alt="{{$shop->shop_name}} ganga services"
+                                                alt="{{$Institution->Institution_name}} ganga services"
                                                 onerror="this.src = 'https://i.imgur.com/e2Ji5su.jpg';">
                                             
                                         </div>
                                         <div class="col-md-8">
                                             <div class="card-body">
-                                                <h5 class="card-title">{{$shop->shop_name}}</h5>
-                                                <div class="card-text">{{$shop->address}}</div>
+                                                <h5 class="card-title">{{$Institution->Institution_name}}</h5>
+                                                <div class="card-text">{{$Institution->address}}</div>
                                                     
                                                 <span class="card-text" style="
                                                         background: #26a541; 
@@ -75,7 +84,7 @@
                                                         padding: 2px 7px;
                                                         border-radius: 14px;
                                                         font-size: 16px; ">
-                                                    <span style="color: white">{{$shop->ratting}} </span><span class="fa fa-star" style="color:white"></span>
+                                                    <span style="color: white">{{$Institution->ratting}} </span><span class="fa fa-star" style="color:white"></span>
                                                 </span>
                                             </div>
                                         </div>
@@ -86,9 +95,9 @@
                         @empty
                             
                                 <div class="col-sm-12">
-                                    <div style="text-align: center">We are sorry no shop found in this area!!</div>
+                                    <div style="text-align: center">We are sorry no Institution found in this area!!</div>
                                 </div>
-                        @endforelse
+                        @endforelse --}}
                 </div>
                 
             </div>
@@ -101,18 +110,27 @@
 <script type="text/javascript">
     $(document).ready(function(){
 
-        $("#searchForShop").click(function () { 
+        // Get all data
+        getData("all");
+        $("#searchForInstitution").click(function () { 
             // Checking for if area not selected
-            if (!$("#cityListDropDownForSaloon").prop('selectedIndex')>0) {
-                alert("Please Select a Area");
-                return;
-            }
+            // if (!$("#cityListDropDownForInstitution").prop('selectedIndex')>0) {
+            //     alert("Please Select a Area");
+            //     return;
+            // }
+
+            $filter = $("#cityListDropDownForInstitution").children("option:selected").val();
+            // Making ajax request to fetech list 
+            getData($filter);
+            
+        })
+        function getData(filter){
 
             //Making empty the list
-            $("#shopListArea").empty();
+            $("#InstitutionListArea").empty();
 
             //puting place holder in list 
-            $("#shopListArea").append(''+
+            $("#InstitutionListArea").append(''+
                 '<div class="timeline-wrapper"  style="width: 100%">'+
                 '    <div class="timeline-item">'+
                 '        <div class="animated-background">'+
@@ -135,8 +153,6 @@
             '');
             
 
-            $areaID = $("#cityListDropDownForSaloon").children("option:selected").val();
-            // Making ajax request to fetech list 
             
             $.ajax({
                     cache: false,
@@ -144,47 +160,47 @@
                     data: {
        
                         _token:  "{{ csrf_token() }}",
-                        areaID : $areaID,
+                        filter : filter,
                     },
-                    url: "{{url('/')}}/findShopByArea", 
+                    url: "{{url('/')}}/getInstitution", 
                     success: function(response){
                         console.log(response)
                         if (response.received) {
                             //Making empty the list
-                            $("#shopListArea").empty();
+                            $("#InstitutionListArea").empty();
 
-                            if (response.saloonshoplist.length != 0 ) {
-                                $shop = response.saloonshoplist;
+                            if (response.data.length != 0 ) {
+                                $data = response.data;
                                 //making list and appendng  in listbox 
-                                for(var i = 0 ; i < $shop.length ; i ++){
-                                    console.log('src="{{url('/')}}/'+$shop[i].pic+'"');
-                                    $("#shopListArea").append(''+
+                                for(var i = 0 ; i < $data.length ; i ++){
+                                    console.log('src="{{url('/')}}/'+$data[i].pic+'"');
+                                    $("#InstitutionListArea").append(''+
                                 
 
 
                                         '<div class="col-sm-6" style="margin-bottom: 15px">'+
-                                        '    <a href="{{url('/')}}/shopdetails/'+$shop[i].shop_id+'" style="text-decoration: none;" >'+
+                                        '    <a href="{{url('/')}}/InstitutionDetails/'+$data[i].shop_id+'" style="text-decoration: none;" >'+
                                         '        <div class="realShadow row no-gutters">'+
                                         '            <div class="col-md-4">'+
                                         '                <img '+
-                                        '                    src="{{url('/')}}/'+$shop[i].pic+'"'+ 
+                                        '                    src="{{url('/')}}/'+$data[i].pic+'"'+ 
                                         '                    class="card-img round img-fluid"'+
                                         '                    style="height: 100%; width: 100%"'+ 
-                                        '                    alt="'+$shop[i].shop_name+'ganga services"'+
+                                        '                    alt="'+$data[i].Institution_name+'ganga services"'+
                                         '                    onerror="this.src = \'https://i.imgur.com/e2Ji5su.jpg\';">'+
                                                         
                                         '            </div>'+
                                         '            <div class="col-md-8">'+
                                         '                <div class="card-body">'+
-                                        '                    <h5 class="card-title">'+$shop[i].shop_name+'</h5>'+
-                                        '                    <div class="card-text">'+$shop[i].address+'</div>'+
+                                        '                    <h5 class="card-title">'+$data[i].shop_name+'</h5>'+
+                                        '                    <div class="card-text">'+$data[i].address+'</div>'+
                                         '                    <span class="card-text" style="'+
                                         '                            background: #26a541; '+
                                         '                            color: white;    '+
                                         '                            padding: 2px 7px;'+
                                         '                            border-radius: 14px;'+
                                         '                            font-size: 16px; ">'+
-                                        '                        <span style="color: white">'+$shop[i].ratting+' </span><span class="fa fa-star" style="color:white"></span>'+
+                                        '                        <span style="color: white">'+$data[i].ratting+' </span><span class="fa fa-star" style="color:white"></span>'+
                                         '                    </span>'+
                                         '                </div>'+
                                         '            </div>'+
@@ -198,10 +214,10 @@
         
                             }else{
                                 //making list as noe list found 
-                                $("#shopListArea").append(''+
+                                $("#InstitutionListArea").append(''+
     
                                     '    <div class="col-sm-12">'+
-                                    '        <div style="text-align: center">We are sorry no shop found in this area!! Please try other nearby area.</div>'+
+                                    '        <div style="text-align: center">We are sorry no Institution found in this area!! Please try other nearby area.</div>'+
                                     '    </div>'+
 
                                 '');
@@ -223,7 +239,8 @@
                         console.log(error);
                     }
             });
-        })
+
+        }
 
     });
 </script>
