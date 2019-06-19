@@ -142,7 +142,7 @@ Route::post('getInstitution', 'Institution_c@getInstitutionList');
 // Institution details
 Route::get('InstitutionDetails/{id}', 'Institution_c@getInstitutionDetails');
 
-
+// Institution Post
 Route::get('InstitutionPostpage/{id}', function($id){
     return view('Institution.InstitutionPost',['id'=>$id]);
 });
@@ -150,5 +150,5 @@ Route::get('InstitutionPostpage/{id}', function($id){
 // post from ajax
 Route::post('InstitutionPostLoading', 'Institution_c@getPost');
 
-// InstitutionDetails ajax
-// Route::post('getDetailsForInstitution', 'Institution_c@getInstitutionDetails');
+// download list 
+Route::get('InstitutionDownloadingPage/{id}', 'Institution_c@getDownloadList');

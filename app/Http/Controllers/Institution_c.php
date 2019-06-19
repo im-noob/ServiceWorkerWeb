@@ -66,4 +66,26 @@ class Institution_c extends Controller
             'id'=>$id,
         ],$this->successStatus);
     }
+
+
+    function getDownloadList($id){
+
+        $Details = DB::table('shop_table') 
+                            ->select('shop_name','pic')
+                            ->where('status',13)
+                            ->where('shop_id',$id)
+                            ->first();
+        
+        
+        $downloadList = DB::table('download_content_tab')
+                            ->select('download_link','download_link_text','description','file_size',DB::raw('date_format(updated_at, "%l:%i %p %D %M %Y") as post_date'))
+                            ->where('ref_id',$id)
+                            ->get();
+
+        $downloadList = [];
+        return view('Institution.InstitutionDownloadContent',[
+            'data' => $downloadList,
+            'DetailsList' => $Details,
+        ]);
+    }
 }

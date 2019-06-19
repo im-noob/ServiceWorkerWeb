@@ -34,7 +34,7 @@
                         <a href="{{url('/')}}/InstitutionPostpage/{{$DetailsList->shop_id}}" class="btn btn-primary">Post/Notice</a>
                     </div>
                     <div class="col-6" style="    text-align: center; color: white">
-                        <a href="{{url('/')}}/" class="btn btn-primary">Download</a>
+                        <a href="{{url('/')}}/InstitutionDownloadingPage/{{$DetailsList->shop_id}}" class="btn btn-primary">Download</a>
                     </div>
                 </div>
 

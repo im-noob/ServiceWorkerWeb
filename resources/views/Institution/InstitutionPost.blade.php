@@ -20,6 +20,24 @@
             </select>
         </div>
     </section> --}}
+
+
+
+
+    {{-- Conver Image:START --}}
+    <section>
+        <div class="container-fluid">
+                <div class="card bg-dark text-white">
+                    <img src=" {{url('/')}}/founder/public/{{$DetailsList->pic}}"" onerror = "this.src = 'https://i.imgur.com/e2Ji5su.jpg';" style="height: 220px;filter: brightness(60%);" class="card-img img-fluid" alt="...">
+                    <div class="card-img-overlay">
+                        <h1 class="card-title" style="font-size: 50px;text-align: center;">{{$DetailsList->shop_name}}</h1>
+                    </div>
+                </div>
+        </div>
+    </section>
+    {{-- Conver Image:END --}}
+
+
     <section id="noticeSection">
         <div class="container" style="margin-bottom: 1em;" id="notice-container">
             
