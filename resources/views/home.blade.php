@@ -45,7 +45,7 @@
     </section>
 
 
-    {{-- CardList:START 
+    {{-- CardList:START  --}}
     <section>
         <div class="container">
             <div class="row">
@@ -88,10 +88,9 @@
             </div>
         </div>
     </section>
-    --}}
-
-
     {{-- CardList:STOP --}}
+
+
     <section>   
         <div class= "card">   
             <br>
