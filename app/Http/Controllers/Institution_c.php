@@ -38,17 +38,32 @@ class Institution_c extends Controller
 
     } 
 
-    function getInstitutionDetails(Request $request){
-        $areaID = $request->areaID;   
-        $Institutionlist = DB::table('shop_table') 
-                            ->select('shop_id','shop_name','pic','address','ratting')
+    function getInstitutionDetails($id){
+
+        $Details = DB::table('shop_table') 
+                            ->select('shop_id','shop_name','pic','address','ratting','description')
                             ->where('status',13)
-                            ->where('work_area',$areaID)
-                            ->get();
-        return response()->json([
-            'received'=>true,
-            'data'=>$Institutionlist
-        ],$this->successStatus);
+                            ->where('shop_id',$id)
+                            ->first();
+        
+
+        return view('Institution.InstitutionDetails',[
+            'DetailsList' => $Details
+        ]);
 
     } 
+    function getPost(Request $request){
+        $id = $request->id;
+        $data = DB::table('notice_tab')
+                    ->select('title','post',DB::raw('date_format(updated_at, "%l:%i %p %D %M %Y") as post_date'))
+                    ->where('post_by_id',$id)
+                    ->limit(30)
+                    ->get();
+        
+        return response()->json([
+            'received'=>true,
+            'data'=>$data,
+            'id'=>$id,
+        ],$this->successStatus);
+    }
 }

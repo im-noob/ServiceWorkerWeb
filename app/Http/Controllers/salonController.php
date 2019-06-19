@@ -13,6 +13,7 @@ class salonController extends Controller
         $saloonshoplist = DB::table('shop_table')
                             ->select('shop_id','shop_name','pic','address','ratting')
                             ->where('status',13)
+                            ->where('shop_type','shop')
                             ->get();
 
         $cityName = DB::table('arealist_table')
@@ -27,6 +28,7 @@ class salonController extends Controller
         $saloonshoplist = DB::table('shop_table')
                             ->select('shop_id','shop_name','pic','address','ratting')
                             ->where('status',13)
+                            ->where('shop_type','shop')
                             ->where('work_area',$areaID)
                             ->get();
         return response()->json(['received'=>true,'saloonshoplist'=>$saloonshoplist],$this->successStatus);

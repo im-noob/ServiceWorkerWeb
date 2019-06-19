@@ -2,13 +2,14 @@
 @section('Institution')
 <section class="bodyView">
     <div class="card">
-        <div class="container ">
+
+        {{-- <div class="container ">
 
 
                 <h3>Search Institution near you.</h3>
                 <div class="row">
                     
-                    {{-- <div class = "col-md-6 col-sm-6 form-group">
+                    <div class = "col-md-6 col-sm-6 form-group">
                         <select id="cityListDropDownForInstitution" style="height: 100%;"  class="custom-select custom-select-sm">
                             <option value="-1" hidden>Choose Area</option>
                             @forelse($cityName as $city)
@@ -17,7 +18,7 @@
                                 <option  value="0">Bhagalpur</option>
                             @endforelse
                         </select>   
-                    </div> --}}
+                    </div>
                     <div class="col-sm-6">
                             <div class="form-group">
                                 <button id="searchForInstitution"  class="form-control btn btn-primary  btn-block" ><i class="fas fa-search"> Search</i></button>
@@ -25,7 +26,7 @@
                     </div>
                     
                 </div>
-        </div>
+        </div> --}}
 
         <div class="card">
             <div class="container" >

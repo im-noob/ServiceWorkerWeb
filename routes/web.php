@@ -140,9 +140,15 @@ Route::get('Institution',function(){
 Route::post('getInstitution', 'Institution_c@getInstitutionList');
 
 // Institution details
-Route::get('InstitutionDetails', function () {
-    return view('Institution.InstitutionDetails');
+Route::get('InstitutionDetails/{id}', 'Institution_c@getInstitutionDetails');
+
+
+Route::get('InstitutionPostpage/{id}', function($id){
+    return view('Institution.InstitutionPost',['id'=>$id]);
 });
 
+// post from ajax
+Route::post('InstitutionPostLoading', 'Institution_c@getPost');
+
 // InstitutionDetails ajax
-Route::post('getDetailsForInstitution', 'Institution_c@getInstitutionDetails');
+// Route::post('getDetailsForInstitution', 'Institution_c@getInstitutionDetails');

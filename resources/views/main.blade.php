@@ -175,6 +175,7 @@
         @endcomponent
         @yield('Institution')
         @yield('InstitutionDetails')
+        @yield('InstitutionPost')
         <!-- Blade Part:END -->
 
     </div>
