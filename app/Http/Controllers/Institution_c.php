@@ -38,6 +38,20 @@ class Institution_c extends Controller
 
     } 
 
+    // only page
+    function InstitutionPostpage($id){
+        $Details = DB::table('shop_table') 
+                            ->select('shop_name','pic')
+                            ->where('status',13)
+                            ->where('shop_id',$id)
+                            ->first();
+
+        return view('Institution.InstitutionPost',[
+            'DetailsList' => $Details,
+            'id'=>$id,
+        ]);
+    }
+
     function getInstitutionDetails($id){
 
         $Details = DB::table('shop_table') 
@@ -82,7 +96,6 @@ class Institution_c extends Controller
                             ->where('ref_id',$id)
                             ->get();
 
-        $downloadList = [];
         return view('Institution.InstitutionDownloadContent',[
             'data' => $downloadList,
             'DetailsList' => $Details,

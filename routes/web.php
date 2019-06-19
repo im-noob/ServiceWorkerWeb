@@ -143,9 +143,7 @@ Route::post('getInstitution', 'Institution_c@getInstitutionList');
 Route::get('InstitutionDetails/{id}', 'Institution_c@getInstitutionDetails');
 
 // Institution Post
-Route::get('InstitutionPostpage/{id}', function($id){
-    return view('Institution.InstitutionPost',['id'=>$id]);
-});
+Route::get('InstitutionPostpage/{id}', 'Institution_c@InstitutionPostpage');
 
 // post from ajax
 Route::post('InstitutionPostLoading', 'Institution_c@getPost');
