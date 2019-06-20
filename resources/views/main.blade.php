@@ -128,13 +128,13 @@
             <div >
                 <!-- Blade Part:START -->
                 @yield('home')
-                @yield('profile')
-                @yield('signup')
+                
+                
                 @yield('hire')
-                @yield('signupForm')
-                @yield('info')
+                
                 @yield('SalonSelect')
-                @yield('conformRequest')
+                
+                
                 @yield('contact')
                 @yield('about')
                 @yield('MyOrder')
