@@ -1,3 +1,7 @@
+<!-- PWA:START-->
+@component('components.PWAComponent')
+@endcomponent
+<!-- PWA:STOP-->
 <section id="tempbody" >
     
     <div style="text-align: center; padding-top: 50%;">
@@ -11,8 +15,8 @@
         
         var elem = document.getElementById("tempbody");
         elem.parentElement.removeChild(elem);
-        var elem = document.getElementById("tempbody");
-        elem.parentElement.removeChild(elem);
+        // var elem = document.getElementById("tempbody");
+        // elem.parentElement.removeChild(elem);
         // scroll to top
         document.documentElement.scrollTop = 0;
     };

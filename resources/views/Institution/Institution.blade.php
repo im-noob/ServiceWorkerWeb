@@ -189,7 +189,7 @@
                                         '                <img '+
                                         '                    src="{{url('/')}}/'+$data[i].pic+'"'+ 
                                         '                    class="card-img round img-fluid"'+
-                                        '                    style="height: 100%; width: 100%"'+ 
+                                        '                    style=" width: 100%"'+ 
                                         '                    alt="'+$data[i].Institution_name+'ganga services"'+
                                         '                    onerror="this.src = \'https://i.imgur.com/e2Ji5su.jpg\';">'+
                                                         

@@ -9,78 +9,423 @@
 
 <url>
   <loc>https://gangaservices.com/</loc>
-  <lastmod>2019-05-14T22:13:57+00:00</lastmod>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://gangaservices.com/regPartner</loc>
-  <lastmod>2019-05-14T22:13:57+00:00</lastmod>
+  <loc>https://gangaservices.com/partners/public/</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://gangaservices.com/about</loc>
-  <lastmod>2019-05-14T22:13:57+00:00</lastmod>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://gangaservices.com/contact</loc>
-  <lastmod>2019-05-14T22:13:57+00:00</lastmod>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://gangaservices.com/CartItem</loc>
-  <lastmod>2019-05-14T22:13:57+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://gangaservices.com/hire/home/130</loc>
-  <lastmod>2019-05-14T22:13:57+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://gangaservices.com/hire/home/131</loc>
-  <lastmod>2019-05-14T22:13:57+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://gangaservices.com/hire/home/132</loc>
-  <lastmod>2019-05-14T22:13:57+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://gangaservices.com/hire/home/133</loc>
-  <lastmod>2019-05-14T22:13:57+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://gangaservices.com/hire/home/134</loc>
-  <lastmod>2019-05-14T22:13:57+00:00</lastmod>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://gangaservices.com/shopsalun</loc>
-  <lastmod>2019-05-14T22:13:57+00:00</lastmod>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://gangaservices.com/Institution</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/softwareService</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/57</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/58</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/59</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/60</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/61</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/62</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/97</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/98</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/99</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/100</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/101</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/118</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/123</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/102</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/103</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/104</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/105</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/106</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/107</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/108</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/109</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/115</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/116</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/117</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/130</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/131</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/132</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/133</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/134</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/135</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/hire/home/136</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/regPartner</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/partners/public/login</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/partners/public/register</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>https://gangaservices.com/hire/shop/1</loc>
-  <lastmod>2019-05-14T22:13:57+00:00</lastmod>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://gangaservices.com/hire/shop/2</loc>
-  <lastmod>2019-05-14T22:13:57+00:00</lastmod>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://gangaservices.com/hire/shop/3</loc>
-  <lastmod>2019-05-14T22:13:57+00:00</lastmod>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://gangaservices.com/hire/shop/4</loc>
-  <lastmod>2019-05-14T22:13:57+00:00</lastmod>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
   <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/clints/UCB/public/</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/25</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/26</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/27</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/28</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/29</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/30</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/31</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/32</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/33</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/97</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/98</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/99</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/100</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/101</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/109</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/110</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/111</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/112</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/113</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/114</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/35</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/36</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/37</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/42</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/88</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/89</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/90</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/1</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/2</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/3</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/4</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/5</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/6</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/136</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/Productdetails/home/137</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/partners/public/password/reset</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://gangaservices.com/clints/UCB/public/notice</loc>
+  <lastmod>2019-06-20T08:06:48+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 
 

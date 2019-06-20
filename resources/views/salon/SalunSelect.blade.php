@@ -62,7 +62,7 @@
                                             <img 
                                                 src="{{$shop->pic}}" 
                                                 class="card-img round img-fluid"
-                                                style="height: 100%; width: 100%" 
+                                                style=" width: 100%" 
                                                 alt="{{$shop->shop_name}} ganga services"
                                                 onerror="this.src = 'https://i.imgur.com/e2Ji5su.jpg';">
                                             
@@ -172,7 +172,7 @@
                                         '                <img '+
                                         '                    src="{{url('/')}}/'+$shop[i].pic+'"'+ 
                                         '                    class="card-img round img-fluid"'+
-                                        '                    style="height: 100%; width: 100%"'+ 
+                                        '                    style="width: 100%"'+ 
                                         '                    alt="'+$shop[i].shop_name+'ganga services"'+
                                         '                    onerror="this.src = \'https://i.imgur.com/e2Ji5su.jpg\';">'+
                                                         

@@ -12,6 +12,39 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+// no use:START
+
+// Route::get('/addToCart','hireController@addToCart');
+
+// Route::get('/hire/address', 'hireController@SetAddresss');
+// Route::get('/hire/cnfrmotp', 'hireController@conformOTP');
+// Route::get('/hire/submit', 'hireController@hireSubmit');
+
+
+// Route::get('/profile', 'authController@authenticate');
+// Route::get('/signup','authController@signUp');
+// Route::get('/generateOtp','authController@sendOtp');
+// Route::get('/sendOtp','authController@SenOTPToUser');
+
+//post not verified
+// Route::post('/profile/submit', 'authController@profileSubmit');
+// Route::post('/SP/submitProfile','authController@SubmitServiceProfile');
+// Route::post('/signupForm', 'authController@cnfrmOTPofUser');
+/* undefiend pile okay */
+// no use:STOP
+
+
+
+
+
+
+
+
+
+
+
 //home
 Route::get('/', 'IndexController@homeView');
 //hire page worl list
@@ -28,31 +61,12 @@ Route::get('/shopdetails/{id}','salonController@SalonDetails');
 
 
 
-/* undefiened */
+/* get subcategory when clicke on server via ajax */
 Route::get('/selectSub', 'IndexController@getSubcategory');
-Route::get('/profile', 'authController@authenticate');
-Route::get('/signup','authController@signUp');
-Route::get('/generateOtp','authController@sendOtp');
-Route::get('/sendOtp','authController@SenOTPToUser');
-Route::get('/hire/address', 'hireController@SetAddresss');
-Route::get('/hire/cnfrmotp', 'hireController@conformOTP');
-Route::get('/hire/submit', 'hireController@hireSubmit');
+
+
+// Home
 Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('/addToCart','hireController@addToCart');
-
-
-//post not verified
-Route::post('/profile/submit', 'authController@profileSubmit');
-Route::post('/SP/submitProfile','authController@SubmitServiceProfile');
-Route::post('/signupForm', 'authController@cnfrmOTPofUser');
-/* undefiend pile okay */
-
-
-
-
-
-
-
 
 
 

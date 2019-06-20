@@ -148,18 +148,16 @@
     @component('softwareService.Components.slickSlider')
         @slot('innerData')
             <div class="col-sm-3 card happy-brand" style="background-color: white" >
-                <img class="img-fluid m-4  rounded mx-auto" src="http://hardigurdi.com/images/icon.png" style="height: 100px;">
+                <a target="_blank" href="http://hardigurdi.com/"><img class="img-fluid m-4  rounded mx-auto" src="http://hardigurdi.com/images/icon.png" style="height: 100px;"></a>
             </div>
             <div class="col-sm-3 card happy-brand">
-                <img class="img-fluid m-4 rounded mx-auto" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png" style="height: 100px;"/>
+                <a target="_blank" href="https://gangaservices.com/clints/UCB/public/" > <img class="img-fluid m-4 rounded mx-auto" src="{{url('/')}}/images/ucb.jpg" style="height: 100px;"/></a>
+            </div>
+            <div class="col-sm-3 card happy-brand" style="background-color: white" >
+                <a target="_blank" href="http://hardigurdi.com/"><img class="img-fluid m-4  rounded mx-auto" src="http://hardigurdi.com/images/icon.png" style="height: 100px;"></a>
             </div>
             <div class="col-sm-3 card happy-brand">
-                <img class="img-fluid m-4 rounded mx-auto" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png" style="height: 100px;"/>
-                
-            </div>
-            <div class="col-sm-3 card happy-brand">
-                <img class="img-fluid m-4 rounded mx-auto" src="https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png" style="height: 100px;"/>
-                
+                <a target="_blank" href="https://gangaservices.com/clints/UCB/public/" > <img class="img-fluid m-4 rounded mx-auto" src="{{url('/')}}/images/ucb.jpg" style="height: 100px;"/></a>
             </div>
         @endslot
     @endcomponent
