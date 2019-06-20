@@ -1,3 +1,6 @@
+@component('components.beforeloadingAnimation')
+@endcomponent
+
 @extends('main')
 @section('MyOrder')
     <input type="hidden" id="userID" value="{{$userID}}">

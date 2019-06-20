@@ -1,3 +1,6 @@
+@component('components.beforeloadingAnimation')
+@endcomponent
+
 @extends('main')
 @section('conformRequest')
 <section class="bodyView" >

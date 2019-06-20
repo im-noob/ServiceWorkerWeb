@@ -13,7 +13,7 @@
                         {{-- <div class="alert alert-success" role="alert" id="searchResultSuccess">Search Somthing..</div> --}}
                         <div class="row">
                             <div class = "col-md-6 col-sm-6 form-group">
-                                <select id="cityListDropDown" style="width: 100%; padding: 0.3em;     height: 130%;" class="col-xl-10 d-flex custom-select custom-select-sm">
+                                <select id="cityListDropDown" style="width: 100%; padding: 0.3em; " class="col-xl-10 d-flex custom-select custom-select-sm">
                                     <option value="-1" hidden>Choose Area</option>
                                     @forelse($cityName as $city)
                                         <option value="{{$city->arealist_id}}" class="dropdown-item" href="#">{{$city->area_city_name}}</option>

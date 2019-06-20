@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
     <head>
@@ -80,181 +79,191 @@
         <!-- Cart System .js -->
         <script src="{{url('/')}}/js/CartSystem.js"></script>
         
-        <!-- Goolge Structed Data -->
+        <!--// Goolge Structed Data-->
         @component('components.StructuredData')
         @endcomponent
     </head>
 
     <body>
-        <section id="mainbody" hidden>
-                <section>
         
-                    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-                        
-                        <a class="navbar-brand" href="{{url('/')}}">
-                            <img src="https://i.imgur.com/CWMqgHO.png"  width="30" height="30"  alt="GangaServices Logo" />
-                            Ganga Services
-                        </a>
+        <div id="mainbody" hidden style="margin-top: 50px;">
+            <section>
+            
+                <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+                    
+                    <a class="navbar-brand" href="{{url('/')}}">
+                        <img src="https://i.imgur.com/CWMqgHO.png"  width="30" height="30"  alt="GangaServices Logo" />
+                        Ganga Services
+                    </a>
 
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav mr-auto" style="align-items: center;">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mr-auto" style="align-items: center;">
 
+                            <li class="nav-item active">
+                                <a class="nav-link nav-text" href="{{url('/')}}/">Home</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link nav-text" id="Myservice" data-toggle="modal" data-target="#service" >Services</a>
+                            </li>
+                            
+                            <li class="nav-item active">
+                                <a class="nav-link nav-text"  href="{{url('/')}}/partners/public" >Partners</a>
+                            </li>
+
+
+                            
+                            
+                            <li class="nav-item active">
+                                <a class="nav-link nav-text" href="{{url('/')}}/about">About</a>
+                            </li>
+                            
+                            <li class="nav-item active">
+                                <a class="nav-link nav-text"  href="{{url('/')}}/contact" >Contact US</a>
+                            </li>
+
+
+                            
+                            @auth
                                 <li class="nav-item active">
-                                    <a class="nav-link nav-text" href="{{url('/')}}/">Home</a>
+                                    <a class="nav-link nav-text" id="MyOrder" href="{{url('/')}}/MyOrder" >My Order</a>
                                 </li>
                                 <li class="nav-item active">
-                                    <a class="nav-link nav-text" id="Myservice" data-toggle="modal" data-target="#service" >Services</a>
+                                    <a class="nav-link nav-text" id="logout" href="{{url('/')}}/logout" >Logout</a>
                                 </li>
-                                
+                            @else
                                 <li class="nav-item active">
-                                    <a class="nav-link nav-text"  href="{{url('/')}}/partners/public" >Partners</a>
+                                    <a class="nav-link nav-text" id="login1" data-toggle="modal" data-target="#loginSignupModal" >Login/SignUp</a>
                                 </li>
-
-
-                                
-                                
-                                <li class="nav-item active">
-                                    <a class="nav-link nav-text" href="{{url('/')}}/about">About</a>
-                                </li>
-                                
-                                <li class="nav-item active">
-                                    <a class="nav-link nav-text"  href="{{url('/')}}/contact" >Contact US</a>
-                                </li>
-
-
-                                
-                                @auth
-                                    <li class="nav-item active">
-                                        <a class="nav-link nav-text" id="MyOrder" href="{{url('/')}}/MyOrder" >My Order</a>
-                                    </li>
-                                    <li class="nav-item active">
-                                        <a class="nav-link nav-text" id="logout" href="{{url('/')}}/logout" >Logout</a>
-                                    </li>
-                                @else
-                                    <li class="nav-item active">
-                                        <a class="nav-link nav-text" id="login1" data-toggle="modal" data-target="#loginSignupModal" >Login/SignUp</a>
-                                    </li>
-                                @endauth
-                                
-                                
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{url('/')}}/CartItem" id="cart-menu">
-                                        <i class="fab fa-opencart" style="font-size: x-large;color: white;">
-                                            <sup style="margin-left: -5px;">
-                                                <sup class="badge badge-secondary" style="background-color: #dd0a0a; font-size: 15px" id="cartValue">
-                                                    0
-                                                </sup>
+                            @endauth
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{url('/')}}/CartItem" id="cart-menu">
+                                    <i class="fab fa-opencart" style="font-size: x-large;color: white;">
+                                        <sup style="margin-left: -5px;">
+                                            <sup class="badge badge-secondary" style="background-color: #dd0a0a; font-size: 15px" id="cartValue">
+                                                0
                                             </sup>
-                                        </i>  
-                                    </a>
-                                </li>
+                                        </sup>
+                                    </i>  
+                                </a>
+                            </li>
 
+                        </ul>
+                    </div>
+                </nav>
+                
+            </section>        
+
+
+            <div >
+                <!-- Blade Part:START -->
+                @yield('home')
+                @yield('profile')
+                @yield('signup')
+                @yield('hire')
+                @yield('signupForm')
+                @yield('info')
+                @yield('SalonSelect')
+                @yield('conformRequest')
+                @yield('contact')
+                @yield('about')
+                @yield('MyOrder')
+                @yield('auth.login')
+                @yield('productDetails')
+                @component('components.login')
+                @endcomponent
+                @yield('Institution')
+                @yield('InstitutionDetails')
+                @yield('InstitutionPost')
+                <!-- Blade Part:END -->
+
+            </div>
+
+            
+
+
+
+            
+
+
+
+
+
+
+
+
+
+            <footer id="footer" class="bg-one">
+                <div class="justify-content-center" style="background-color: #00a63f; padding: 10px;">
+                    <div class="col-sm-12  mb-3 mt-3" style="text-align: center;">
+                        <h3 style="color: #fff"><b><span>Need help? </span><span>Call our support team 24/7 at</span> <a href="tel:9608240612" style="color: #fff">9608240612</a></b></h3> 
+                    </div>
+                </div>
+                <div class="top-footer">
+                    <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4 col-md-4 col-lg-4 mb-3">
+                            <h3>About</h3>
+                            <p>A Best service provide of your city.</p>
+                            <div id="google_translate_element"></div>
+                        </div>
+
+                        <!--
+                        <div class="col-sm-4 col-md-4 col-lg-4">
+                            <ul>
+                                <li><h3>Our Services</h3></li>
+                                <li><h4><a href="#">Ganga Services</a></h4></li>
+                                <li><h4><a href="#">Ganga Cart</a></h4></li>
+                                <li><h4><a href="#">SSGF</a></h4></li>
                             </ul>
                         </div>
-                    </nav>
+                        End of .col-sm-4 -->
+
                     
-                </section>        
-
-
-
-
-                <div style="/*margin-top: 30px;*/">
-                    <!-- Blade Part:START -->
-                    @yield('home')
-                    @yield('profile')
-                    @yield('signup')
-                    @yield('hire')
-                    @yield('signupForm')
-                    @yield('info')
-                    @yield('SalonSelect')
-                    @yield('conformRequest')
-                    @yield('contact')
-                    @yield('about')
-                    @yield('MyOrder')
-                    @yield('auth.login')
-                    @yield('productDetails')
-                    @component('components.login')
-                    @endcomponent
-                    @yield('Institution')
-                    @yield('InstitutionDetails')
-                    @yield('InstitutionPost')
-                    <!-- Blade Part:END -->
-
-                </div>
-
-                
-
-
-
-                <footer id="footer" class="bg-one">
-                    <div class="justify-content-center" style="background-color: #00a63f; padding: 10px;">
-                        <div class="col-sm-12  mb-3 mt-3" style="text-align: center;">
-                            <h3 style="color: #fff"><b><span>Need help? </span><span>Call our support team 24/7 at</span> <a href="tel:9608240612" style="color: #fff">9608240612</a></b></h3> 
+                        <div class="col-sm-4 col-md-4 col-lg-4">
+                        <ul>
+                            <li><h3>Quick Links</h3></li>
+                            <li><h4><a href="{{url('/')}}/partners/public">Partners</a></h4></li>
+                            <li><h4><a href="{{url('/')}}/regPartner">Quik Partners</a></h4></li>
+                            <li><h4><a href="{{url('/')}}/partners/public">Quick Join</a></h4></li>
+                            <li><h4><a href="{{url('/')}}/about">About</a></h4></li>
+                            <li><h4><a href="{{url('/')}}/contact">Contact US</a></h4></li>
+                        </ul>
                         </div>
-                    </div>
-                    <div class="top-footer">
-                        <div class="container">
-                        <div class="row">
-                            <div class="col-sm-4 col-md-4 col-lg-4 mb-3">
-                                <h3>About</h3>
-                                <p>A Best service provide of your city.</p>
-                                <div id="google_translate_element"></div>
-                            </div>
+                        <!--  End of .col-sm-4 -->
+
+                        <div class="col-sm-4 col-md-4 col-lg-4">
+                        <ul>
+                            <li><h3>Connect with us Socially</h3></li>
+                            <li><h4><a href="http://facebook.com/gangaservices">Facebook</a></h4></li>
+                            <li><h4><a href="https://www.youtube.com/channel/UC612tWYpQW3OEKuYddfXoXQ">Youtube</a></li>
 
                             <!--
-                            <div class="col-sm-4 col-md-4 col-lg-4">
-                                <ul>
-                                    <li><h3>Our Services</h3></li>
-                                    <li><h4><a href="#">Ganga Services</a></h4></li>
-                                    <li><h4><a href="#">Ganga Cart</a></h4></li>
-                                    <li><h4><a href="#">SSGF</a></h4></li>
-                                </ul>
-                            </div>
-                            End of .col-sm-4 -->
+                            <li><h4><a href="#">Twitter</a></h4></li>
+                            <li><h4><a href="#">Pinterest</a></h4></li>
+                            -->
 
-                        
-                            <div class="col-sm-4 col-md-4 col-lg-4">
-                            <ul>
-                                <li><h3>Quick Links</h3></li>
-                                <li><h4><a href="{{url('/')}}/partners/public">Partners</a></h4></li>
-                                <li><h4><a href="{{url('/')}}/regPartner">Quik Partners</a></h4></li>
-                                <li><h4><a href="{{url('/')}}/partners/public">Quick Join</a></h4></li>
-                                <li><h4><a href="{{url('/')}}/about">About</a></h4></li>
-                                <li><h4><a href="{{url('/')}}/contact">Contact US</a></h4></li>
-                            </ul>
-                            </div>
-                            <!--  End of .col-sm-4 -->
-
-                            <div class="col-sm-4 col-md-4 col-lg-4">
-                            <ul>
-                                <li><h3>Connect with us Socially</h3></li>
-                                <li><h4><a href="http://facebook.com/gangaservices">Facebook</a></h4></li>
-                                <li><h4><a href="https://www.youtube.com/channel/UC612tWYpQW3OEKuYddfXoXQ">Youtube</a></li>
-
-                                <!--
-                                <li><h4><a href="#">Twitter</a></h4></li>
-                                <li><h4><a href="#">Pinterest</a></h4></li>
-                                -->
-
-                            </ul>
-                            </div>
-                            <!-- End of .col-sm-4 -->
+                        </ul>
                         </div>
-                        </div> <!-- end container -->
+                        <!-- End of .col-sm-4 -->
                     </div>
-                    <div class="footer-bottom">
-                        <h5>Copyright 2019. All rights reserved.</h5>
-                        <h6>Design and Developed by <a>GangaServices.com Team</a></h6>
-                    </div>
-                </footer>
+                    </div> <!-- end container -->
+                </div>
+                <div class="footer-bottom">
+                    <h5>Copyright 2019. All rights reserved.</h5>
+                    <h6>Design and Developed by <a>GangaServices.com Team</a></h6>
+                </div>
+            </footer>
+        </div>
 
 
 
-        </section>
-        
+
+
 
         <!-- model for service list model:start -->
 

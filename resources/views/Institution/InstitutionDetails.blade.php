@@ -1,3 +1,6 @@
+@component('components.beforeloadingAnimation')
+@endcomponent
+
 @extends('main')
 @section('InstitutionDetails')
 

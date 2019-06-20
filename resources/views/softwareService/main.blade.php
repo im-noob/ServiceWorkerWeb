@@ -1,3 +1,5 @@
+
+
 @extends('softwareService.master')
 @section('main')
     {{-- cursole:START --}}
@@ -267,3 +269,4 @@
     </script>
     
 @endsection
+
