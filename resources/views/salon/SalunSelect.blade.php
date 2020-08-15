@@ -12,7 +12,7 @@
                 <div class="row">
                     
                     <div class = "col-md-6 col-sm-6 form-group">
-                        <select id="cityListDropDownForSaloon" style="height: 100%;"  class="custom-select custom-select-sm">
+                        <select id="cityListDropDownForSaloon"   class="custom-select custom-select-sm">
                             <option value="-1" hidden>Choose Area</option>
                             @forelse($cityName as $city)
                                 <option value="{{$city->arealist_id}}" class="dropdown-item" href="#">{{$city->area_city_name}}</option>
